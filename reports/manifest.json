@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-24 19:31:49 CST",
+  "generated_at": "2026-04-24 19:35:30 CST",
   "reports": [
     {
       "id": "active-etf-analysis",
       "name": "主動ETF持股分析報告",
-      "updated": "2026-04-23 19:32:57 CST",
+      "updated": "2026-04-24 19:35:30 CST",
       "url": "reports/active-etf-analysis/latest.html",
       "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/主動ETF持股報告_新版.html",
-      "bytes": 18243
+      "bytes": 18294
     },
     {
       "id": "active-etf-holdings-change",
