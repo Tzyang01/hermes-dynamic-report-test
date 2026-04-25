@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25 14:49:00 CST",
+  "generated_at": "2026-04-25 14:54:10 CST",
   "reports": [
     {
       "id": "active-etf-analysis",
@@ -19,11 +19,11 @@
     },
     {
       "id": "active-etf-morning-brief",
-      "name": "20260423晨報",
-      "updated": "2026-04-23 06:55:00 CST",
+      "name": "20260425晨報",
+      "updated": "2026-04-25 07:03:22 CST",
       "url": "reports/active-etf-morning-brief/latest.html",
-      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/前日優先觀察名單晨報_作戰板圖文版_20260423.html",
-      "bytes": 19551
+      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/台股持股晨報_互動式_20260425_0703.html",
+      "bytes": 53082
     }
   ]
 }
