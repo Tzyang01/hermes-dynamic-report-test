@@ -1,16 +1,341 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>前日優先觀察名單晨報｜開盤作戰頁</title>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>前日優先觀察名單晨報｜開盤作戰頁</title>
 <style>
-:root{--bg:#f4f7fb;--card:#ffffff;--ink:#102033;--muted:#66758a;--line:#d8e2ef;--red:#c62828;--green:#2e7d32;--amber:#b26a00;--blue:#1565c0;}
-*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink)}
-.wrap{max-width:1080px;margin:0 auto;padding:24px} .hero,.panel,.news-card,.metric,.focus{background:var(--card);border:1px solid var(--line);border-radius:18px} .hero{padding:20px;background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%);color:#fff} .hero h1{margin:0 0 8px;font-size:32px} .hero p{margin:0;color:#dbe7ff} .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px} .metric{padding:12px;color:var(--ink)} .metric-label{font-size:11px;color:var(--muted)} .metric-value{font-size:24px;font-weight:800;margin-top:4px;color:var(--ink)} .metric-sub{font-size:12px;margin-top:4px;color:var(--muted)} .section{margin-top:16px} .triple{display:grid;grid-template-columns:repeat(3,1fr);gap:12px} .focus{padding:14px} .tag{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;margin-bottom:8px} .green{background:#e8f5e9;color:var(--green)} .blue{background:#e3f2fd;color:var(--blue)} .amber{background:#fff3e0;color:var(--amber)} .red{background:#ffebee;color:var(--red)} .news-grid{display:grid;grid-template-columns:1fr;gap:10px} .news-card{padding:14px} .news-head{font-weight:800;margin-bottom:8px} .news-line{font-size:14px;line-height:1.5;margin-top:6px;color:#243447} .panel{padding:16px} .small{color:var(--muted);font-size:13px} ul{margin:8px 0 0 18px;padding:0} li{margin:6px 0} @media (max-width:900px){.grid,.triple{grid-template-columns:1fr 1fr}} @media (max-width:640px){.grid,.triple{grid-template-columns:1fr}} @media print{body{background:#fff} .wrap{padding:12px} .hero,.panel,.news-card,.metric,.focus{box-shadow:none} }
+:root{--bg:#f4f7fb;--card:#ffffff;--ink:#102033;--muted:#66758a;--line:#d8e2ef;
+--red:#c62828;--green:#2e7d32;--amber:#b26a00;--blue:#1565c0;--gray:#78909c;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft JhengHei",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:20px}
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%);color:#fff;
+  border-radius:18px;padding:24px 28px;margin-bottom:16px}
+.hero h1{font-size:28px;font-weight:900;margin-bottom:6px}
+.hero .sub{color:#dbe7ff;font-size:15px;margin-bottom:4px}
+.hero .meta{color:#8eaadc;font-size:12px;margin-top:8px}
+.market-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}
+.m-card{background:#fff;border-radius:14px;padding:14px;border:1px solid rgba(255,255,255,.2)}
+.m-card .m-label{font-size:11px;color:var(--muted);font-weight:600}
+.m-card .m-value{font-size:22px;font-weight:900;color:var(--ink);margin-top:3px}
+.m-card .m-sub{font-size:11px;margin-top:3px}
+.m-card .m-sub.up{color:var(--green)} .m-card .m-sub.down{color:var(--red)}
+.section{margin-top:14px}
+.section-title{font-size:16px;font-weight:800;margin-bottom:8px;padding-left:2px;
+  border-left:4px solid var(--blue);padding-left:10px}
+.action-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.action-box{background:var(--card);border-radius:14px;padding:16px;border:1px solid var(--line)}
+.action-box h3{font-size:14px;font-weight:800;margin-bottom:8px}
+.tag{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700;margin-bottom:6px}
+.tag-green{background:#e8f5e9;color:var(--green)} .tag-blue{background:#e3f2fd;color:var(--blue)}
+.tag-amber{background:#fff3e0;color:var(--amber)} .tag-red{background:#ffebee;color:var(--red)}
+.tag-gray{background:#eceff1;color:var(--gray)}
+.stock-card{background:var(--card);border-radius:14px;padding:18px;border:1px solid var(--line);margin-bottom:12px}
+.stock-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.stock-name{font-size:18px;font-weight:900} .stock-code{font-size:13px;color:var(--muted)}
+.mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.mini{background:var(--bg);border-radius:10px;padding:10px}
+.mini .mini-label{font-size:10px;color:var(--muted);font-weight:600}
+.mini .mini-value{font-size:12px;font-weight:700;margin-top:3px}
+.dual-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.col-box{border-radius:10px;padding:12px}
+.col-left{background:#f0f7ff;border:1px solid #c8dff5}
+.col-right{background:#fff8f0;border:1px solid #f0ddc8}
+.col-box h4{font-size:13px;font-weight:800;margin-bottom:6px}
+.col-box p,.col-box li{font-size:13px;line-height:1.5}
+.col-box ul{margin-left:16px} .col-box li{margin-bottom:3px}
+.radar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.radar-card{background:var(--card);border-radius:12px;padding:14px;border:1px solid var(--line)}
+.radar-card .r-name{font-weight:800;font-size:14px}
+.radar-card .r-price{font-size:11px;color:var(--muted)}
+.radar-card .r-text{font-size:12px;margin-top:6px;color:#37474f}
+.defense-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.def-card{background:var(--card);border-radius:10px;padding:12px;border:1px solid var(--line);text-align:center}
+.def-card .d-name{font-weight:800;font-size:13px} .def-card .d-price{font-size:11px;color:var(--muted)}
+.def-card .d-text{font-size:11px;margin-top:4px;color:#546e7a}
+.news-card{background:var(--card);border-radius:12px;padding:14px;border:1px solid var(--line);margin-bottom:8px}
+.news-head{font-weight:800;font-size:14px;margin-bottom:6px}
+.news-meta{font-size:11px;color:var(--muted)}
+.news-row{font-size:13px;margin-top:6px;line-height:1.5}
+.news-row b{color:var(--ink)}
+.bottom-box{background:linear-gradient(135deg,#1a237e,#283593);color:#fff;border-radius:14px;padding:20px;margin-top:16px}
+.bottom-box h3{font-size:15px;font-weight:800;margin-bottom:8px}
+.bottom-box p{font-size:13px;line-height:1.6;opacity:.92}
+.bottom-box .highlight{background:rgba(255,255,255,.15);border-radius:8px;padding:10px;margin-top:8px}
+@media print{body{background:#fff}.wrap{padding:10px}
+  .hero,.action-box,.stock-card,.radar-card,.def-card,.news-card,.bottom-box{box-shadow:none;break-inside:auto}
+  .mini,.col-box{break-inside:avoid}}
+@media (max-width:900px){.market-grid,.action-rail,.radar-grid{grid-template-columns:1fr 1fr}
+  .defense-grid{grid-template-columns:1fr 1fr}.mini-grid{grid-template-columns:1fr 1fr}.dual-col{grid-template-columns:1fr}}
+@media (max-width:640px){.market-grid,.action-rail,.radar-grid,.defense-grid,.mini-grid{grid-template-columns:1fr}}
 </style></head><body><div class="wrap">
-<section class="hero"><h1>前日優先觀察名單晨報｜開盤作戰頁</h1><p>前日晚報主線仍在 AI 算力／網通／高速材料，但 4/21 台股已大漲、夜盤續強，美股三大指數轉弱；今天較像高檔震盪選股盤，能看但不適合全面追高。</p><p style="margin-top:8px">沒有資料</p><p style="margin-top:8px;font-size:12px;color:#bfd4ff">生成時間：2026-04-24 06:30</p><div class="grid"><div class="metric"><div class="metric-label">台指電子盤</div><div class="metric-value">37621</div><div class="metric-sub">▲381 / -</div></div><div class="metric"><div class="metric-label">Dow</div><div class="metric-value">沒有資料</div><div class="metric-sub">- / -</div></div><div class="metric"><div class="metric-label">S&amp;P 500</div><div class="metric-value">沒有資料</div><div class="metric-sub">- / -</div></div><div class="metric"><div class="metric-label">Nasdaq</div><div class="metric-value">沒有資料</div><div class="metric-sub">- / -</div></div><div class="metric"><div class="metric-label">費半</div><div class="metric-value">沒有資料</div><div class="metric-sub">- / -</div></div></div></section>
-<section class="section triple">
-<div class="focus"><div class="tag green">先做</div><ul><li>沒有資料</li></ul></div>
-<div class="focus"><div class="tag blue">再看</div><ul><li>沒有資料</li></ul></div>
-<div class="focus"><div class="tag red">先不要</div><ul><li>2330 台積電</li><li>2368 金像電</li></ul></div>
+
+<!-- HERO -->
+<section class="hero">
+<h1>前日優先觀察名單晨報｜開盤作戰頁</h1>
+<p class="sub"><b>一句話：</b>台指夜盤大漲 530 點、美股四大指數全收紅、費半飆漲 2.72%，盤前順風極強——但晚報主線三檔全是「不追高 / 等回檔」，所以今天是「能看但不能追的選股盤」。</p>
+<p class="sub"><b>副結論：</b>結論不是轉空，而是把進攻降級：有部位偏續抱，新倉優先等回檔站穩再接。</p>
+<p class="meta">資料日：2026-04-22 ｜ 生成時間：2026-04-23 06:55 ｜ ETF 完整度 14/14</p>
+<div class="market-grid">
+  <div class="m-card"><div class="m-label">台指電子盤</div><div class="m-value">38,746</div><div class="m-sub up">▲530 / ▲1.39%</div></div>
+  <div class="m-card"><div class="m-label">Dow</div><div class="m-value">49,490</div><div class="m-sub up">▲340.65 / ▲0.69%</div></div>
+  <div class="m-card"><div class="m-label">Nasdaq</div><div class="m-value">24,658</div><div class="m-sub up">▲397.60 / ▲1.64%</div></div>
+  <div class="m-card"><div class="m-label">S&P 500</div><div class="m-value">7,138</div><div class="m-sub up">▲73.89 / ▲1.05%</div></div>
+  <div class="m-card"><div class="m-label">費半</div><div class="m-value">9,909</div><div class="m-sub up">▲262.05 / ▲2.72%</div></div>
+</div>
 </section>
-<section class="section panel"><h2>今天新聞怎麼用：不是剪貼三則新聞，而是把它翻成今天怎麼做</h2><div class="news-grid"><div class="news-card">沒有資料</div></div></section>
-<section class="section panel"><h2>你只要記住</h2><ul><li>今天先用晚報主線決定優先序，不用因一則新聞就改變整體做法。</li><li>若外部市場與 ETF 主線分歧，先降速，不直接追價。</li><li>若缺官方驗證，就把消息降成背景，不升級成買點。</li></ul></section>
+
+<!-- ACTION RAIL -->
+<section class="section">
+<h2 class="section-title">先做什麼 / 再看什麼 / 不要做什麼</h2>
+<div class="action-rail">
+  <div class="action-box">
+    <div class="tag tag-green">先做</div>
+    <h3>觀察回檔承接點</h3>
+    <ul style="margin-left:16px;font-size:13px">
+      <li><b>2330 台積電</b>：看回檔是否守住 MA20，站穩再升級</li>
+      <li><b>2313 華通</b>：有期貨利多新聞，但等整理後再看</li>
+      <li><b>3264 欣銓</b>：營運逐季成長，但等轉強訊號</li>
+    </ul>
+  </div>
+  <div class="action-box">
+    <div class="tag tag-amber">再看</div>
+    <h3>候補不追</h3>
+    <ul style="margin-left:16px;font-size:13px">
+      <li><b>2383 台光電</b>：3 檔 ETF 同步加碼，但過熱不追</li>
+      <li><b>2454 聯發科</b>：4 檔 ETF 同步加碼，但過熱不追</li>
+      <li><b>2449 京元電</b>：ASIC/費半題材加分，但等轉強</li>
+    </ul>
+  </div>
+  <div class="action-box">
+    <div class="tag tag-red">先不要</div>
+    <h3>今天不追高</h3>
+    <ul style="margin-left:16px;font-size:13px">
+      <li>任何標的若開盤急拉爆量卻沒有新催化，優先視為不追高</li>
+      <li>台光電、聯發科晚報明確標「不追高」</li>
+      <li>不要因為夜盤大漲就直接追價</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- MARKET MOOD -->
+<section class="section">
+<h2 class="section-title">盤前環境：順風但不是全面追價盤</h2>
+<div class="action-box" style="padding:16px">
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+    <div class="mini" style="flex:1;min-width:140px"><div class="mini-label">美股風險偏好</div><div class="mini-value" style="color:var(--green)">▲ 全面收紅</div></div>
+    <div class="mini" style="flex:1;min-width:140px"><div class="mini-label">台指夜盤</div><div class="mini-value" style="color:var(--green)">▲ +530 點</div></div>
+    <div class="mini" style="flex:1;min-width:140px"><div class="mini-label">權值股新聞</div><div class="mini-value">台積電利多密集</div></div>
+    <div class="mini" style="flex:1;min-width:140px"><div class="mini-label">題材擴散</div><div class="mini-value">費半連漲 + ASIC</div></div>
+  </div>
+  <p style="font-size:13px;color:#37474f"><b>判讀：</b>盤前做多順風程度 <b>偏高</b>（美股 + 夜盤 + 新聞三向共振），但晚報主線三檔全是「不追高 / 等回檔」，代表 ETF 價格節奏已領先反映。今天更像<b>「高檔震盪選股盤」</b>，不是「全面追價盤」。</p>
+</div>
+</section>
+
+<!-- SCENARIOS -->
+<section class="section">
+<h2 class="section-title">開盤三種劇本，只記三句</h2>
+<div class="action-rail">
+  <div class="action-box" style="border-left:4px solid var(--green)">
+    <div class="tag tag-green">開高</div>
+    <p style="font-size:13px;margin-top:4px"><b>不追。</b>晚報主線三檔全標不追高，開高反而更不該追。等回檔再看承接。</p>
+  </div>
+  <div class="action-box" style="border-left:4px solid var(--amber)">
+    <div class="tag tag-amber">平開</div>
+    <p style="font-size:13px;margin-top:4px"><b>觀察承接。</b>看台積電是否站穩 MA20、華通 / 欣銓是否有量價配合。</p>
+  </div>
+  <div class="action-box" style="border-left:4px solid var(--red)">
+    <div class="tag tag-red">開低</div>
+    <p style="font-size:13px;margin-top:4px"><b>看支撐。</b>若台積電回測 MA20 量縮守穩，才是真正的承接點。</p>
+  </div>
+</div>
+</section>
+
+<!-- FOCUS STOCKS -->
+<section class="section">
+<h2 class="section-title">今天真正要看的 3 張作戰卡</h2>
+
+<div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-name">台積電</span>
+    <span class="stock-code">2330</span>
+    <span class="tag tag-blue">觀察主軸</span>
+  </div>
+  <div style="font-size:14px;font-weight:700;margin-bottom:8px">前日建議：等回檔不破月線可觀察</div>
+  <div class="mini-grid">
+    <div class="mini"><div class="mini-label">ETF 訊號</div><div class="mini-value">3 檔同步加碼</div></div>
+    <div class="mini"><div class="mini-label">風險溫度</div><div class="mini-value">可觀察</div></div>
+    <div class="mini"><div class="mini-label">法人方向</div><div class="mini-value">連續加碼</div></div>
+    <div class="mini"><div class="mini-label">新聞結論</div><div class="mini-value">A13/A12 製程、封裝廠</div></div>
+  </div>
+  <div class="dual-col">
+    <div class="col-box col-left">
+      <h4>結論區</h4>
+      <p><b>今日動作：</b>觀察即可，先看能否重新站回 MA20 再說。</p>
+      <p style="margin-top:4px"><b>進場條件：</b>若開盤後站穩 MA20 且回檔不破，再看承接。</p>
+      <p style="margin-top:4px"><b>失效條件：</b>若開高後無法守住、或回檔跌回 MA20 下方，就維持只看不追。</p>
+    </div>
+    <div class="col-box col-right">
+      <h4>證據區</h4>
+      <ul>
+        <li><b>ETF：</b>3 檔 ETF 同步加碼、有連續加碼</li>
+        <li><b>新聞：</b>台積電北美技術論壇揭示 A13/A12 製程 2029 量產、亞利桑那封裝廠規劃、大加薪最高 9%</li>
+        <li><b>盤前：</b>夜盤大漲 + 費半強，新聞密集正向，但晚報標「等回檔」</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-name">台光電</span>
+    <span class="stock-code">2383</span>
+    <span class="tag tag-red">不追高</span>
+  </div>
+  <div style="font-size:14px;font-weight:700;margin-bottom:8px">前日建議：不追價，等回檔到月線附近再看</div>
+  <div class="mini-grid">
+    <div class="mini"><div class="mini-label">ETF 訊號</div><div class="mini-value">3 檔同步加碼</div></div>
+    <div class="mini"><div class="mini-label">風險溫度</div><div class="mini-value">偏過熱</div></div>
+    <div class="mini"><div class="mini-label">法人方向</div><div class="mini-value">連續加碼</div></div>
+    <div class="mini"><div class="mini-label">新聞結論</div><div class="mini-value">沒有資料</div></div>
+  </div>
+  <div class="dual-col">
+    <div class="col-box col-left">
+      <h4>結論區</h4>
+      <p><b>今日動作：</b>不追高，等過熱降溫再說。</p>
+      <p style="margin-top:4px"><b>進場條件：</b>量縮整理後再觀察是否重新轉強。</p>
+      <p style="margin-top:4px"><b>失效條件：</b>若續攻但無新數據跟上，容易轉成高檔震盪。</p>
+    </div>
+    <div class="col-box col-right">
+      <h4>證據區</h4>
+      <ul>
+        <li><b>ETF：</b>3 檔 ETF 同步加碼、有連續加碼</li>
+        <li><b>新聞：</b>沒有資料</li>
+        <li><b>盤前：</b>高速材料線偏過熱，雖夜盤大漲但無個股新催化</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-name">聯發科</span>
+    <span class="stock-code">2454</span>
+    <span class="tag tag-red">不追高</span>
+  </div>
+  <div style="font-size:14px;font-weight:700;margin-bottom:8px">前日建議：不追價，等回檔到月線附近再看</div>
+  <div class="mini-grid">
+    <div class="mini"><div class="mini-label">ETF 訊號</div><div class="mini-value">4 檔同步加碼</div></div>
+    <div class="mini"><div class="mini-label">風險溫度</div><div class="mini-value">偏過熱</div></div>
+    <div class="mini"><div class="mini-label">法人方向</div><div class="mini-value">連續加碼</div></div>
+    <div class="mini"><div class="mini-label">新聞結論</div><div class="mini-value">市值型持有、TPU 帶動</div></div>
+  </div>
+  <div class="dual-col">
+    <div class="col-box col-left">
+      <h4>結論區</h4>
+      <p><b>今日動作：</b>不追高，等回檔再看。</p>
+      <p style="margin-top:4px"><b>進場條件：</b>量縮整理後再觀察是否重新轉強。</p>
+      <p style="margin-top:4px"><b>失效條件：</b>若續攻但無新數據跟上，容易轉成高檔震盪。</p>
+    </div>
+    <div class="col-box col-right">
+      <h4>證據區</h4>
+      <ul>
+        <li><b>ETF：</b>4 檔 ETF 同步加碼、有連續加碼</li>
+        <li><b>新聞：</b>市值型 ETF 持有聯發科吃補、Google TPU 推理訓練雙規格帶動台鏈</li>
+        <li><b>盤前：</b>AI 邊緣運算 / IC 設計主線仍強，短線過熱不追</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- RADAR -->
+<section class="section">
+<h2 class="section-title">小資候補雷達</h2>
+<div class="radar-grid">
+  <div class="radar-card">
+    <div class="r-name">華通 <span style="color:var(--muted);font-size:11px">2313</span></div>
+    <div class="r-price">觀察價：259.1 ｜ 失效價：213.0</div>
+    <div class="r-text">價格壓力相對低，有期貨利多新聞，但仍以等整理後再看為主。</div>
+  </div>
+  <div class="radar-card">
+    <div class="r-name">欣銓 <span style="color:var(--muted);font-size:11px">3264</span></div>
+    <div class="r-price">觀察價：172.9 ｜ 失效價：172.9</div>
+    <div class="r-text">2026 營運逐季成長新聞，半導體封測延伸題材加分，但仍要等轉強訊號。</div>
+  </div>
+  <div class="radar-card">
+    <div class="r-name">京元電 <span style="color:var(--muted);font-size:11px">2449</span></div>
+    <div class="r-price">觀察價：279.6 ｜ 失效價：290.2</div>
+    <div class="r-text">費半連漲 + ASIC 題材支持，但等轉強再看。</div>
+  </div>
+</div>
+</section>
+
+<!-- DEFENSE -->
+<section class="section">
+<h2 class="section-title">防守區（盤亂時的退路）</h2>
+<div class="defense-grid">
+  <div class="def-card">
+    <div class="d-name">富邦金 <span style="color:var(--muted);font-size:10px">2881</span></div>
+    <div class="d-price">87.7</div>
+    <div class="d-text">防守參考，盤亂時保留進退空間</div>
+  </div>
+  <div class="def-card">
+    <div class="d-name">元大金 <span style="color:var(--muted);font-size:10px">2885</span></div>
+    <div class="d-price">47.7</div>
+    <div class="d-text">防守續抱區</div>
+  </div>
+  <div class="def-card">
+    <div class="d-name">中信金 <span style="color:var(--muted);font-size:10px">2891</span></div>
+    <div class="d-price">53.4</div>
+    <div class="d-text">高檔震盪中的現金流選項</div>
+  </div>
+  <div class="def-card">
+    <div class="d-name">遠傳 <span style="color:var(--muted);font-size:10px">4904</span></div>
+    <div class="d-price">94.2</div>
+    <div class="d-text">紀律型替代位</div>
+  </div>
+</div>
+</section>
+
+<!-- NEWS -->
+<section class="section">
+<h2 class="section-title">今天新聞怎麼用：不是剪貼三則新聞，而是把它翻成今天怎麼做</h2>
+
+<div class="news-card">
+  <div class="news-head">台積電北美技術論壇揭示 A13/A12 製程、2029 年量產</div>
+  <div class="news-meta">04/23 06:25</div>
+  <div class="news-row"><b>官方驗證：</b>台積電正式發布製程路線圖，A13 與 A12 為下一代先進製程，2029 年量產時程明確。</div>
+  <div class="news-row"><b>對今天怎麼用：</b>對台積電長線基本面偏正向，但不直接等於今天追價理由。用它確認「主線沒壞」，進場仍看 MA20。</div>
+</div>
+
+<div class="news-card">
+  <div class="news-head">費半飆漲 2.72% 連 15 漲、ASIC 題材點火</div>
+  <div class="news-meta">04/22 收盤</div>
+  <div class="news-row"><b>官方驗證：</b>費半指數收 9,909 點，單日漲 2.72%，連續 15 個交易日上漲。ASIC 相關概念股受 Google TPU 新架構帶動。</div>
+  <div class="news-row"><b>對今天怎麼用：</b>費半強勢 = 封測 / ASIC 鏈的盤前順風加強。欣銓、京元電候補雷達可提高觀察優先序，但不升級成直接追價。</div>
+</div>
+
+<div class="news-card">
+  <div class="news-head">欣銓 2026 年營運逐季成長、華通期利多簇擁</div>
+  <div class="news-meta">04/23 00:12 / 04/22 23:10</div>
+  <div class="news-row"><b>官方驗證：</b>欣銓公司展望正向、華通期貨市場有利多跡象。屬公司層級消息，但尚未見正式公告或營收數據驗證。</div>
+  <div class="news-row"><b>對今天怎麼用：</b>只能當背景加分項。若與 ETF 名單同向（魚身候補），才提高觀察優先序；不直接升級成買點。</div>
+</div>
+</section>
+
+<!-- BOTTOM -->
+<section class="bottom-box">
+  <h3>你只要記住</h3>
+  <div class="highlight">
+    <p>1. 今天先用晚報主線決定優先序：三檔全是「不追高 / 等回檔」，不要因為夜盤大漲就改變做法。</p>
+    <p>2. 夜盤 + 美股 + 新聞三向共振偏多，但 ETF 價格節奏已領先反映。開高不追，等回檔承接。</p>
+    <p>3. 若缺官方驗證，就把消息降成背景，不升級成買點。</p>
+  </div>
+  <div class="highlight" style="margin-top:8px">
+    <p><b>如果開盤很亂：</b>退回這條紀律——有部位偏續抱，新倉只看回檔是否守住 MA20，不要追急拉。</p>
+  </div>
+</section>
+
 </div></body></html>
