@@ -1,11 +1,12 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>日月光投控（3711）個股分析｜圖像儀表板版</title>
 <style>
 :root{--bg:#f5f7fb;--card:#fff;--ink:#0f2137;--muted:#65758a;--line:#dbe4ef;--red:#c62828;--blue:#1565c0;--green:#2e7d32;}
-*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink)} .wrap{max-width:980px;margin:0 auto;padding:24px} .hero,.panel,.kpi,.news-card{background:var(--card);border:1px solid var(--line);border-radius:18px} .hero{padding:20px;background:linear-gradient(135deg,#0f172a,#163b63);color:#fff} .hero h1{margin:0 0 8px;font-size:32px} .hero p{margin:0;color:#d9e7ff} .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px} .kpi{padding:12px;color:var(--ink)} .kpi-label{font-size:11px;color:var(--muted)} .kpi-value{font-size:24px;font-weight:800;margin-top:4px;color:var(--ink)} .kpi-sub{font-size:12px;margin-top:4px;color:var(--muted)} .section{margin-top:16px} .triple{display:grid;grid-template-columns:repeat(3,1fr);gap:12px} .panel{padding:16px} .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#e3f2fd;color:var(--blue);font-size:12px;font-weight:700} ul{margin:8px 0 0 18px;padding:0} li{margin:6px 0} .news-card{padding:14px;margin-top:10px} .news-head{font-weight:800} .news-line{font-size:14px;line-height:1.5;margin-top:6px} .scan-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px;table-layout:fixed} .scan-table th,.scan-table td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;overflow-wrap:anywhere;word-break:break-word} .scan-table th{background:#f7fafc;text-align:left} .market-table td,.market-table th{text-align:left} .score-box{border:1px solid var(--line);border-radius:16px;padding:14px;background:linear-gradient(180deg,#fff,#f8fbff)} .score-top{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap} .score-num{font-size:40px;font-weight:950;line-height:1;color:#0f2137} .score-note{max-width:520px;color:var(--muted);line-height:1.5} .score-bar{height:12px;background:#e8eef5;border-radius:999px;margin:12px 0 10px;overflow:hidden} .score-bar span{display:block;height:100%;background:linear-gradient(90deg,#2e7d32,#81c784)} .small-list{margin:8px 0 0 18px;padding:0;font-size:14px;line-height:1.5} .plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px} .plan-card{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff} .plan-k{font-size:11px;color:var(--muted)} .plan-v{font-size:18px;font-weight:900;color:#102033;margin-top:4px}
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink)} .wrap{max-width:1120px;margin:0 auto;padding:16px} .hero,.panel,.kpi,.news-card{background:var(--card);border:1px solid var(--line);border-radius:18px} .hero{padding:20px;background:linear-gradient(135deg,#0f172a,#163b63);color:#fff} .hero h1{margin:0 0 8px;font-size:26px;line-height:1.15} .hero p{margin:0;color:#d9e7ff} .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px} .kpi{padding:12px;color:var(--ink)} .kpi-label{font-size:11px;color:var(--muted)} .kpi-value{font-size:24px;font-weight:800;margin-top:4px;color:var(--ink)} .kpi-sub{font-size:12px;margin-top:4px;color:var(--muted)} .section{margin-top:10px} .triple{display:grid;grid-template-columns:repeat(3,1fr);gap:8px} .dash-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px} .panel{padding:12px;min-width:0} .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#e3f2fd;color:var(--blue);font-size:12px;font-weight:700} ul{margin:8px 0 0 18px;padding:0} li{margin:6px 0} .news-card{padding:14px;margin-top:10px} .news-head{font-weight:800} .news-line{font-size:14px;line-height:1.5;margin-top:6px} .scan-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px;table-layout:fixed} .scan-table th,.scan-table td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;overflow-wrap:anywhere;word-break:break-word} .scan-table th{background:#f7fafc;text-align:left} .market-table td,.market-table th{text-align:left} .score-box{border:1px solid var(--line);border-radius:16px;padding:14px;background:linear-gradient(180deg,#fff,#f8fbff)} .score-top{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap} .score-num{font-size:40px;font-weight:950;line-height:1;color:#0f2137} .score-note{max-width:520px;color:var(--muted);line-height:1.5} .score-bar{height:12px;background:#e8eef5;border-radius:999px;margin:12px 0 10px;overflow:hidden} .score-bar span{display:block;height:100%;background:linear-gradient(90deg,#2e7d32,#81c784)} .small-list{margin:8px 0 0 18px;padding:0;font-size:14px;line-height:1.5} .plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px} .plan-card{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff} .plan-k{font-size:11px;color:var(--muted)} .plan-v{font-size:18px;font-weight:900;color:#102033;margin-top:4px}
 </style></head><body><div class="wrap">
-<section class="hero"><h1>日月光投控（3711）個股分析</h1><p>偏保守觀察，先等技術面重新轉強</p><p style="margin-top:8px">K棒語言：長陽線｜生成時間：2026-04-25 15:48</p><div class="grid"><div class="kpi"><div class="kpi-label">收盤</div><div class="kpi-value">496.0</div><div class="kpi-sub">6.78%</div></div><div class="kpi"><div class="kpi-label">月線 / 季線</div><div class="kpi-value">414.425 / 325.225</div><div class="kpi-sub"></div></div><div class="kpi"><div class="kpi-label">RSI14</div><div class="kpi-value">79.87</div><div class="kpi-sub"></div></div><div class="kpi"><div class="kpi-label">近5日法人</div><div class="kpi-value">841,981</div><div class="kpi-sub">股</div></div></div></section>
+<section class="hero"><h1>日月光投控（3711）個股分析</h1><p>偏保守觀察，先等技術面重新轉強</p><p style="margin-top:8px">K棒語言：長陽線｜生成時間：2026-04-25 15:53</p><div class="grid"><div class="kpi"><div class="kpi-label">收盤</div><div class="kpi-value">496.0</div><div class="kpi-sub">6.78%</div></div><div class="kpi"><div class="kpi-label">月線 / 季線</div><div class="kpi-value">414.425 / 325.225</div><div class="kpi-sub"></div></div><div class="kpi"><div class="kpi-label">RSI14</div><div class="kpi-value">79.87</div><div class="kpi-sub"></div></div><div class="kpi"><div class="kpi-label">近5日法人</div><div class="kpi-value">841,981</div><div class="kpi-sub">股</div></div></div></section>
 <section class="section triple"><div class="panel"><div class="badge">現在可不可以買</div><ul><li>偏保守觀察，先等技術面重新轉強</li></ul></div><div class="panel"><div class="badge">比較適合等哪裡</div><ul><li>回檔靠近 MA20，或整理後重新放量站穩近期高點，再提高進場意願。</li></ul></div><div class="panel"><div class="badge">什麼情況先退</div><ul><li>若跌破 MA20 且外資續賣，或進一步跌破 MA60，則偏多結構明顯轉弱。</li></ul></div></section>
-<section class="section panel"><h2>全方位現況掃描</h2>
+<div class="dash-grid">
+<section class="panel"><h2>全方位現況掃描</h2>
     <table class="scan-table">
       <thead><tr><th>面向</th><th>重點</th><th>白話判讀</th></tr></thead>
       <tbody>
@@ -15,14 +16,14 @@
       </tbody>
     </table>
     </section>
-<section class="section panel"><h2>外部環境連動分析</h2>
+<section class="panel"><h2>外部環境連動分析</h2>
     <div class="small">美股風險偏好偏正向，費半若同步偏強，對封測 / 半導體供應鏈較有利。</div>
     <table class="scan-table market-table" style="margin-top:10px">
       <thead><tr><th>指數</th><th>點位</th><th>漲跌點</th><th>漲跌幅</th></tr></thead>
       <tbody><tr><td>Dow Jones</td><td>49230.70</td><td>-89.60</td><td>-0.18%</td></tr><tr><td>S&amp;P 500</td><td>7165.10</td><td>28.60</td><td>0.40%</td></tr><tr><td>Nasdaq</td><td>24836.60</td><td>220.04</td><td>0.89%</td></tr><tr><td>費半</td><td>沒有資料</td><td>沒有資料</td><td>沒有資料</td></tr></tbody>
     </table>
     </section>
-<section class="section panel"><h2>核心競爭力 / 風險圖表</h2>
+<section class="panel"><h2>核心競爭力 / 風險圖表</h2>
     <div class="score-box">
       <div class="score-top">
         <div>
@@ -35,7 +36,7 @@
       <ul class="small-list"><li>股價仍站在 MA20 上方，趨勢還沒壞。</li><li>若同時站穩 MA60，結構會更完整。</li><li>RSI 偏高，短線追價容易買在熱點。</li><li>20 日乖離偏大，容易震盪洗籌碼。</li></ul>
     </div>
     </section>
-<section class="section panel"><h2>隔日實戰交易計畫</h2>
+<section class="panel"><h2>隔日實戰交易計畫</h2>
     <div class="plan-grid">
       <div class="plan-card"><div class="plan-k">壓力位</div><div class="plan-v">500.00</div></div>
       <div class="plan-card"><div class="plan-k">支撐位</div><div class="plan-v">471.80 / 414.43</div></div>
@@ -48,8 +49,9 @@
       <li>若回檔但量能縮、籌碼不再惡化，才是比較舒服的承接點。</li>
     </ul>
     </section>
-<section class="section panel"><h2>資料事實</h2><ul><li>最新收盤 496.00 元，前一日收盤 464.50 元，單日漲跌幅 6.78%。</li><li>技術位置：MA5 471.80 / MA20 414.43 / MA60 325.23。</li><li>20日區間 349.00～496.00，20日乖離 19.68%，RSI14 79.87。</li><li>最近 5 日三大法人合計 841,981 股，其中外資 1,273,103、投信 857,630、自營商 9,749。</li></ul></section>
-<section class="section panel"><h2>我的白話判讀</h2><ul><li>這份正式產線版以官方資料為主，先用來判斷能不能追、要不要等。</li><li>若短線乖離偏大，較好的做法通常不是直接追，而是等回檔或整理。</li><li>若法人方向與技術位置不同步，優先降速，不用急著把觀察升級成追價。</li></ul></section>
-<section class="section panel"><h2>最近消息對你有沒有用</h2><div class="news-card"><div class="news-head">市場目前對 日月光投控 的討論，重點仍在技術位置與資金節奏，不在單一消息本身。</div><div class="news-line"><b>官方驗證</b>：目前這份半自動版主要依官方價量、估值、月營收、EPS 與三大法人資料整理；若沒有新的公司公告，消息只能當背景。</div><div class="news-line"><b>對你的操作</b>：對你的操作：若還在等待區間外，就維持等回來再看；不要因題材熱度把『觀察』直接升級成『現在追』。</div></div></section>
-<section class="section panel"><h2>風險提醒</h2><ul><li>若跌破 MA20 且外資續賣，短線結構容易轉弱。</li><li>若題材熱度先跑、但沒有新公告或新數據，追價勝率會下降。</li></ul></section>
+<section class="panel"><h2>資料事實</h2><ul><li>最新收盤 496.00 元，前一日收盤 464.50 元，單日漲跌幅 6.78%。</li><li>技術位置：MA5 471.80 / MA20 414.43 / MA60 325.23。</li><li>20日區間 349.00～496.00，20日乖離 19.68%，RSI14 79.87。</li><li>最近 5 日三大法人合計 841,981 股，其中外資 1,273,103、投信 857,630、自營商 9,749。</li></ul></section>
+<section class="panel"><h2>我的白話判讀</h2><ul><li>這份正式產線版以官方資料為主，先用來判斷能不能追、要不要等。</li><li>若短線乖離偏大，較好的做法通常不是直接追，而是等回檔或整理。</li><li>若法人方向與技術位置不同步，優先降速，不用急著把觀察升級成追價。</li></ul></section>
+<section class="panel"><h2>最近消息對你有沒有用</h2><div class="news-card"><div class="news-head">市場目前對 日月光投控 的討論，重點仍在技術位置與資金節奏，不在單一消息本身。</div><div class="news-line"><b>官方驗證</b>：目前這份半自動版主要依官方價量、估值、月營收、EPS 與三大法人資料整理；若沒有新的公司公告，消息只能當背景。</div><div class="news-line"><b>對你的操作</b>：對你的操作：若還在等待區間外，就維持等回來再看；不要因題材熱度把『觀察』直接升級成『現在追』。</div></div></section>
+<section class="panel"><h2>風險提醒</h2><ul><li>若跌破 MA20 且外資續賣，短線結構容易轉弱。</li><li>若題材熱度先跑、但沒有新公告或新數據，追價勝率會下降。</li></ul></section>
+</div>
 </div></body></html>
