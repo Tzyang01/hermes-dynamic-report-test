@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28 06:54:50 CST",
+  "generated_at": "2026-04-28 07:02:53 CST",
   "reports": [
     {
       "id": "active-etf-analysis",
@@ -28,10 +28,10 @@
     {
       "id": "active-etf-morning-brief",
       "name": "主動ETF前日優先觀察名單晨報",
-      "updated": "2026-04-28 06:54:49 CST",
+      "updated": "2026-04-28 07:02:53 CST",
       "url": "reports/active-etf-morning-brief/latest.html",
       "source": "reports/前日優先觀察名單晨報_作戰板圖文版_20260428.html",
-      "bytes": 8133
+      "bytes": 8055
     }
   ]
 }
