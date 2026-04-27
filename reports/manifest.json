@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28 07:02:53 CST",
+  "generated_at": "2026-04-28 07:24:26 CST",
   "reports": [
     {
       "id": "active-etf-analysis",
@@ -18,20 +18,20 @@
       "bytes": 62511
     },
     {
+      "id": "active-etf-morning-brief",
+      "name": "20260428晨報",
+      "updated": "2026-04-28 07:24:26 CST",
+      "url": "reports/active-etf-morning-brief/latest.html",
+      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/前日優先觀察名單晨報_作戰板圖文版_20260428.html",
+      "bytes": 8784
+    },
+    {
       "id": "stock-3711-analysis",
       "name": "3711日月光投控個股分析",
       "updated": "2026-04-28 06:08:02 CST",
       "url": "reports/stock-3711-analysis/latest.html",
       "source": "/Users/ch/Documents/Claude/Projects/stock_reports/日月光投控_3711_個股分析_20260428_0608.html",
       "bytes": 48818
-    },
-    {
-      "id": "active-etf-morning-brief",
-      "name": "主動ETF前日優先觀察名單晨報",
-      "updated": "2026-04-28 07:02:53 CST",
-      "url": "reports/active-etf-morning-brief/latest.html",
-      "source": "reports/前日優先觀察名單晨報_作戰板圖文版_20260428.html",
-      "bytes": 8055
     }
   ]
 }
