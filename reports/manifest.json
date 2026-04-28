@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-29 07:50:56 CST",
+  "generated_at": "2026-04-29 07:57:05 CST",
   "reports": [
     {
       "id": "active-etf-analysis",
       "name": "主動ETF持股分析報告",
-      "updated": "2026-04-29 07:50:56 CST",
-      "url": "reports/active-etf-analysis/latest.html?v=20260429075056",
+      "updated": "2026-04-29 07:57:05 CST",
+      "url": "reports/active-etf-analysis/latest.html",
       "source": "/tmp/etf_analysis_dark_v7.html",
       "bytes": 20397,
       "schedule_desc": "每個交易日 19:30"
