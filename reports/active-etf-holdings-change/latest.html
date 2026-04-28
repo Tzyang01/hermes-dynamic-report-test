@@ -79,6 +79,27 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
 .plus { color:var(--inc); }
 .minus { color:var(--dec); }
 .empty { padding:8px 0; font-size:16px; color:var(--muted); }
+
+/* --- Overall summary section (cross-ETF top-5) --- */
+.ovr-page { margin-top:18px; background:var(--card); border:1px solid var(--line); border-radius:26px; padding:24px; box-shadow:0 10px 26px rgba(15,31,56,.06); page-break-inside:avoid; break-inside:avoid-page; }
+.ovr-head { margin-bottom:18px; }
+.ovr-head-wrap { display:flex; align-items:center; gap:10px; }
+.ovr-title-mark { width:10px; height:10px; background:linear-gradient(135deg,#c62828,#e53935); border-radius:2px; flex:0 0 auto; }
+.ovr-head h2 { margin:0; font-size:26px; color:var(--navy); }
+.ovr-sub { margin-top:8px; font-size:14px; color:var(--muted); line-height:1.6; }
+.ovr-three-col { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; }
+.ovr-panel { border-radius:22px; overflow:visible; border:1px solid var(--line); background:#fff; min-height:180px; }
+.ovr-panel-head { padding:12px 18px; font-size:16px; font-weight:700; display:flex; align-items:center; gap:8px; border-radius:22px 22px 0 0; }
+.ovr-panel-body { padding:8px 16px 16px; }
+.ovr-panel-new .ovr-panel-head { background:var(--new-bg); color:var(--new); }
+.ovr-panel-inc .ovr-panel-head { background:var(--inc-bg); color:var(--inc); }
+.ovr-panel-dec .ovr-panel-head { background:var(--dec-bg); color:var(--dec); }
+.ovr-item { display:grid; grid-template-columns:minmax(0, 1fr) auto; grid-template-rows:auto auto; gap:2px 12px; padding:10px 0; border-bottom:1px dashed #e5ebf3; align-items:start; }
+.ovr-item:last-child { border-bottom:none; }
+.ovr-stock { font-size:16px; font-weight:700; color:var(--ink); line-height:1.5; overflow-wrap:anywhere; word-break:break-word; }
+.ovr-etf { grid-column:2; grid-row:1; font-size:12px; color:var(--muted); background:#f0f4f8; padding:3px 8px; border-radius:999px; white-space:nowrap; align-self:center; }
+.ovr-item .ovr-meta { grid-column:1 / -1; font-size:14px; font-weight:700; line-height:1.5; overflow-wrap:anywhere; word-break:break-word; }
+
 @page { size: A4; margin: 12mm 10mm 14mm; }
 @media print {
   body { background:#fff; }
@@ -99,7 +120,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
   <section class="cover">
     <h1>主動式ETF持股異動總覽</h1>
     <p>先看新增與加碼，再看減碼風險；這份報告只保留最新兩個可比較持股快照，讓你快速抓出投信今天在補什麼、砍什麼。</p>
-    <div class="note-bar">閱讀順序：先看總檔數與總異動量，再往下看每檔 ETF 的新增 / 加碼 / 減碼。</div>
+    <div class="note-bar">閱讀順序：先看總檔數與總異動量 → 全體 ETF 異動總覽抓重點 → 再往下看每檔 ETF 的明細。</div>
     <div class="cover-grid">
       <div class="cover-card"><div class="num">14</div><div class="label">主動式 ETF 檔數</div></div>
       <div class="cover-card"><div class="num">26</div><div class="label">總新增檔次</div></div>
@@ -108,6 +129,31 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
     </div>
     <div class="note-bar">資料主體：/state/holdings_history 最新兩個可比較快照｜主頁日期基準：2026年4月28日</div>
   </section>
+  
+    <section class="ovr-page">
+      <div class="ovr-head">
+        <div class="ovr-head-wrap">
+          <div class="ovr-title-mark"></div>
+          <h2>全體 ETF 異動總覽</h2>
+        </div>
+        <div class="ovr-sub">彙整所有主動式 ETF，依異動股數排序，同一股票出現在多檔 ETF 時合併顯示最大變動。</div>
+      </div>
+      <div class="ovr-three-col">
+        <div class="ovr-panel ovr-panel-new">
+          <div class="ovr-panel-head"><span class="panel-icon square"></span><span>前五大新增 / 首次納入</span></div>
+          <div class="ovr-panel-body"><div class="ovr-item ovr-new"><span class="ovr-stock">華航（2610）</span><span class="ovr-etf">00993A</span><span class="ovr-meta plus">+3,472張　0.50%</span></div><div class="ovr-item ovr-new"><span class="ovr-stock">旺宏（2337）</span><span class="ovr-etf">00981A、00996A</span><span class="ovr-meta plus">+2,910張　0.20%</span></div><div class="ovr-item ovr-new"><span class="ovr-stock">長榮航（2618）</span><span class="ovr-etf">00993A</span><span class="ovr-meta plus">+1,841張　0.49%</span></div><div class="ovr-item ovr-new"><span class="ovr-stock">大成鋼（2027）</span><span class="ovr-etf">00993A</span><span class="ovr-meta plus">+1,664張　0.50%</span></div><div class="ovr-item ovr-new"><span class="ovr-stock">南亞科（2408）</span><span class="ovr-etf">00400A</span><span class="ovr-meta plus">+1,100張　1.39%</span></div></div>
+        </div>
+        <div class="ovr-panel ovr-panel-inc">
+          <div class="ovr-panel-head"><span class="panel-icon dot inc"></span><span>前五大加碼</span></div>
+          <div class="ovr-panel-body"><div class="ovr-item ovr-inc"><span class="ovr-stock">聯電（2303）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+7,263張 → 40,054張　1.28%</span></div><div class="ovr-item ovr-inc"><span class="ovr-stock">國巨（2327）</span><span class="ovr-etf">00993A、00991A、00981A</span><span class="ovr-meta plus">+1,758張 → 16,954張　2.35%</span></div><div class="ovr-item ovr-inc"><span class="ovr-stock">京元電子（2449）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+1,547張 → 12,719張　1.53%</span></div><div class="ovr-item ovr-inc"><span class="ovr-stock">日月光投控（3711）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+1,362張 → 9,536張　2.00%</span></div><div class="ovr-item ovr-inc"><span class="ovr-stock">凱基金控（2883）</span><span class="ovr-etf">00993A</span><span class="ovr-meta plus">+594張 → 5,928張　1.01%</span></div></div>
+        </div>
+        <div class="ovr-panel ovr-panel-dec">
+          <div class="ovr-panel-head"><span class="panel-icon dot dec"></span><span>前五大減碼</span></div>
+          <div class="ovr-panel-body"><div class="ovr-item ovr-dec"><span class="ovr-stock">群創光電（3481）</span><span class="ovr-etf">00993A</span><span class="ovr-meta minus">-4,199張 → 0張　0.00%</span></div><div class="ovr-item ovr-dec"><span class="ovr-stock">中信金（2891）</span><span class="ovr-etf">00993A</span><span class="ovr-meta minus">-2,002張 → 0張　0.00%</span></div><div class="ovr-item ovr-dec"><span class="ovr-stock">台塑石化（6505）</span><span class="ovr-etf">00993A</span><span class="ovr-meta minus">-1,788張 → 0張　0.00%</span></div><div class="ovr-item ovr-dec"><span class="ovr-stock">國泰金（2882）</span><span class="ovr-etf">00993A</span><span class="ovr-meta minus">-1,513張 → 0張　0.00%</span></div><div class="ovr-item ovr-dec"><span class="ovr-stock">金居（8358）</span><span class="ovr-etf">00992A</span><span class="ovr-meta minus">-1,508張 → 0張　0.00%</span></div></div>
+        </div>
+      </div>
+    </section>
+    
   
         <section class="etf-page">
           <div class="etf-head">
