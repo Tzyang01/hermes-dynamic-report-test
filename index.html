@@ -1,71 +1,43 @@
-<!doctype html>
-<html lang="zh-Hant-TW">
+<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>投資動態報表中心</title>
-  <style>
-    :root { --bg:#07111f; --panel:#0e1b2f; --panel2:#132541; --line:rgba(255,255,255,.12); --txt:#edf5ff; --muted:#98abc6; --gold:#ffd166; --blue:#6ea8fe; }
-    * { box-sizing:border-box; }
-    body { margin:0; min-height:100vh; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif; color:var(--txt); background:radial-gradient(circle at 12% -10%, #214b7c 0%, var(--bg) 42%, #03070d 100%); }
-    main { max-width:1080px; margin:0 auto; padding:28px 16px 56px; }
-    .hero { background:linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04)); border:1px solid var(--line); border-radius:26px; padding:24px; box-shadow:0 14px 42px rgba(0,0,0,.25); }
-    .badge { display:inline-flex; padding:5px 9px; border-radius:999px; background:rgba(255,209,102,.16); color:var(--gold); border:1px solid rgba(255,209,102,.3); font-size:12px; margin-bottom:12px; }
-    h1 { margin:0 0 10px; font-size:clamp(28px,5vw,48px); letter-spacing:.02em; }
-    .caption { color:var(--muted); line-height:1.65; max-width:760px; }
-    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:18px; }
-    .report-card { display:grid; gap:6px; min-height:168px; text-decoration:none; color:var(--txt); background:linear-gradient(135deg, rgba(19,37,65,.95), rgba(10,22,39,.95)); border:1px solid var(--line); border-radius:22px; padding:20px; transition:.18s ease; box-shadow:0 12px 30px rgba(0,0,0,.22); }
-    .report-card:hover { transform:translateY(-2px); border-color:rgba(255,209,102,.55); box-shadow:0 18px 38px rgba(0,0,0,.32); }
-    .report-name { font-weight:950; font-size:22px; line-height:1.25; }
-    .report-schedule { color:var(--blue); font-size:13px; }
-    .report-time, .report-meta { color:var(--muted); font-size:13px; }
-    .open { margin-top:auto; color:var(--gold); font-weight:900; }
-    footer { color:var(--muted); font-size:12px; margin-top:22px; line-height:1.6; }
-    @media (max-width:760px) { .grid { grid-template-columns:1fr; } .hero { padding:20px; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>投資動態報表中心</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Microsoft JhengHei",sans-serif;background:#0c0e14;color:#eaecf2;min-height:100vh;padding:40px 20px}
+.wrap{max-width:640px;margin:0 auto}
+h1{font-size:22px;font-weight:800;margin-bottom:6px}
+.sub{font-size:13px;color:#5a6178;margin-bottom:28px}
+.grid{display:flex;flex-direction:column;gap:12px}
+.rc{background:#141822;border:1px solid #252a3a;border-radius:12px;padding:18px 20px;text-decoration:none;color:inherit;transition:border-color .15s,transform .1s}
+.rc:hover{border-color:#5b9cf6;transform:translateY(-1px)}
+.rn{font-size:16px;font-weight:700;margin-bottom:4px}
+.rt{font-size:12px;color:#9ba3b8}
+.rm{font-size:11px;color:#5a6178;margin-top:6px}
+.ro{font-size:12px;color:#5b9cf6;margin-top:8px;font-weight:600}
+</style>
 </head>
 <body>
-  <main>
-    <section class="hero">
-      <span class="badge">GitHub Pages · Report Links</span>
-      <h1>投資動態報表中心</h1>
-      <div class="caption">這裡是報表入口頁。每張卡片都是直接連到該報表自己的獨立 HTML，因此開啟後可使用瀏覽器原生放大、縮小、列印與分享網址，不再使用 iframe。</div>
-      <div class="grid">
-
-      <a class="report-card" href="reports/active-etf-analysis/latest.html?v=20260428193544CST">
-        <span class="report-name">主動ETF持股分析報告</span>
-        <span class="report-schedule">預設產出時間：每個交易日 19:30</span>
-        <span class="report-time">實際更新時間：2026-04-28 19:35:44 CST</span>
-        <span class="report-meta">獨立 HTML｜19,582 bytes</span>
-        <span class="open">開啟報表 →</span>
-      </a>
-      <a class="report-card" href="reports/active-etf-holdings-change/latest.html?v=20260428225137CST">
-        <span class="report-name">ETF持股異動報告</span>
-        <span class="report-schedule">預設產出時間：每個交易日 19:30</span>
-        <span class="report-time">實際更新時間：2026-04-28 22:51:37 CST</span>
-        <span class="report-meta">獨立 HTML｜64,054 bytes</span>
-        <span class="open">開啟報表 →</span>
-      </a>
-      <a class="report-card" href="reports/active-etf-morning-brief/latest.html?v=20260429071436CST">
-        <span class="report-name">20260429晨報</span>
-        <span class="report-schedule">預設產出時間：每個交易日 06:30</span>
-        <span class="report-time">實際更新時間：2026-04-29 07:14:36 CST</span>
-        <span class="report-meta">獨立 HTML｜8,849 bytes</span>
-        <span class="open">開啟報表 →</span>
-      </a>
-      <a class="report-card" href="reports/stock-3711-analysis/latest.html?v=20260428233000CST">
-        <span class="report-name">3711日月光投控個股分析</span>
-        <span class="report-schedule">預設產出時間：每個交易日 18:00</span>
-        <span class="report-time">實際更新時間：2026-04-28 23:30:00 CST</span>
-        <span class="report-meta">獨立 HTML｜47,655 bytes</span>
-        <span class="open">開啟報表 →</span>
-      </a>
-      </div>
-    </section>
-    <footer>
-      清單更新時間：2026-04-29 07:14:36 CST<br>
-      更新規則：各報表 Job 產生自己的 HTML 後，上傳到各自資料夾；此首頁只更新連結與報表更新時間。若新增報表，首頁新增一張連結卡片。
-    </footer>
-  </main>
+<div class="wrap">
+<h1>📊 投資動態報表中心</h1>
+<p class="sub">Hermes Agent 自動產出 · 點擊卡片開啟報表</p>
+<div class="grid" id="reports"></div>
+</div>
+<script>
+var REPORTS = [{"id":"active-etf-analysis","name":"主動ETF持股分析報告","updated":"2026-04-29 07:50:56 CST","url":"reports/active-etf-analysis/latest.html?v=20260429075056","bytes":20397},
+{"id":"active-etf-holdings-change","name":"ETF持股異動報告","updated":"2026-04-28 22:51:37 CST","url":"reports/active-etf-holdings-change/latest.html","bytes":64054},
+{"id":"active-etf-morning-brief","name":"20260429晨報","updated":"2026-04-29 07:14:36 CST","url":"reports/active-etf-morning-brief/latest.html","bytes":8849},
+{"id":"stock-3711-analysis","name":"3711日月光投控個股分析","updated":"2026-04-28 23:30:00 CST","url":"reports/stock-3711-analysis/latest.html","bytes":47655}];
+function esc(v){return String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;")}
+document.getElementById("reports").innerHTML = REPORTS.map(function(r){
+  return '<a class="rc" href="'+esc(r.url)+'">'+
+    '<div class="rn">'+esc(r.name)+'</div>'+
+    '<div class="rt">更新：'+esc(r.updated)+'</div>'+
+    '<div class="rm">獨立 HTML · '+Number(r.bytes||0).toLocaleString()+' bytes</div>'+
+    '<div class="ro">開啟報表 →</div></a>';
+}).join("");
+</script>
 </body>
 </html>
