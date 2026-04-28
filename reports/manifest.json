@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28 19:35:44 CST",
+  "generated_at": "2026-04-28 22:09:52 CST",
   "reports": [
     {
       "id": "active-etf-analysis",
@@ -31,7 +31,7 @@
     {
       "id": "stock-3711-analysis",
       "name": "3711日月光投控個股分析",
-      "updated": "2026-04-28 18:22:41 CST",
+      "updated": "2026-04-28 22:09:52 CST",
       "url": "reports/stock-3711-analysis/latest.html",
       "source": "/Users/ch/Documents/Claude/Projects/stock_reports/日月光投控_3711_個股分析_20260428_1822.html",
       "bytes": 49800,
