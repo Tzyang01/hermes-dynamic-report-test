@@ -14,9 +14,10 @@
     h1 { margin:0 0 10px; font-size:clamp(28px,5vw,48px); letter-spacing:.02em; }
     .caption { color:var(--muted); line-height:1.65; max-width:760px; }
     .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:18px; }
-    .report-card { display:grid; gap:8px; min-height:154px; text-decoration:none; color:var(--txt); background:linear-gradient(135deg, rgba(19,37,65,.95), rgba(10,22,39,.95)); border:1px solid var(--line); border-radius:22px; padding:20px; transition:.18s ease; box-shadow:0 12px 30px rgba(0,0,0,.22); }
+    .report-card { display:grid; gap:6px; min-height:168px; text-decoration:none; color:var(--txt); background:linear-gradient(135deg, rgba(19,37,65,.95), rgba(10,22,39,.95)); border:1px solid var(--line); border-radius:22px; padding:20px; transition:.18s ease; box-shadow:0 12px 30px rgba(0,0,0,.22); }
     .report-card:hover { transform:translateY(-2px); border-color:rgba(255,209,102,.55); box-shadow:0 18px 38px rgba(0,0,0,.32); }
     .report-name { font-weight:950; font-size:22px; line-height:1.25; }
+    .report-schedule { color:var(--blue); font-size:13px; }
     .report-time, .report-meta { color:var(--muted); font-size:13px; }
     .open { margin-top:auto; color:var(--gold); font-weight:900; }
     footer { color:var(--muted); font-size:12px; margin-top:22px; line-height:1.6; }
@@ -33,32 +34,36 @@
 
       <a class="report-card" href="reports/active-etf-analysis/latest.html?v=20260428193544CST">
         <span class="report-name">主動ETF持股分析報告</span>
-        <span class="report-time">更新時間：2026-04-28 19:35:44 CST</span>
+        <span class="report-schedule">預設產出時間：每個交易日 19:30</span>
+        <span class="report-time">實際更新時間：2026-04-28 19:35:44 CST</span>
         <span class="report-meta">獨立 HTML｜19,582 bytes</span>
         <span class="open">開啟報表 →</span>
       </a>
       <a class="report-card" href="reports/active-etf-holdings-change/latest.html?v=20260428193312CST">
         <span class="report-name">ETF持股異動報告</span>
-        <span class="report-time">更新時間：2026-04-28 19:33:12 CST</span>
+        <span class="report-schedule">預設產出時間：每個交易日 19:30</span>
+        <span class="report-time">實際更新時間：2026-04-28 19:33:12 CST</span>
         <span class="report-meta">獨立 HTML｜58,251 bytes</span>
         <span class="open">開啟報表 →</span>
       </a>
       <a class="report-card" href="reports/active-etf-morning-brief/latest.html?v=20260428072426CST">
         <span class="report-name">20260428晨報</span>
-        <span class="report-time">更新時間：2026-04-28 07:24:26 CST</span>
+        <span class="report-schedule">預設產出時間：每個交易日 06:30</span>
+        <span class="report-time">實際更新時間：2026-04-28 07:24:26 CST</span>
         <span class="report-meta">獨立 HTML｜8,784 bytes</span>
         <span class="open">開啟報表 →</span>
       </a>
-      <a class="report-card" href="reports/stock-3711-analysis/latest.html?v=20260428213525CST">
+      <a class="report-card" href="reports/stock-3711-analysis/latest.html?v=20260428182241CST">
         <span class="report-name">3711日月光投控個股分析</span>
-        <span class="report-time">更新時間：2026-04-28 21:35:25 CST</span>
-        <span class="report-meta">獨立 HTML｜47,656 bytes</span>
+        <span class="report-schedule">預設產出時間：每個交易日 18:00 與 06:00</span>
+        <span class="report-time">實際更新時間：2026-04-28 18:22:41 CST</span>
+        <span class="report-meta">獨立 HTML｜49,800 bytes</span>
         <span class="open">開啟報表 →</span>
       </a>
       </div>
     </section>
     <footer>
-      清單更新時間：2026-04-28 21:35:25 CST<br>
+      清單更新時間：2026-04-28 19:35:44 CST<br>
       更新規則：各報表 Job 產生自己的 HTML 後，上傳到各自資料夾；此首頁只更新連結與報表更新時間。若新增報表，首頁新增一張連結卡片。
     </footer>
   </main>

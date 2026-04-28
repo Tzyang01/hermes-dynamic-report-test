@@ -7,7 +7,8 @@
       "updated": "2026-04-28 19:35:44 CST",
       "url": "reports/active-etf-analysis/latest.html",
       "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/主動ETF持股報告_新版.html",
-      "bytes": 19582
+      "bytes": 19582,
+      "schedule_desc": "每個交易日 19:30"
     },
     {
       "id": "active-etf-holdings-change",
@@ -15,7 +16,8 @@
       "updated": "2026-04-28 19:33:12 CST",
       "url": "reports/active-etf-holdings-change/latest.html",
       "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/主動式ETF持股異動總覽_20260428.html",
-      "bytes": 58251
+      "bytes": 58251,
+      "schedule_desc": "每個交易日 19:30"
     },
     {
       "id": "active-etf-morning-brief",
@@ -23,7 +25,8 @@
       "updated": "2026-04-28 07:24:26 CST",
       "url": "reports/active-etf-morning-brief/latest.html",
       "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/前日優先觀察名單晨報_作戰板圖文版_20260428.html",
-      "bytes": 8784
+      "bytes": 8784,
+      "schedule_desc": "每個交易日 06:30"
     },
     {
       "id": "stock-3711-analysis",
@@ -31,7 +34,8 @@
       "updated": "2026-04-28 18:22:41 CST",
       "url": "reports/stock-3711-analysis/latest.html",
       "source": "/Users/ch/Documents/Claude/Projects/stock_reports/日月光投控_3711_個股分析_20260428_1822.html",
-      "bytes": 49800
+      "bytes": 49800,
+      "schedule_desc": "每個交易日 18:00 與 06:00"
     }
   ]
 }
