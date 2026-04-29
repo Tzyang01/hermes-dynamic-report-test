@@ -29,12 +29,12 @@
       "schedule_desc": "每個交易日 06:30"
     },
     {
-      "id": "stock-3711-analysis",
+      "id": "stock-3711",
       "name": "3711日月光投控個股分析",
       "updated": "2026-04-29 18:00:58 CST",
-      "url": "reports/stock-3711-analysis/latest.html",
+      "url": "reports/stock-3711/latest.html",
       "source": "/Users/ch/Documents/Claude/Projects/stock_reports/日月光投控_3711_個股分析_20260429_1800.html",
-      "bytes": 50075,
+      "bytes": 0,
       "schedule_desc": "每個交易日 18:00"
     }
   ]
