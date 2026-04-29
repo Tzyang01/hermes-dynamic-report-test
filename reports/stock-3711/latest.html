@@ -12,7 +12,7 @@ body { font-family: "SFMono-Regular", "Consolas", "Noto Sans TC", "Microsoft Jhe
 .dashboard { width:1280px; height:853px; padding:8px; background:radial-gradient(circle at 48% 0%, #101a30 0%, #0a0e1a 50%, #070a13 100%); }
 .panel { border:1px solid rgba(0,255,200,.17); background:linear-gradient(180deg, rgba(11,22,38,.94), rgba(7,13,24,.96)); box-shadow:0 0 12px rgba(0,255,200,.08), inset 0 0 22px rgba(0,140,255,.025); border-radius:6px; position:relative; overflow:hidden; }
 .panel::before { content:""; position:absolute; left:0; right:0; top:0; height:1px; background:linear-gradient(90deg, transparent, rgba(0,255,218,.50), transparent); }
-.top { height:64px; display:grid; grid-template-columns: 414px 345px 1fr; gap:8px; }
+.top { height:64px; display:grid; grid-template-columns: 380px 300px 1fr; gap:8px; }
 .stock-head { padding:7px 11px; display:grid; grid-template-columns: 153px 1fr; align-items:center; }
 .name { font-size:18px; color:#fff; font-weight:800; letter-spacing:.5px; line-height:1.12; }
 .tag { display:inline-block; margin-top:5px; color:#101827; background:#00ffd0; border-radius:12px; padding:2px 8px; font-size:11px; font-weight:800; }
@@ -24,10 +24,10 @@ body { font-family: "SFMono-Regular", "Consolas", "Noto Sans TC", "Microsoft Jhe
 .bar { height:22px; border:1px solid rgba(255,255,255,.10); border-radius:12px; overflow:hidden; display:flex; background:#111827; box-shadow: inset 0 0 10px rgba(0,0,0,.55); }
 .inbar { width:60.9%; background:linear-gradient(90deg, #00a76f, #00ff9c); color:#03140d; text-align:center; font-weight:900; font-size:12px; line-height:21px; }
 .outbar { width:39.1%; background:linear-gradient(90deg, #ff6a7a, #ff344d); color:#fff; text-align:center; font-weight:900; font-size:12px; line-height:21px; }
-.quote { padding:4px 8px; display:flex; flex-wrap:nowrap; gap:0; overflow:hidden; }
-.qitem { flex:1 1 0; min-width:0; border-left:1px solid rgba(0,255,200,.16); padding-left:6px; }
-.qitem .lab { color:#80b8c7; font-size:9px; margin-bottom:2px; white-space:nowrap; }
-.qitem .val { color:#f6fff9; font-size:13px; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.quote { padding:5px 7px; display:grid; grid-template-columns: repeat(5,1fr) 58px; gap:4px; }
+.qitem { border-left:1px solid rgba(0,255,200,.16); padding-left:7px; min-width:0; }
+.qitem .lab { color:#80b8c7; font-size:10px; margin-bottom:3px; white-space:nowrap; }
+.qitem .val { color:#f6fff9; font-size:16px; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .main { height:510px; margin-top:8px; display:grid; grid-template-columns: 525px 355px 366px; gap:8px; }
 .leftcol { display:grid; grid-template-rows: 414px 88px; gap:8px; }
 .chartpanel { padding:8px 8px 5px 8px; }
@@ -97,7 +97,7 @@ td { color:#d9fff3; padding:4px 3px; border-bottom:1px dashed rgba(255,255,255,.
       <div class="qitem"><div class="lab">最低</div><div class="val green">483.50</div></div>
       <div class="qitem"><div class="lab">成交量</div><div class="val">22,749張</div></div>
       <div class="qitem"><div class="lab">成交金額</div><div class="val">112.76億</div></div>
-      <div class="qitem"><div class="lab">日期</div><div class="val">115/04/28</div></div>
+      <div class="qitem"><div class="lab">日期</div><div class="val">04/28</div></div>
     </div>
   </div>
 
