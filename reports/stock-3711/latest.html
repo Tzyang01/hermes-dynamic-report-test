@@ -24,10 +24,10 @@ body { font-family: "SFMono-Regular", "Consolas", "Noto Sans TC", "Microsoft Jhe
 .bar { height:22px; border:1px solid rgba(255,255,255,.10); border-radius:12px; overflow:hidden; display:flex; background:#111827; box-shadow: inset 0 0 10px rgba(0,0,0,.55); }
 .inbar { width:60.9%; background:linear-gradient(90deg, #00a76f, #00ff9c); color:#03140d; text-align:center; font-weight:900; font-size:12px; line-height:21px; }
 .outbar { width:39.1%; background:linear-gradient(90deg, #ff6a7a, #ff344d); color:#fff; text-align:center; font-weight:900; font-size:12px; line-height:21px; }
-.quote { padding:5px 10px; display:grid; grid-template-columns: repeat(3,1fr); grid-template-rows: 1fr 1fr; gap:3px 8px; align-content:center; }
-.qitem { border-left:1px solid rgba(0,255,200,.16); padding-left:7px; min-width:0; }
-.qitem .lab { color:#80b8c7; font-size:10px; margin-bottom:3px; white-space:nowrap; }
-.qitem .val { color:#f6fff9; font-size:14px; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.quote { padding:4px 8px; display:flex; flex-wrap:nowrap; gap:0; overflow:hidden; }
+.qitem { flex:1 1 0; min-width:0; border-left:1px solid rgba(0,255,200,.16); padding-left:6px; }
+.qitem .lab { color:#80b8c7; font-size:9px; margin-bottom:2px; white-space:nowrap; }
+.qitem .val { color:#f6fff9; font-size:13px; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .main { height:510px; margin-top:8px; display:grid; grid-template-columns: 525px 355px 366px; gap:8px; }
 .leftcol { display:grid; grid-template-rows: 414px 88px; gap:8px; }
 .chartpanel { padding:8px 8px 5px 8px; }
