@@ -24,8 +24,9 @@
   --neutral:#5b6472;
 }
 * { box-sizing:border-box; }
-body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif; background:linear-gradient(180deg,#f7faff 0%,#edf3f9 100%); color:var(--ink); }
-.wrap { width:1200px; margin:0 auto; padding:26px 28px 40px; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif; background:linear-gradient(180deg,#f7faff 0%,#edf3f9 100%); color:var(--ink); overflow-x:hidden; }
+.page-zoom { width:100%; transform-origin:top center; }
+.wrap { width:min(1440px, calc(100vw - 24px)); margin:0 auto; padding:24px 20px 40px; }
 .cover { background:linear-gradient(135deg,#16365f 0%, #1f4a85 45%, #24569a 100%); color:#fff; border-radius:28px; padding:28px 30px; box-shadow:0 18px 40px rgba(15,31,56,.18); }
 .cover h1 { margin:0 0 10px; font-size:38px; letter-spacing:.02em; }
 .cover p { margin:0; font-size:18px; line-height:1.7; color:rgba(255,255,255,.92); }
@@ -57,7 +58,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
 .chip-inc .chip-num { color:var(--inc); }
 .chip-del { background:var(--del-bg); }
 .chip-del .chip-num { color:var(--del); }
-.summary-strip { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:16px; }
+.summary-strip { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px; margin-bottom:16px; }
 .summary-box { border:1px solid var(--line); border-radius:18px; padding:14px; background:#fbfdff; }
 .summary-box h3 { margin:0 0 10px; font-size:16px; color:var(--ink); line-height:1.4; }
 .mini-pill { display:inline-block; margin:0 8px 8px 0; padding:7px 10px; border-radius:999px; font-size:13px; font-weight:700; max-width:100%; line-height:1.45; white-space:normal; overflow-wrap:anywhere; }
@@ -65,7 +66,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
 .mini-pill.inc { background:var(--inc-bg); color:var(--inc); }
 .mini-pill.del { background:var(--del-bg); color:var(--del); }
 .mini-empty { font-size:14px; color:var(--muted); }
-.three-col { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:16px; }
+.three-col { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:16px; }
 .panel { border-radius:22px; overflow:visible; border:1px solid var(--line); background:#fff; min-height:220px; }
 
 .panel-new .panel-head { background:var(--new-bg); color:var(--new); }
@@ -103,9 +104,23 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
 .ovr-item .ovr-meta { grid-column:1 / -1; font-size:14px; font-weight:700; line-height:1.5; overflow-wrap:anywhere; word-break:break-word; }
 .ovr-meta.del { color:var(--del); }
 
+@media (max-width: 960px) {
+  .summary-strip { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  .three-col { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  .summary-chips { grid-template-columns:repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 820px) {
+  .summary-strip, .three-col, .summary-chips, .cover-grid, .ovr-three-col { grid-template-columns:1fr; }
+  .etf-head { display:block; }
+  .summary-chips { min-width:0; width:100%; margin-top:14px; }
+  .change-item { grid-template-columns:1fr; gap:4px; }
+  .meta { text-align:left; }
+}
+
 @page { size: A4; margin: 12mm 10mm 14mm; }
 @media print {
   body { background:#fff; }
+  .page-zoom { transform:none !important; width:auto !important; }
   .wrap { width:auto; padding:0; }
   .cover { box-shadow:none; }
   .etf-page { box-shadow:none; margin-top:12px; padding:18px; }
@@ -120,6 +135,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
 </style>
 </head>
 <body>
+<div class="page-zoom" id="page-zoom">
 <div class="wrap">
   <section class="cover">
     <h1>主動式ETF持股異動總覽</h1>
@@ -823,5 +839,22 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
         </section>
         
 </div>
+</div>
+<script>
+(function() {
+  const host = document.getElementById('page-zoom');
+  if (!host) return;
+  const DESIGN_WIDTH = 1440;
+  const MIN_SCALE = 0.82;
+  const MAX_SCALE = 1.08;
+  const apply = () => {
+    const scale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, window.innerWidth / DESIGN_WIDTH));
+    host.style.transform = 'scale(' + scale + ')';
+    host.style.width = (100 / scale) + '%';
+  };
+  window.addEventListener('resize', apply, { passive: true });
+  apply();
+})();
+</script>
 </body>
 </html>
