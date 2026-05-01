@@ -21,11 +21,11 @@
     },
     {
       "id": "active-etf-morning-brief",
-      "name": "20260501台股大盤總經晨報",
-      "updated": "2026-05-01 22:27:30 CST",
+      "name": "20260502晨報",
+      "updated": "2026-05-02 06:32:56 CST",
       "url": "reports/active-etf-morning-brief/latest.html",
-      "source": "/Users/ch/Downloads/Report/台股大盤總經圖文報告_20260501_2226_內嵌圖版.html",
-      "bytes": 782895,
+      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/前日優先觀察名單晨報_作戰板圖文版_20260502.html",
+      "bytes": 8601,
       "schedule_desc": "每個交易日 06:30"
     },
     {
