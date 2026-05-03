@@ -35,6 +35,13 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
 .cover-card .num { font-size:30px; font-weight:800; line-height:1.1; }
 .cover-card .label { margin-top:6px; font-size:13px; color:rgba(255,255,255,.8); }
 .note-bar { margin-top:14px; font-size:13px; color:rgba(255,255,255,.86); }
+.etf-nav { position:sticky; top:0; z-index:20; margin:16px 0 0; padding:14px; border:1px solid var(--line); border-radius:22px; background:rgba(255,255,255,.94); box-shadow:0 12px 28px rgba(15,31,56,.08); backdrop-filter:blur(10px); display:flex; flex-wrap:wrap; gap:10px; }
+.etf-nav-title { flex:0 0 100%; font-size:13px; font-weight:800; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; }
+.etf-nav-btn { appearance:none; border:1px solid #cbd8e8; background:#f7faff; color:var(--navy); border-radius:999px; padding:10px 15px; font-size:15px; font-weight:800; cursor:pointer; box-shadow:0 4px 10px rgba(15,31,56,.04); transition:background .16s ease, color .16s ease, border-color .16s ease, transform .16s ease; }
+.etf-nav-btn:hover { transform:translateY(-1px); border-color:var(--navy-2); }
+.etf-nav-btn.active { background:linear-gradient(135deg,#173f73,#2a66b7); color:#fff; border-color:#2a66b7; box-shadow:0 8px 18px rgba(30,90,166,.20); }
+.view-panel { display:none; }
+.view-panel.active { display:block; }
 .etf-page { margin-top:18px; background:var(--card); border:1px solid var(--line); border-radius:26px; padding:24px; box-shadow:0 10px 26px rgba(15,31,56,.06); page-break-inside:avoid; break-inside:avoid-page; }
 .etf-head { display:flex; justify-content:space-between; align-items:flex-start; gap:18px; margin-bottom:18px; flex-wrap:wrap; }
 .etf-title-wrap { display:flex; align-items:flex-start; gap:12px; min-width:0; flex:1 1 520px; }
@@ -139,37 +146,44 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
     </div>
     <div class="note-bar">資料主體：/state/holdings_history 最新兩個可比較快照｜主頁日期基準：2026年4月30日</div>
   </section>
+  <nav class="etf-nav" aria-label="ETF持股異動切換">
+    <div class="etf-nav-title">切換查看範圍</div>
+    <button type="button" class="etf-nav-btn active" data-target="all">全體ETF</button><button type="button" class="etf-nav-btn" data-target="00400A">00400A</button><button type="button" class="etf-nav-btn" data-target="00401A">00401A</button><button type="button" class="etf-nav-btn" data-target="00980A">00980A</button><button type="button" class="etf-nav-btn" data-target="00981A">00981A</button><button type="button" class="etf-nav-btn" data-target="00982A">00982A</button><button type="button" class="etf-nav-btn" data-target="00984A">00984A</button><button type="button" class="etf-nav-btn" data-target="00985A">00985A</button><button type="button" class="etf-nav-btn" data-target="00987A">00987A</button><button type="button" class="etf-nav-btn" data-target="00991A">00991A</button><button type="button" class="etf-nav-btn" data-target="00992A">00992A</button><button type="button" class="etf-nav-btn" data-target="00993A">00993A</button><button type="button" class="etf-nav-btn" data-target="00994A">00994A</button><button type="button" class="etf-nav-btn" data-target="00995A">00995A</button><button type="button" class="etf-nav-btn" data-target="00996A">00996A</button>
+  </nav>
   
-    <section class="ovr-page">
-      <div class="ovr-head">
-        <div class="ovr-head-wrap">
-          <div class="ovr-title-mark"></div>
-          <h2>全體 ETF 異動總覽</h2>
+    <section class="view-panel active" id="panel-all" data-view-panel="all">
+      <div class="ovr-page">
+        <div class="ovr-head">
+          <div class="ovr-head-wrap">
+            <div class="ovr-title-mark"></div>
+            <h2>全體 ETF 異動總覽</h2>
+          </div>
+          <div class="ovr-sub">彙整所有主動式 ETF，依異動股數排序，同一股票出現在多檔 ETF 時合併顯示最大變動；刪除持股獨立列出，不再與減碼混在一起。</div>
         </div>
-        <div class="ovr-sub">彙整所有主動式 ETF，依異動股數排序，同一股票出現在多檔 ETF 時合併顯示最大變動；刪除持股獨立列出，不再與減碼混在一起。</div>
-      </div>
-      <div class="ovr-three-col">
-        <div class="ovr-panel ovr-panel-new">
-          <div class="ovr-panel-head"><span class="panel-icon square"></span><span>前五大新增 / 首次納入</span></div>
-          <div class="ovr-panel-body"><div class="ovr-item ovr-new"><span class="ovr-stock">萬潤（6187）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+684張　0.35%</span></div><div class="ovr-item ovr-new"><span class="ovr-stock">景碩（3189）</span><span class="ovr-etf">00980A</span><span class="ovr-meta plus">+180張　0.66%</span></div><div class="ovr-item ovr-new"><span class="ovr-stock">世界（5347）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+62張　0.00%</span></div><div class="ovr-item ovr-new"><span class="ovr-stock">聯亞（3081）</span><span class="ovr-etf">00980A</span><span class="ovr-meta plus">+45張　0.82%</span></div><div class="ovr-item ovr-new"><span class="ovr-stock">高力（8996）</span><span class="ovr-etf">00994A</span><span class="ovr-meta plus">+18張　0.53%</span></div></div>
-        </div>
-        <div class="ovr-panel ovr-panel-inc">
-          <div class="ovr-panel-head"><span class="panel-icon dot inc"></span><span>前五大加碼</span></div>
-          <div class="ovr-panel-body"><div class="ovr-item ovr-inc"><span class="ovr-stock">日月光投控（3711）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+1,323張 → 10,859張　2.17%</span></div><div class="ovr-item ovr-inc"><span class="ovr-stock">華通（2313）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+1,200張 → 2,543張　0.26%</span></div><div class="ovr-item ovr-inc"><span class="ovr-stock">頎邦（6147）</span><span class="ovr-etf">00400A</span><span class="ovr-meta plus">+1,084張 → 1,234張　1.07%</span></div><div class="ovr-item ovr-inc"><span class="ovr-stock">欣興（3037）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+939張 → 10,226張　3.78%</span></div><div class="ovr-item ovr-inc"><span class="ovr-stock">高力（8996）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+379張 → 914張　0.48%</span></div></div>
-        </div>
-        <div class="ovr-panel ovr-panel-dec">
-          <div class="ovr-panel-head"><span class="panel-icon dot dec"></span><span>前五大減碼</span></div>
-          <div class="ovr-panel-body"><div class="ovr-item ovr-dec"><span class="ovr-stock">玉山金（2884）</span><span class="ovr-etf">00980A</span><span class="ovr-meta minus">-3,736張 → 1,834張　0.40%</span></div><div class="ovr-item ovr-dec"><span class="ovr-stock">中信金（2891）</span><span class="ovr-etf">00980A</span><span class="ovr-meta minus">-1,277張 → 2,614張　0.94%</span></div><div class="ovr-item ovr-dec"><span class="ovr-stock">廣達（2382）</span><span class="ovr-etf">00400A</span><span class="ovr-meta minus">-627張 → 664張　1.11%</span></div><div class="ovr-item ovr-dec"><span class="ovr-stock">欣銓（3264）</span><span class="ovr-etf">00980A</span><span class="ovr-meta minus">-537張 → 158張　0.21%</span></div><div class="ovr-item ovr-dec"><span class="ovr-stock">緯創（3231）</span><span class="ovr-etf">00980A</span><span class="ovr-meta minus">-343張 → 1,127張　1.07%</span></div></div>
-        </div>
-        <div class="ovr-panel ovr-panel-del">
-          <div class="ovr-panel-head"><span class="panel-icon square"></span><span>前五大刪除持股</span></div>
-          <div class="ovr-panel-body"><div class="ovr-item ovr-del"><span class="ovr-stock">富邦金（2881）</span><span class="ovr-etf">00980A</span><span class="ovr-meta del">-2,058張 → 0　0.00%</span></div><div class="ovr-item ovr-del"><span class="ovr-stock">南亞（1303）</span><span class="ovr-etf">00981A</span><span class="ovr-meta del">-1,374張 → 0　0.00%</span></div><div class="ovr-item ovr-del"><span class="ovr-stock">一詮（2486）</span><span class="ovr-etf">00992A</span><span class="ovr-meta del">-567張 → 0　0.00%</span></div><div class="ovr-item ovr-del"><span class="ovr-stock">尖點（8021）</span><span class="ovr-etf">00992A</span><span class="ovr-meta del">-334張 → 0　0.00%</span></div><div class="ovr-item ovr-del"><span class="ovr-stock">達興材料（5234）</span><span class="ovr-etf">00980A</span><span class="ovr-meta del">-244張 → 0　0.00%</span></div></div>
+        <div class="ovr-three-col">
+          <div class="ovr-panel ovr-panel-new">
+            <div class="ovr-panel-head"><span class="panel-icon square"></span><span>前五大新增 / 首次納入</span></div>
+            <div class="ovr-panel-body"><div class="ovr-item ovr-new"><span class="ovr-stock">萬潤（6187）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+684張　0.35%</span></div><div class="ovr-item ovr-new"><span class="ovr-stock">景碩（3189）</span><span class="ovr-etf">00980A</span><span class="ovr-meta plus">+180張　0.66%</span></div><div class="ovr-item ovr-new"><span class="ovr-stock">世界（5347）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+62張　0.00%</span></div><div class="ovr-item ovr-new"><span class="ovr-stock">聯亞（3081）</span><span class="ovr-etf">00980A</span><span class="ovr-meta plus">+45張　0.82%</span></div><div class="ovr-item ovr-new"><span class="ovr-stock">高力（8996）</span><span class="ovr-etf">00994A</span><span class="ovr-meta plus">+18張　0.53%</span></div></div>
+          </div>
+          <div class="ovr-panel ovr-panel-inc">
+            <div class="ovr-panel-head"><span class="panel-icon dot inc"></span><span>前五大加碼</span></div>
+            <div class="ovr-panel-body"><div class="ovr-item ovr-inc"><span class="ovr-stock">日月光投控（3711）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+1,323張 → 10,859張　2.17%</span></div><div class="ovr-item ovr-inc"><span class="ovr-stock">華通（2313）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+1,200張 → 2,543張　0.26%</span></div><div class="ovr-item ovr-inc"><span class="ovr-stock">頎邦（6147）</span><span class="ovr-etf">00400A</span><span class="ovr-meta plus">+1,084張 → 1,234張　1.07%</span></div><div class="ovr-item ovr-inc"><span class="ovr-stock">欣興（3037）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+939張 → 10,226張　3.78%</span></div><div class="ovr-item ovr-inc"><span class="ovr-stock">高力（8996）</span><span class="ovr-etf">00981A</span><span class="ovr-meta plus">+379張 → 914張　0.48%</span></div></div>
+          </div>
+          <div class="ovr-panel ovr-panel-dec">
+            <div class="ovr-panel-head"><span class="panel-icon dot dec"></span><span>前五大減碼</span></div>
+            <div class="ovr-panel-body"><div class="ovr-item ovr-dec"><span class="ovr-stock">玉山金（2884）</span><span class="ovr-etf">00980A</span><span class="ovr-meta minus">-3,736張 → 1,834張　0.40%</span></div><div class="ovr-item ovr-dec"><span class="ovr-stock">中信金（2891）</span><span class="ovr-etf">00980A</span><span class="ovr-meta minus">-1,277張 → 2,614張　0.94%</span></div><div class="ovr-item ovr-dec"><span class="ovr-stock">廣達（2382）</span><span class="ovr-etf">00400A</span><span class="ovr-meta minus">-627張 → 664張　1.11%</span></div><div class="ovr-item ovr-dec"><span class="ovr-stock">欣銓（3264）</span><span class="ovr-etf">00980A</span><span class="ovr-meta minus">-537張 → 158張　0.21%</span></div><div class="ovr-item ovr-dec"><span class="ovr-stock">緯創（3231）</span><span class="ovr-etf">00980A</span><span class="ovr-meta minus">-343張 → 1,127張　1.07%</span></div></div>
+          </div>
+          <div class="ovr-panel ovr-panel-del">
+            <div class="ovr-panel-head"><span class="panel-icon square"></span><span>前五大刪除持股</span></div>
+            <div class="ovr-panel-body"><div class="ovr-item ovr-del"><span class="ovr-stock">富邦金（2881）</span><span class="ovr-etf">00980A</span><span class="ovr-meta del">-2,058張 → 0　0.00%</span></div><div class="ovr-item ovr-del"><span class="ovr-stock">南亞（1303）</span><span class="ovr-etf">00981A</span><span class="ovr-meta del">-1,374張 → 0　0.00%</span></div><div class="ovr-item ovr-del"><span class="ovr-stock">一詮（2486）</span><span class="ovr-etf">00992A</span><span class="ovr-meta del">-567張 → 0　0.00%</span></div><div class="ovr-item ovr-del"><span class="ovr-stock">尖點（8021）</span><span class="ovr-etf">00992A</span><span class="ovr-meta del">-334張 → 0　0.00%</span></div><div class="ovr-item ovr-del"><span class="ovr-stock">達興材料（5234）</span><span class="ovr-etf">00980A</span><span class="ovr-meta del">-244張 → 0　0.00%</span></div></div>
+          </div>
         </div>
       </div>
     </section>
     
   
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00400A" data-view-panel="00400A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -214,9 +228,11 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="empty">今天沒有資料</div></div>
             </div>
           </div>
+        </div>
         </section>
         
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00401A" data-view-panel="00401A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -261,9 +277,11 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="empty">今天沒有資料</div></div>
             </div>
           </div>
+        </div>
         </section>
         
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00980A" data-view-panel="00980A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -308,9 +326,11 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="change-item del"><span class="stock">富邦金（2881）</span><span class="meta del">-2,058張 → 0　0.00%</span></div><div class="change-item del"><span class="stock">達興材料（5234）</span><span class="meta del">-244張 → 0　0.00%</span></div><div class="change-item del"><span class="stock">京元電子（2449）</span><span class="meta del">-232張 → 0　0.00%</span></div><div class="change-item del"><span class="stock">亞德客-KY（1590）</span><span class="meta del">-91張 → 0　0.00%</span></div><div class="change-item del"><span class="stock">精測（6510）</span><span class="meta del">-35張 → 0　0.00%</span></div></div>
             </div>
           </div>
+        </div>
         </section>
         
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00981A" data-view-panel="00981A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -355,9 +375,11 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="change-item del"><span class="stock">南亞（1303）</span><span class="meta del">-1,374張 → 0　0.00%</span></div><div class="change-item del"><span class="stock">鴻勁（7769）</span><span class="meta del">-98張 → 0　0.00%</span></div></div>
             </div>
           </div>
+        </div>
         </section>
         
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00982A" data-view-panel="00982A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -402,9 +424,11 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="empty">今天沒有資料</div></div>
             </div>
           </div>
+        </div>
         </section>
         
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00984A" data-view-panel="00984A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -449,9 +473,11 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="empty">今天沒有資料</div></div>
             </div>
           </div>
+        </div>
         </section>
         
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00985A" data-view-panel="00985A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -496,9 +522,11 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="empty">今天沒有資料</div></div>
             </div>
           </div>
+        </div>
         </section>
         
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00987A" data-view-panel="00987A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -543,9 +571,11 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="empty">今天沒有資料</div></div>
             </div>
           </div>
+        </div>
         </section>
         
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00991A" data-view-panel="00991A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -590,9 +620,11 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="empty">今天沒有資料</div></div>
             </div>
           </div>
+        </div>
         </section>
         
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00992A" data-view-panel="00992A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -637,9 +669,11 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="change-item del"><span class="stock">一詮（2486）</span><span class="meta del">-567張 → 0　0.00%</span></div><div class="change-item del"><span class="stock">尖點（8021）</span><span class="meta del">-334張 → 0　0.00%</span></div><div class="change-item del"><span class="stock">力旺（3529）</span><span class="meta del">-4張 → 0　0.00%</span></div></div>
             </div>
           </div>
+        </div>
         </section>
         
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00993A" data-view-panel="00993A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -684,9 +718,11 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="empty">今天沒有資料</div></div>
             </div>
           </div>
+        </div>
         </section>
         
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00994A" data-view-panel="00994A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -731,9 +767,11 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="empty">今天沒有資料</div></div>
             </div>
           </div>
+        </div>
         </section>
         
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00995A" data-view-panel="00995A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -778,9 +816,11 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="empty">今天沒有資料</div></div>
             </div>
           </div>
+        </div>
         </section>
         
-        <section class="etf-page">
+        <section class="view-panel" id="panel-00996A" data-view-panel="00996A">
+        <div class="etf-page">
           <div class="etf-head">
             <div class="etf-title-wrap">
               <div class="etf-title-mark"></div>
@@ -825,11 +865,26 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
               <div class="panel-body"><div class="empty">今天沒有資料</div></div>
             </div>
           </div>
+        </div>
         </section>
         
 </div>
 </div>
 <script>
+(function() {
+  const buttons = Array.from(document.querySelectorAll('.etf-nav-btn'));
+  const panels = Array.from(document.querySelectorAll('[data-view-panel]'));
+  const setActivePanel = (target) => {
+    buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.target === target));
+    panels.forEach(panel => panel.classList.toggle('active', panel.dataset.viewPanel === target));
+    const nav = document.querySelector('.etf-nav');
+    if (nav) nav.setAttribute('data-active', target);
+  };
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => setActivePanel(btn.dataset.target || 'all'));
+  });
+  setActivePanel('all');
+})();
 (function() {
   const host = document.getElementById('page-zoom');
   if (!host) return;
