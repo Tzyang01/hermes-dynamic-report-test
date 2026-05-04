@@ -12,7 +12,7 @@ body { font-family: "SFMono-Regular","Consolas","Noto Sans TC","Microsoft JhengH
 .dashboard { width:1440px; height:960px; padding:10px; background:radial-gradient(circle at 48% 0%,#101a30 0%,#0a0e1a 50%,#070a13 100%); }
 .panel { border:1px solid rgba(0,255,200,.17); background:linear-gradient(180deg,rgba(11,22,38,.94),rgba(7,13,24,.96)); box-shadow:0 0 12px rgba(0,255,200,.08),inset 0 0 22px rgba(0,140,255,.025); border-radius:6px; position:relative; overflow:hidden; }
 .panel::before { content:""; position:absolute; left:0; right:0; top:0; height:1px; background:linear-gradient(90deg,transparent,rgba(0,255,218,.50),transparent); }
-.top { height:68px; display:grid; grid-template-columns: 400px 340px 1fr; gap:8px; }
+.top { height:76px; display:grid; grid-template-columns: 400px 340px 1fr; gap:8px; }
 .stock-head { padding:7px 11px; display:grid; grid-template-columns: 153px 1fr; align-items:center; }
 .name { font-size:18px; color:#fff; font-weight:800; letter-spacing:.5px; line-height:1.12; }
 .tag { display:inline-block; margin-top:5px; color:#101827; background:#00ffd0; border-radius:12px; padding:2px 8px; font-size:11px; font-weight:800; }
@@ -45,7 +45,8 @@ body { font-family: "SFMono-Regular","Consolas","Noto Sans TC","Microsoft JhengH
 .chartpanel { padding:7px 8px 5px 8px; }
 .title { color:#00ffd0; font-size:14px; font-weight:900; letter-spacing:.6px; text-shadow:0 0 8px rgba(0,255,208,.25); display:flex; justify-content:space-between; align-items:center; }
 .title small { color:#8ad7d1; font-size:10px; font-weight:500; }
-.main-svg { width:100%; height:368px; margin-top:2px; }
+.main-svg { width:100%; height:342px; margin-top:2px; display:block; }
+.chart-note { margin-top:4px; font-size:11px; line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .grid { stroke:rgba(122,255,230,.105); stroke-width:1; } .grid.v { stroke:rgba(122,255,230,.055); }
 .axis { fill:#6d9aa4; font-size:9px; } .legend text { font-size:11px; font-weight:800; }
 .anno-box { fill:rgba(0,255,225,.12); stroke:rgba(0,255,225,.35); } .anno { fill:#00ffe1; font-size:12px; font-weight:800; }
@@ -57,7 +58,7 @@ body { font-family: "SFMono-Regular","Consolas","Noto Sans TC","Microsoft JhengH
 .mini-note.muted { font-size:9px; font-weight:700; }
 .stack { display:grid; gap:7px; }
 .midstack { grid-template-rows: 202px 151px 161px; }
-.rightstack { grid-template-rows: 185px 284px 45px; }
+.rightstack { grid-template-rows: 185px 264px 65px; }
 .card { padding:8px 10px; }
 .rows { margin-top:6px; display:grid; gap:4px; }
 .analysis-row { display:grid; grid-template-columns: 55px 1fr; align-items:center; gap:6px; font-size:11.5px; }
@@ -76,10 +77,11 @@ body { font-family: "SFMono-Regular","Consolas","Noto Sans TC","Microsoft JhengH
 .rightstack .metric-grid { margin-top:5px; gap:5px; }
 .rightstack .metric { padding:4px 5px; }
 .rightstack .textblock.muted { margin-top:5px; font-size:10.5px; line-height:1.25; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
-.ratio-card { padding:7px 12px; }
-.ratio-card .ratio-head { display:flex; justify-content:space-between; align-items:center; margin-top:5px; font-size:14px; font-weight:900; }
+.ratio-card { padding:6px 12px; }
+.ratio-card .ratio-head { display:flex; justify-content:space-between; align-items:center; margin-top:4px; font-size:14px; line-height:1.15; font-weight:900; }
+.ratio-card .ratio-thin { margin-top:4px!important; height:7px; }
 .sigicon { display:inline-block; width:13px; margin-right:3px; text-align:center; font-weight:900; }
-.bottom { height:322px; margin-top:8px; display:grid; grid-template-rows: 262px 52px; gap:8px; }
+.bottom { height:318px; margin-top:8px; display:grid; grid-template-rows: 258px 52px; gap:8px; }
 .bottomgrid { display:grid; grid-template-columns:290px 320px 260px 270px 220px; gap:10px; }
 .patterns { display:grid; grid-template-rows: 1fr 1fr; gap:8px; }
 .smallcard { padding:7px 10px; } .smallcard .title { font-size:12px; } .smallcard p { margin:4px 0 0; font-size:11px; line-height:1.35; color:#c9f6ed; }
