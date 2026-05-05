@@ -40,10 +40,10 @@
     {
       "id": "taiwan-stock-mobile-morning",
       "name": "每日台股行動版晨報",
-      "updated": "2026-05-05 06:00:54 CST",
+      "updated": "2026-05-06 06:01:10 CST",
       "url": "reports/taiwan-stock-mobile-morning/latest.html",
-      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/每日台股行動版晨報_20260505_0600.html",
-      "bytes": 8991,
+      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/每日台股行動版晨報_20260506_0601.html",
+      "bytes": 8897,
       "schedule_desc": "每個交易日 06:00"
     },
     {
