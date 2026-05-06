@@ -1,144 +1,31 @@
 <!doctype html>
-<html lang="zh-Hant-TW">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>投資動態報表中心</title>
-  <style>
-    :root { --bg:#07111f; --panel:#0e1b2f; --panel2:#132541; --line:rgba(255,255,255,.12); --txt:#edf5ff; --muted:#98abc6; --gold:#ffd166; --blue:#6ea8fe; }
-    * { box-sizing:border-box; }
-    body { margin:0; min-height:100vh; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif; color:var(--txt); background:radial-gradient(circle at 12% -10%, #214b7c 0%, var(--bg) 42%, #03070d 100%); }
-    main { max-width:1080px; margin:0 auto; padding:28px 16px 56px; }
-    .hero { background:linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04)); border:1px solid var(--line); border-radius:26px; padding:24px; box-shadow:0 14px 42px rgba(0,0,0,.25); }
-    .badge { display:inline-flex; padding:5px 9px; border-radius:999px; background:rgba(255,209,102,.16); color:var(--gold); border:1px solid rgba(255,209,102,.3); font-size:12px; margin-bottom:12px; }
-    h1 { margin:0 0 10px; font-size:clamp(28px,5vw,48px); letter-spacing:.02em; }
-    .caption { color:var(--muted); line-height:1.65; max-width:760px; }
-    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:18px; }
-    .report-card { display:grid; gap:6px; min-height:168px; text-decoration:none; color:var(--txt); background:linear-gradient(135deg, rgba(19,37,65,.95), rgba(10,22,39,.95)); border:1px solid var(--line); border-radius:22px; padding:20px; transition:.18s ease; box-shadow:0 12px 30px rgba(0,0,0,.22); }
-    .report-card:hover { transform:translateY(-2px); border-color:rgba(255,209,102,.55); box-shadow:0 18px 38px rgba(0,0,0,.32); }
-    .report-name { font-weight:950; font-size:22px; line-height:1.25; }
-    .report-schedule { color:var(--blue); font-size:13px; }
-    .report-time, .report-meta { color:var(--muted); font-size:13px; }
-    .open { margin-top:auto; color:var(--gold); font-weight:900; }
-    footer { color:var(--muted); font-size:12px; margin-top:22px; line-height:1.6; }
-    @media (max-width:760px) { .grid { grid-template-columns:1fr; } .hero { padding:20px; } }
-  </style>
-</head>
-<body>
-  <main>
-    <section class="hero">
-      <span class="badge">GitHub Pages · Report Links</span>
-      <h1>投資動態報表中心</h1>
-      <div class="caption">這裡是報表入口頁。每張卡片都是直接連到該報表自己的獨立 HTML，因此開啟後可使用瀏覽器原生放大、縮小、列印與分享網址，不再使用 iframe。</div>
-      <div class="grid">
-      
-      
-      
-      
-      
-      
-      <a class="report-card" href="reports/active-etf-analysis/latest.html?v=20260506193245CST" data-report-id="active-etf-analysis">
-        <span class="report-name">主動ETF持股分析報告</span>
-        <span class="report-schedule">預設產出時間：每個交易日 19:30</span>
-        <span class="report-time">實際更新時間：2026-05-06 19:32:45 CST</span>
-        <span class="report-meta">獨立 HTML｜22,651 bytes</span>
-        <span class="open">開啟報表 →</span>
-      </a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a class="report-card" href="reports/active-etf-holdings-change/latest.html?v=20260506193112CST" data-report-id="active-etf-holdings-change">
-        <span class="report-name">ETF持股異動報告</span>
-        <span class="report-schedule">預設產出時間：每個交易日 19:30</span>
-        <span class="report-time">實際更新時間：2026-05-06 19:31:12 CST</span>
-        <span class="report-meta">獨立 HTML｜186,412 bytes</span>
-        <span class="open">開啟報表 →</span>
-      </a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a class="report-card" href="reports/active-etf-morning-brief/latest.html?v=20260506180130CST" data-report-id="active-etf-morning-brief">
-        <span class="report-name">20260506台股大盤總經報告</span>
-        <span class="report-schedule">預設產出時間：週一到週六 06:30 / 18:00</span>
-        <span class="report-time">實際更新時間：2026-05-06 18:01:30 CST</span>
-        <span class="report-meta">獨立 HTML｜21,867 bytes</span>
-        <span class="open">開啟報表 →</span>
-      </a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a class="report-card" href="reports/stock-3711/latest.html?v=20260506180113CST" data-report-id="stock-3711">
-        <span class="report-name">3711日月光投控個股分析</span>
-        <span class="report-schedule">預設產出時間：每個交易日 18:00</span>
-        <span class="report-time">實際更新時間：2026-05-06 18:01:13 CST</span>
-        <span class="report-meta">獨立 HTML｜45,846 bytes</span>
-        <span class="open">開啟報表 →</span>
-      </a>
-
-      
-      
-      
-      
-      <a class="report-card" href="reports/taiwan-stock-mobile-morning/latest.html?v=20260506174806CST" data-report-id="taiwan-stock-mobile-morning">
-        <span class="report-name">每日台股行動版晨報</span>
-        <span class="report-schedule">預設產出時間：每個交易日 06:00</span>
-        <span class="report-time">實際更新時間：2026-05-06 17:48:06 CST</span>
-        <span class="report-meta">獨立 HTML｜10,396 bytes</span>
-        <span class="open">開啟報表 →</span>
-      </a>
-
-      
-      
-      
-      
-      <a class="report-card" href="reports/taiwan-stock-evening-radar/latest.html?v=20260506193116CST" data-report-id="taiwan-stock-evening-radar">
-        <span class="report-name">晚間股票雷達</span>
-        <span class="report-schedule">預設產出時間：每個交易日 19:30</span>
-        <span class="report-time">實際更新時間：2026-05-06 19:31:16 CST</span>
-        <span class="report-meta">獨立 HTML｜14,348 bytes</span>
-        <span class="open">開啟報表 →</span>
-      </a>
-      </div>
-    </section>
-    <footer>
-      清單更新時間：2026-05-06 19:32:45 CST<br>
-      更新規則：各報表 Job 產生自己的 HTML 後，上傳到各自資料夾；此首頁只更新連結與報表更新時間。若新增報表，首頁新增一張連結卡片。
-    </footer>
-  </main>
-</body>
-</html>
+<html lang="zh-Hant-TW"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><title>投資動態報表中心｜市場氛圍即時新聞版</title>
+<style>
+:root{--bg:#07111f;--panel:#0e1b2f;--panel2:#132541;--line:rgba(255,255,255,.12);--txt:#edf5ff;--muted:#98abc6;--gold:#ffd166;--blue:#6ea8fe;--red:#ff4d6d;--green:#2dd4bf;--yellow:#ffd166}
+*{box-sizing:border-box} html,body{margin:0;min-height:100%;background:#03070d;color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;overflow-x:hidden} body{background:radial-gradient(circle at 12% -10%,#214b7c 0%,var(--bg) 44%,#03070d 100%)}
+#fit-outer{width:100%;display:flex;justify-content:center;align-items:flex-start;overflow:hidden} #fit-stage{width:1080px;min-width:1080px;flex:0 0 1080px;transform-origin:top center;padding:28px 16px 56px}
+.hero{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.04));border:1px solid var(--line);border-radius:26px;padding:24px;box-shadow:0 14px 42px rgba(0,0,0,.25)}
+.topline{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:16px} .badge{display:inline-flex;padding:5px 9px;border-radius:999px;background:rgba(255,209,102,.16);color:var(--gold);border:1px solid rgba(255,209,102,.3);font-size:12px;margin-bottom:12px}
+h1{margin:0;font-size:46px;letter-spacing:.02em} .caption{color:var(--muted);line-height:1.55;margin-top:8px;max-width:720px} .stamp{display:grid;grid-template-columns:1fr;gap:8px;text-align:left;color:var(--muted);font-size:12px;line-height:1.35;min-width:255px}.stamp-card{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.045);border-radius:14px;padding:8px 11px;white-space:nowrap}.stamp-card b{display:block;color:#fff;font-size:14px;margin-top:3px}.stamp-card.next{border-color:rgba(255,209,102,.35);background:rgba(255,209,102,.09)}.stamp-card.next b{color:var(--gold)}
+.market-card{display:grid;grid-template-columns:350px 1fr;gap:18px;background:linear-gradient(135deg,rgba(19,37,65,.98),rgba(10,22,39,.96));border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.22)}
+.gauge{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:22px;padding:14px 16px 18px;display:grid;grid-template-rows:auto auto;justify-items:center;align-content:center;row-gap:2px;min-height:310px}.gauge svg{display:block;max-width:100%;height:auto}.score{font-size:64px;font-weight:1000;line-height:1;color:var(--red);text-align:center;margin-top:0;overflow:visible}.score small{font-size:21px;color:var(--muted)}
+.mood-main{display:grid;gap:12px;align-content:center} .mood-title{font-size:33px;font-weight:1000;line-height:1.15} .mood-title em{font-style:normal;color:var(--red)} .takeaway{font-size:21px;font-weight:900;line-height:1.45;color:#fff;background:rgba(255,77,109,.09);border:1px solid rgba(255,77,109,.25);border-radius:18px;padding:13px 15px}
+.live-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px} .metric{background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:16px;padding:12px;min-width:0} .metric .label{display:block;color:var(--muted);font-size:13px;white-space:nowrap} .metric .value{display:block;font-size:21px;font-weight:950;margin-top:6px;line-height:1.12;white-space:nowrap} .metric .sub{display:block;color:var(--muted);font-size:12px;line-height:1.25;margin-top:5px;word-break:keep-all} .positive{color:var(--red)} .negative{color:var(--green)} .neutral{color:var(--yellow)}
+.breadth-bar{height:18px;display:flex;border-radius:99px;overflow:hidden;background:rgba(255,255,255,.08);border:1px solid var(--line)} .breadth-bar .up{background:linear-gradient(90deg,#ff8fa3,#ff2f5f);width:43.51%} .breadth-bar .flat{background:#69758d;width:7.56%} .breadth-bar .down{background:linear-gradient(90deg,#1dbda8,#2dd4bf);width:48.93%}
+.news-panel{display:grid;grid-template-columns:.92fr 1.08fr;gap:12px;margin-top:16px} .news-lead,.news-list{background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:18px;padding:15px}.news-lead{display:block;text-decoration:none;color:var(--txt)}.news-lead:hover,.news-item:hover{border-color:rgba(255,209,102,.45);background:rgba(255,209,102,.055)} .news-lead span,.news-list-title{display:block;color:var(--gold);font-size:12px;font-weight:900;letter-spacing:.06em;margin-bottom:8px} .news-lead b{display:block;font-size:20px;line-height:1.28} .news-lead small{display:block;color:var(--muted);line-height:1.45;margin-top:8px} .news-list{display:grid;gap:8px} .news-item{display:block;text-decoration:none;color:var(--txt);border-top:1px solid rgba(255,255,255,.08);padding-top:8px} .news-item:first-of-type{border-top:0;padding-top:0} .news-item b{display:block;font-size:14px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis} .news-item span{display:block;color:var(--muted);font-size:12px;line-height:1.25;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px} .report-card{display:grid;gap:6px;min-height:150px;text-decoration:none;color:var(--txt);background:linear-gradient(135deg,rgba(19,37,65,.95),rgba(10,22,39,.95));border:1px solid var(--line);border-radius:22px;padding:20px;transition:.18s ease;box-shadow:0 12px 30px rgba(0,0,0,.22)} .report-name{font-weight:950;font-size:21px;line-height:1.25} .report-schedule{color:var(--blue);font-size:13px} .report-time{color:var(--muted);font-size:13px} .open{margin-top:auto;color:var(--gold);font-weight:900} .footer{color:var(--muted);font-size:12px;line-height:1.6;margin-top:16px}
+</style></head><body><div id="fit-outer"><main id="fit-stage"><section class="hero">
+<div class="topline"><div><span class="badge">Market Mood · 即時摘要</span><h1>投資動態報表中心</h1><div class="caption">首頁只放「台股市場氛圍」與報告入口；市場氛圍優先呈現盤中會變、會影響散戶進出場判斷的資訊。</div></div><div class="stamp"><div class="stamp-card">更新時間<b>2026-05-06 20:00:08 CST</b></div><div class="stamp-card next">下次更新時間<b>2026-05-07 08:00:00 CST</b></div></div></div>
+<section class="market-card" aria-label="台股市場氛圍">
+  <div class="gauge"><svg width="330" height="196" viewBox="0 0 372 230"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0%" stop-color="#2dd4bf"/><stop offset="43%" stop-color="#ffd166"/><stop offset="68%" stop-color="#ff8a00"/><stop offset="100%" stop-color="#ff2f5f"/></linearGradient></defs><path d="M62 168 A124 124 0 0 1 310 168" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="32" stroke-linecap="round"/><path d="M62 168 A124 124 0 0 1 310 168" fill="none" stroke="url(#g)" stroke-width="25" stroke-linecap="round"/><line x1="186" y1="168" x2="221.2" y2="70.1" stroke="#edf5ff" stroke-width="6" stroke-linecap="round"/><circle cx="186" cy="168" r="12" fill="#edf5ff"/><circle cx="186" cy="168" r="6" fill="#07111f"/><text x="58" y="210" fill="#2dd4bf" font-size="14" font-weight="800">偏空</text><text x="166" y="210" fill="#ffd166" font-size="14" font-weight="800">震盪</text><text x="286" y="210" fill="#ff4d6d" font-size="14" font-weight="800">偏多</text></svg><div class="score">61<small>/100</small></div></div>
+  <div class="mood-main"><div class="mood-title">台股市場氛圍：<em>權值撐盤・中性偏多</em></div><div class="takeaway">指數偏多，但擴散度不足；盤中決策先看「即時新聞 + 指數動能 + 盤中廣度」，避免追高過熱題材。</div>
+    <div class="live-grid"><div class="metric"><span class="label">加權指數</span><span class="value positive">41,138.85</span><span class="sub positive">+369.56 / +0.91%</span></div><div class="metric"><span class="label">盤中廣度</span><span class="value neutral">待即時源</span><span class="sub">收盤廣度不放主判斷</span></div><div class="metric"><span class="label">氣氛新聞</span><span class="value positive">偏多＋過熱</span><span class="sub">外資、天量、創高</span></div><div class="metric"><span class="label">成交熱度</span><span class="value positive">1.52兆</span><span class="sub">量能高，追價風險升</span></div></div>
+    <div class="breadth-bar"><span class="up"></span><span class="flat"></span><span class="down"></span></div>
+  </div>
+</section>
+<section class="news-panel" aria-label="影響股市氣氛最大新聞"><a class="news-lead" href="https://money.udn.com/money/story/5607/9486048?from=edn_related_storybottom" target="_blank" rel="noopener"><span>最大氣氛新聞</span><b>台股4月強彈外資淨匯入264億美元爆單月最大量| 市場焦點 - 經濟日報</b><small>13 分鐘前 · 全球股市4月走出美伊戰爭陰霾，台股4月單月大漲7203.64點，寫下史上最強月線漲點。金管會統計顯示，4月單月外陸資淨匯入264.2億美元，不只是同期第1大，也 ...</small></a><div class="news-list"><span class="news-list-title">同步觀察的市場新聞</span><a class="news-item" href="https://money.udn.com/money/story/5607/9486048?from=edn_related_storybottom" target="_blank" rel="noopener"><b>台股4月強彈外資淨匯入264億美元爆單月最大量| 市場焦點 - 經濟日報</b><span>13 分鐘前 · 全球股市4月走出美伊戰爭陰霾，台股4月單月大漲7203.64點，寫下史上最強月線漲點。金管會統計顯示，4月單月外陸資淨匯入264.2億美元，不只是同期第1大，也 ...</span></a><a class="news-item" href="https://www.ctee.com.tw/news/20260506700219-439901" target="_blank" rel="noopener"><b>台股創高可期短線修正難免- 日報- 工商時報</b><span>11 小時前 · 台灣「巴菲特指標」（總市值／GDP）已達500％的極高水位，大盤與年線正乖離率超過40％，技術面存在過熱修正的壓力。另外，6月中至8月進入除權息旺季，預估指數將 ...</span></a><a class="news-item" href="https://www.ctee.com.tw/news/20260506700219-430205" target="_blank" rel="noopener"><b>台股創高可期短線修正難免- 日報- 工商時報</b><span>11 小時前 · 台灣「巴菲特指標」（總市值／GDP）已達500％的極高水位，大盤與年線正乖離率超過40％，技術面存在過熱修正的壓力。另外，6月中至8月進入除權息旺季，預估指數將 ...</span></a></div></section>
+<div class="report-grid"><a class="report-card" href="reports/active-etf-analysis/latest.html" data-report-id="active-etf-analysis"><span class="report-name">主動ETF持股分析報告</span><span class="report-schedule">預設產出：每個交易日 19:30</span><span class="report-time">更新：2026-05-06 19:32:45 CST</span><span class="open">開啟報表 →</span></a><a class="report-card" href="reports/active-etf-holdings-change/latest.html" data-report-id="active-etf-holdings-change"><span class="report-name">ETF持股異動報告</span><span class="report-schedule">預設產出：每個交易日 19:30</span><span class="report-time">更新：2026-05-06 19:31:12 CST</span><span class="open">開啟報表 →</span></a><a class="report-card" href="reports/active-etf-morning-brief/latest.html" data-report-id="active-etf-morning-brief"><span class="report-name">台股大盤總經報告</span><span class="report-schedule">預設產出：週一到週六 06:30 / 18:00</span><span class="report-time">更新：2026-05-06 18:01:30 CST</span><span class="open">開啟報表 →</span></a><a class="report-card" href="reports/stock-3711/latest.html" data-report-id="stock-3711"><span class="report-name">3711日月光投控個股分析</span><span class="report-schedule">預設產出：每個交易日 18:00</span><span class="report-time">更新：2026-05-06 18:01:13 CST</span><span class="open">開啟報表 →</span></a><a class="report-card" href="reports/taiwan-stock-mobile-morning/latest.html" data-report-id="taiwan-stock-mobile-morning"><span class="report-name">每日台股行動版晨報</span><span class="report-schedule">預設產出：每個交易日 06:00</span><span class="report-time">更新：2026-05-06 17:48:06 CST</span><span class="open">開啟報表 →</span></a><a class="report-card" href="reports/taiwan-stock-evening-radar/latest.html" data-report-id="taiwan-stock-evening-radar"><span class="report-name">晚間股票雷達</span><span class="report-schedule">預設產出：每個交易日 19:30</span><span class="report-time">更新：2026-05-06 19:31:16 CST</span><span class="open">開啟報表 →</span></a></div><div class="footer">原型檔：市場氛圍首頁原型_即時新聞版_20260506_2000.html。此版尚未發布到 GitHub Pages。</div>
+</section></main></div><script>
+function fitStage(){const stage=document.getElementById('fit-stage'); const outer=document.getElementById('fit-outer'); const scale=Math.min(1, (window.innerWidth-8)/1080); stage.style.transform='scale('+scale+')'; outer.style.height=(stage.scrollHeight*scale)+'px';}
+window.addEventListener('load',fitStage); window.addEventListener('resize',fitStage);
+</script></body></html>
