@@ -2,17 +2,17 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=1440, initial-scale=1" />
+<meta name="viewport" content="width=1600, initial-scale=1" />
 <title>日月光投控 3711 深色股票分析儀表板</title>
 <style>
 
 * { box-sizing: border-box; }
-html, body { width:100%; min-width:1440px; min-height:1200px; margin:0; overflow:auto; background:#0a0e1a; }
+html, body { width:100%; min-width:1600px; min-height:1500px; margin:0; overflow:auto; background:#0a0e1a; }
 body { font-family: "SFMono-Regular","Consolas","Noto Sans TC","Microsoft JhengHei",monospace; color:#d9fff3; }
-.dashboard { width:1440px; min-height:1200px; padding:12px; background:radial-gradient(circle at 48% 0%,#101a30 0%,#0a0e1a 50%,#070a13 100%); }
+.dashboard { width:1600px; min-height:1500px; padding:12px; background:radial-gradient(circle at 48% 0%,#101a30 0%,#0a0e1a 50%,#070a13 100%); }
 .panel { border:1px solid rgba(0,255,200,.17); background:linear-gradient(180deg,rgba(11,22,38,.94),rgba(7,13,24,.96)); box-shadow:0 0 12px rgba(0,255,200,.08),inset 0 0 22px rgba(0,140,255,.025); border-radius:6px; position:relative; overflow:hidden; }
 .panel::before { content:""; position:absolute; left:0; right:0; top:0; height:1px; background:linear-gradient(90deg,transparent,rgba(0,255,218,.50),transparent); }
-.top { height:84px; display:grid; grid-template-columns: 400px 340px 1fr; gap:10px; }
+.top { height:90px; display:grid; grid-template-columns: 430px 380px 1fr; gap:10px; }
 .stock-head { padding:7px 11px; display:grid; grid-template-columns: 153px 1fr; align-items:center; }
 .name { font-size:18px; color:#fff; font-weight:800; letter-spacing:.5px; line-height:1.12; }
 .tag { display:inline-block; margin-top:5px; color:#101827; background:#00ffd0; border-radius:12px; padding:2px 8px; font-size:11px; font-weight:800; }
@@ -40,25 +40,25 @@ body { font-family: "SFMono-Regular","Consolas","Noto Sans TC","Microsoft JhengH
 .qitem { border-left:1px solid rgba(0,255,200,.16); padding-left:7px; min-width:0; }
 .qitem .lab { color:#80b8c7; font-size:10px; margin-bottom:3px; white-space:nowrap; }
 .qitem .val { color:#f6fff9; font-size:16px; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.main { height:680px; margin-top:10px; display:grid; grid-template-columns: 590px 390px 410px; gap:12px; }
-.leftcol { display:grid; grid-template-rows: 520px 148px; gap:12px; }
-.chartpanel { padding:9px 10px 7px 10px; }
+.main { height:800px; margin-top:12px; display:grid; grid-template-columns: 660px 430px 462px; gap:12px; }
+.leftcol { display:grid; grid-template-rows: 610px 178px; gap:12px; }
+.chartpanel { padding:10px 12px 9px 12px; }
 .title { color:#00ffd0; font-size:14px; font-weight:900; letter-spacing:.6px; text-shadow:0 0 8px rgba(0,255,208,.25); display:flex; justify-content:space-between; align-items:center; }
 .title small { color:#8ad7d1; font-size:10px; font-weight:500; }
-.main-svg { width:100%; height:450px; margin-top:4px; display:block; }
-.chart-note { margin-top:8px; font-size:12px; line-height:1.35; white-space:normal; overflow:visible; }
+.main-svg { width:100%; height:540px; margin-top:5px; display:block; }
+.chart-note { margin-top:9px; font-size:12px; line-height:1.4; white-space:normal; overflow:visible; }
 .grid { stroke:rgba(122,255,230,.105); stroke-width:1; } .grid.v { stroke:rgba(122,255,230,.055); }
 .axis { fill:#6d9aa4; font-size:9px; } .legend text { font-size:11px; font-weight:800; }
 .anno-box { fill:rgba(0,255,225,.12); stroke:rgba(0,255,225,.35); } .anno { fill:#00ffe1; font-size:12px; font-weight:800; }
 .risk-box { fill:rgba(255,216,74,.10); stroke:rgba(255,216,74,.30); } .risk-text { fill:#ffd84a; font-size:12px; font-weight:800; }
 .indicators { display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; }
-.ind { padding:8px 9px 7px; overflow:hidden; } .ind h4 { margin:0; font-size:13px; color:#f6fff9; line-height:1.15; } .ind .sub { position:absolute; right:9px; top:8px; font-size:10px; color:#8ad7d1; }
-.mini-svg { width:100%; height:72px; margin-top:5px; } .mini-grid { stroke:rgba(140,255,230,.18); stroke-width:1; } .mini-grid.warn { stroke:rgba(255,216,74,.28); } .mini-grid.safe { stroke:rgba(0,255,156,.22); }
-.mini-note { margin-top:4px; font-size:11px; line-height:1.25; font-weight:800; text-align:center; white-space:normal; overflow:visible; text-overflow:clip; }
-.mini-note.muted { font-size:9px; font-weight:700; }
+.ind { padding:9px 10px 8px; overflow:hidden; } .ind h4 { margin:0; font-size:13px; color:#f6fff9; line-height:1.15; } .ind .sub { position:absolute; right:10px; top:9px; font-size:10px; color:#8ad7d1; }
+.mini-svg { width:100%; height:88px; margin-top:6px; } .mini-grid { stroke:rgba(140,255,230,.18); stroke-width:1; } .mini-grid.warn { stroke:rgba(255,216,74,.28); } .mini-grid.safe { stroke:rgba(0,255,156,.22); }
+.mini-note { margin-top:5px; font-size:11.5px; line-height:1.28; font-weight:800; text-align:center; white-space:normal; overflow:visible; text-overflow:clip; }
+.mini-note.muted { font-size:9.5px; font-weight:700; }
 .stack { display:grid; gap:10px; }
-.midstack { grid-template-rows: 252px 198px 210px; }
-.rightstack { grid-template-rows: 230px 350px 80px; }
+.midstack { grid-template-rows: 300px 235px 245px; }
+.rightstack { grid-template-rows: 305px 405px 70px; }
 .card { padding:10px 12px; }
 .rows { margin-top:6px; display:grid; gap:4px; }
 .analysis-row { display:grid; grid-template-columns: 55px 1fr; align-items:center; gap:6px; font-size:11.5px; }
@@ -67,8 +67,8 @@ body { font-family: "SFMono-Regular","Consolas","Noto Sans TC","Microsoft JhengH
 .textblock { margin-top:6px; color:#d8fff7; font-size:12px; line-height:1.45; }
 .metric-grid { margin-top:6px; display:grid; grid-template-columns: repeat(2,1fr); gap:5px; }
 .metric { border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.025); border-radius:5px; padding:5px; min-width:0; }
-.metric .m-lab { color:#86b6c3; font-size:10px; line-height:1.15; } .metric .m-val { margin-top:2px; font-size:13.5px; line-height:1.15; font-weight:900; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.advice-big { color:#ffd84a; font-size:20px; line-height:1.18; font-weight:900; margin:8px 0 4px; text-shadow:0 0 11px rgba(255,216,74,.35); }
+.metric .m-lab { color:#86b6c3; font-size:10px; line-height:1.15; } .metric .m-val { margin-top:2px; font-size:13.5px; line-height:1.2; font-weight:900; color:#fff; white-space:normal; overflow:visible; text-overflow:clip; }
+.advice-big { color:#ffd84a; font-size:22px; line-height:1.2; font-weight:900; margin:9px 0 6px; text-shadow:0 0 11px rgba(255,216,74,.35); }
 .trade-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:6px; margin-top:8px; }
 .tradebox { border:1px solid rgba(255,216,74,.18); background:rgba(255,216,74,.055); border-radius:6px; padding:6px 4px; text-align:center; min-width:0; }
 .tradebox .lab { color:#b8a85e; font-size:10px; } .tradebox .val { color:#fff; font-size:13px; font-weight:900; margin-top:3px; white-space:nowrap; }
@@ -81,14 +81,14 @@ body { font-family: "SFMono-Regular","Consolas","Noto Sans TC","Microsoft JhengH
 .ratio-card .ratio-head { display:flex; justify-content:space-between; align-items:center; margin-top:4px; font-size:14px; line-height:1.15; font-weight:900; }
 .ratio-card .ratio-thin { margin-top:4px!important; height:7px; }
 .sigicon { display:inline-block; width:13px; margin-right:3px; text-align:center; font-weight:900; }
-.bottom { height:400px; margin-top:10px; display:grid; grid-template-rows: 326px 62px; gap:12px; }
-.bottomgrid { display:grid; grid-template-columns:290px 320px 260px 270px 220px; gap:12px; }
+.bottom { height:550px; margin-top:12px; display:grid; grid-template-rows: 455px 83px; gap:12px; }
+.bottomgrid { display:grid; grid-template-columns:320px 350px 290px 330px 238px; gap:12px; }
 .patterns { display:grid; grid-template-rows: 1fr 1fr; gap:10px; }
-.smallcard { padding:9px 11px; } .smallcard .title { font-size:13px; } .smallcard p { margin:6px 0 0; font-size:11.5px; line-height:1.45; color:#c9f6ed; }
-table { width:100%; border-collapse:collapse; margin-top:5px; font-size:10px; }
-th { color:#00ffd0; text-align:left; border-bottom:1px solid rgba(0,255,200,.18); padding:3px 3px; }
-td { color:#d9fff3; padding:3px 3px; border-bottom:1px dashed rgba(255,255,255,.07); }
-.warnbox { border:1px solid rgba(255,216,74,.18); border-radius:5px; background:rgba(255,216,74,.045); padding:6px; margin-top:5px; }
+.smallcard { padding:10px 12px; } .smallcard .title { font-size:13px; } .smallcard p { margin:7px 0 0; font-size:12px; line-height:1.55; color:#c9f6ed; }
+table { width:100%; border-collapse:collapse; margin-top:6px; font-size:11px; }
+th { color:#00ffd0; text-align:left; border-bottom:1px solid rgba(0,255,200,.18); padding:4px 3px; }
+td { color:#d9fff3; padding:4px 3px; border-bottom:1px dashed rgba(255,255,255,.07); }
+.warnbox { border:1px solid rgba(255,216,74,.18); border-radius:5px; background:rgba(255,216,74,.045); padding:8px; margin-top:7px; }
 .warnbox.redw { border-color:rgba(255,89,106,.20); background:rgba(255,89,106,.045); }
 .warnbox h4 { margin:0 0 4px; font-size:12px; color:#ffd84a; } .warnbox.redw h4 { color:#ff596a; } .warnbox div { font-size:11px; line-height:1.35; }
 .winwrap { height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; }
@@ -125,13 +125,13 @@ td { color:#d9fff3; padding:3px 3px; border-bottom:1px dashed rgba(255,255,255,.
       <div class="panel card"><div class="title">產業概況 <small>AI / 先進封裝</small></div><div class="textblock">半導體封測產業受 AI 晶片、HPC 與先進封裝需求帶動，CoWoS、SiP、測試服務與高階封裝產能利用率為主要觀察重點。</div><div class="metric-grid"><div class="metric"><div class="m-lab">產業循環</div><div class="m-val red">向上</div></div><div class="metric"><div class="m-lab">關鍵題材</div><div class="m-val yellow">AI封裝</div></div></div></div>
       <div class="panel card"><div class="title">公司概況 <small>Fundamental</small></div><div class="textblock">日月光投控為全球封測龍頭；近期新聞重點：《台股盤後》聯發科撐盤 漲64點/收40769點續創高；台股早盤緩步向上！指數上漲132點 台積電開2250元</div><div class="metric-grid"><div class="metric"><div class="m-lab">EPS / PE</div><div class="m-val">N/A / 55.97</div></div><div class="metric"><div class="m-lab">殖利率 / PB</div><div class="m-val">1.27% / 6.56</div></div></div></div></div>
     <div class="stack rightstack"><div class="panel card"><div class="title">條件式操作劇本 <small>朱家泓式</small></div><div class="advice-big">高檔爆量上影警訊</div><div class="textblock">收盤站回 544 且量不縮，才視為重新攻擊。<br>回測 519～501 不破、量縮或留下影，才小部位試單。<br>收盤跌破 519 先降速；跌破 MA20 453 視為主升生命線失守。</div><div class="trade-grid"><div class="tradebox"><div class="lab">建議區間</div><div class="val">519~544</div></div><div class="tradebox"><div class="lab">停損</div><div class="val green">519</div></div><div class="tradebox"><div class="lab">目標</div><div class="val red">544/555</div></div></div></div>
-      <div class="panel card"><div class="title">籌碼分析 <small>04/27 - 05/05</small></div><div class="chip-line"><b>主力動向</b><div class="spark"><span style="width:19%;background:#00d986"></span></div><b class="green">偏保守</b></div><div class="chip-line"><b>外資</b><div class="spark"><span style="width:8%;background:#00d986"></span></div><span class="green">-19,926張</span></div><div class="chip-line"><b>投信</b><div class="spark"><span style="width:68%;background:#ff4b5c"></span></div><span class="red">+5,513張</span></div><div class="chip-line"><b>自營商</b><div class="spark"><span style="width:47%;background:#00d986"></span></div><span class="green">-962張</span></div><div class="chip-line"><b>集中度</b><div class="spark"><span style="width:70%;background:#ffd84a"></span></div><span class="yellow">★★★☆☆</span></div><div class="metric-grid" style="grid-template-columns:repeat(2,1fr);"><div class="metric"><div class="m-lab">外資5日</div><div class="m-val green">-19,926張</div></div><div class="metric"><div class="m-lab">投信5日</div><div class="m-val red">+5,513張</div></div><div class="metric"><div class="m-lab">自營商5日</div><div class="m-val green">-962張</div></div><div class="metric"><div class="m-lab">三大法人</div><div class="m-val green">-15,375張</div></div></div><div class="textblock muted">最新法人合計 -5,821張；外資 -5,798張、投信 +183張。</div></div>
+      <div class="panel card"><div class="title">籌碼分析 <small>04/28 - 05/05</small></div><div class="chip-line"><b>主力動向</b><div class="spark"><span style="width:44%;background:#00d986"></span></div><b class="green">偏保守</b></div><div class="chip-line"><b>外資</b><div class="spark"><span style="width:21%;background:#00d986"></span></div><span class="green">-8,755張</span></div><div class="chip-line"><b>投信</b><div class="spark"><span style="width:69%;background:#ff4b5c"></span></div><span class="red">+5,762張</span></div><div class="chip-line"><b>自營商</b><div class="spark"><span style="width:50%;background:#00d986"></span></div><span class="green">-131張</span></div><div class="chip-line"><b>集中度</b><div class="spark"><span style="width:70%;background:#ffd84a"></span></div><span class="yellow">★★★☆☆</span></div><div class="metric-grid" style="grid-template-columns:repeat(2,1fr);"><div class="metric"><div class="m-lab">外資5日</div><div class="m-val green">-8,755張</div></div><div class="metric"><div class="m-lab">投信5日</div><div class="m-val red">+5,762張</div></div><div class="metric"><div class="m-lab">自營商5日</div><div class="m-val green">-131張</div></div><div class="metric"><div class="m-lab">三大法人</div><div class="m-val green">-3,124張</div></div></div><div class="textblock muted">最新法人合計 -5,821張；外資 -5,798張、投信 +183張。</div></div>
       <div class="panel ratio-card"><div class="title">內外盤比</div><div class="ratio-head"><span class="green">60.0%</span><span class="red">40.0%</span></div><div class="ratio-thin" style="margin-top:7px;"><div class="ratio-in" style="width:60.0%"></div><div class="ratio-out" style="width:40.0%"></div></div></div></div>
   </div>
   <div class="bottom"><div class="bottomgrid"><div class="patterns"><div class="panel smallcard"><div class="title">今日K線判讀</div><p><b class="yellow">高檔爆量上影警訊</b></p><p>量比 1.55x；上影 19.0、實體 5.0。高檔攻擊後若收不過高點，要先當警訊而非買點。</p></div><div class="panel smallcard"><div class="title">線圖位置</div><p><b class="yellow">主升高檔，乖離偏大</b></p><p>20日箱型 348～544；MA20 453 是主升生命線，不可用新聞題材取代防守線。</p></div></div>
     <div class="panel smallcard"><div class="title">必畫價格線</div><div class="warnbox"><h4>攻擊線 / 防守線</h4><div>攻擊線 544｜防守線 519｜MA5短撐 501｜MA20生命線 453</div></div><div class="warnbox"><h4>圖上標註規則</h4><div>爆量K畫高低點；站上高點才續攻，跌破低點先降速，跌破MA20視為波段破壞。</div></div></div>
     <div class="panel smallcard"><div class="title">明日三劇本</div><table><thead><tr><th>劇本</th><th>條件</th><th>動作</th></tr></thead><tbody><tr><td>強勢</td><td>站回544</td><td class="red">續攻</td></tr><tr><td>正常</td><td>519~501守住</td><td class="yellow">等止跌</td></tr><tr><td>轉弱</td><td>跌破519</td><td class="green">先減碼</td></tr></tbody></table><div class="textblock muted">不是預測漲跌，是把明天收盤位置轉成動作。</div></div>
-    <div class="panel smallcard"><div class="title">量價與籌碼交叉</div><div class="warnbox"><h4>量能觀察</h4><div>成交量 38,107張，20日均量 24,606張；量增收低時，爆量K低點必須守。</div></div><div class="warnbox redw"><h4>籌碼警示</h4><div>近5日法人合計 -15,375張，外資偏賣，若跌破防守線不硬接。</div></div></div>
+    <div class="panel smallcard"><div class="title">量價與籌碼交叉</div><div class="warnbox"><h4>量能觀察</h4><div>成交量 38,107張，20日均量 24,606張；量增收低時，爆量K低點必須守。</div></div><div class="warnbox redw"><h4>籌碼警示</h4><div>近5日法人合計 -3,124張，外資偏賣，若跌破防守線不硬接。</div></div></div>
     <div class="panel smallcard winwrap"><div class="circle" style="background:conic-gradient(#00ff9c 0 73%,rgba(0,255,156,.10) 73% 100%);"><span>73%</span></div><div class="winlabel">條件勝率</div><div class="muted" style="font-size:11px;margin-top:6px;text-align:center;">只在站回攻擊線或守住防守線時提高勝率</div></div></div>
     <div class="panel conclusion"><div class="lead">結論</div><div class="txt">高檔爆量上影警訊：目前位置是主升高檔，乖離偏大。收盤站回 544 且量不縮，才視為重新攻擊。 回測 519～501 不破、量縮或留下影，才小部位試單。 收盤跌破 519 先降速；跌破 MA20 453 視為主升生命線失守。</div><div class="kpi">建議：519~544布局｜停損519｜目標544/555</div></div>
   </div>
