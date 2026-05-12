@@ -36,10 +36,11 @@ body { font-family: "SFMono-Regular","Consolas","Noto Sans TC","Microsoft JhengH
 .order-mid .ratio-thin { margin-top:5px; }
 .ratio-in { background:linear-gradient(90deg,#00a76f,#00ff9c); }
 .ratio-out { background:linear-gradient(90deg,#ff6a7a,#ff344d); }
-.quote { padding:5px 8px; display:grid; grid-template-columns: repeat(5,1fr) 62px; gap:5px; }
+.quote { padding:5px 8px; display:grid; grid-template-columns: repeat(5,minmax(0,1fr)) 86px; gap:5px; }
 .qitem { border-left:1px solid rgba(0,255,200,.16); padding-left:7px; min-width:0; }
 .qitem .lab { color:#80b8c7; font-size:15px; margin-bottom:4px; white-space:nowrap; }
 .qitem .val { color:#f6fff9; font-size:24px; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.quote .qitem:last-child .val { font-size:22px; overflow:visible; text-overflow:clip; }
 .main { height:1200px; margin-top:18px; display:grid; grid-template-columns: 990px 645px 693px; gap:18px; }
 .leftcol { display:grid; grid-template-rows: 915px 267px; gap:18px; }
 .chartpanel { padding:15px 18px 13px 18px; }
