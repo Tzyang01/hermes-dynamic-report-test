@@ -21,11 +21,11 @@
     },
     {
       "id": "active-etf-morning-brief",
-      "name": "20260513台股大盤總經報告",
-      "updated": "2026-05-13 18:00:00 CST",
+      "name": "20260514台股大盤總經報告",
+      "updated": "2026-05-14 06:30:26 CST",
       "url": "reports/active-etf-morning-brief/latest.html",
-      "source": "/Users/ch/Downloads/Report/台股大盤總經報告_20260513_1800.html",
-      "bytes": 22490,
+      "source": "/Users/ch/Downloads/Report/台股大盤總經報告_20260514_0630.html",
+      "bytes": 22492,
       "schedule_desc": "週一到週六 06:30 / 18:00"
     },
     {
