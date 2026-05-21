@@ -141,7 +141,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
 .market-overview-head h3 { margin:0; color:var(--navy); font-size:20px; font-weight:900; letter-spacing:.02em; }
 .market-overview-head p { margin:0; max-width:620px; color:#5f7185; font-size:12px; font-weight:800; line-height:1.5; text-align:right; }
 .market-table-wrap { overflow:auto; border:1px solid #d9e4f0; border-radius:18px; background:#fff; }
-.market-table { width:100%; border-collapse:separate; border-spacing:0; min-width:960px; }
+.market-table { width:100%; border-collapse:separate; border-spacing:0; min-width:1080px; }
 .market-table th { position:sticky; top:0; z-index:1; padding:10px 12px; background:#173f73; color:#fff; font-size:13px; font-weight:900; text-align:right; white-space:nowrap; }
 .market-table .th-unit { display:inline-block; margin-top:2px; font-size:11px; font-weight:800; opacity:.82; }
 .market-table th:first-child, .market-table th:nth-child(2) { text-align:left; }
@@ -151,6 +151,8 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
 .market-table td.code { color:var(--navy); font-weight:950; text-align:left; }
 .market-table td.name { color:var(--ink); text-align:left; }
 .market-table td.num { font-variant-numeric:tabular-nums; }
+.market-table td.cash-col strong { display:block; color:#0f2f57; font-weight:950; }
+.market-table td.cash-col span { display:block; margin-top:2px; color:#64748b; font-size:11px; font-weight:900; }
 .market-table .up { color:var(--inc); }
 .market-table .down { color:var(--dec); }
 .market-table .flat { color:var(--neutral); }
@@ -233,7 +235,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
       <div class="cover-card"><div class="num">15</div><div class="label">總刪除檔次</div></div>
     </div>
     <div class="note-bar">資料主體：/state/holdings_history 最新兩個可比較快照｜主頁日期基準：2026年5月21日</div>
-    <div style="margin-top:16px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:14px 16px;"><h2 style="font-size:20px;margin:0 0 8px;">資料品質 / 官方補證</h2><div class="rq-strip"><div class="rq-item "><div class="rq-k">資料日</div><div class="rq-v">20260521</div><div class="rq-s">產生：2026-05-21 21:10:58 台北</div></div><div class="rq-item "><div class="rq-k">資料信心</div><div class="rq-v">高</div><div class="rq-s">官方優先；缺資料降級判讀</div></div><div class="rq-item "><div class="rq-k">ETF / 樣本日</div><div class="rq-v">20260521</div><div class="rq-s">持股揭露與行情日期需分開看</div></div><div class="rq-item rq-ok"><div class="rq-k">資料缺口</div><div class="rq-v">無重大缺口</div><div class="rq-s">缺口不硬補結論</div></div></div><div class="rq-badges"><span class="rq-badge rq-ok">✓ 每日持股揭露</span><span class="rq-badge rq-ok">✓ 跨 ETF 異動彙整</span><span class="rq-badge rq-ok">✓ 可用歷史連續性</span><span class="rq-badge rq-ok">✓ 缺資料不硬補</span></div><div class="rq-links"><b>官方補證入口：</b><a href="https://www.twse.com.tw/zh/trading/historical/mi-index.html" target="_blank" rel="noopener noreferrer">TWSE MI_INDEX</a><a href="https://openapi.twse.com.tw/" target="_blank" rel="noopener noreferrer">TWSE OpenAPI</a></div></div>
+    <div style="margin-top:16px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:14px 16px;"><h2 style="font-size:20px;margin:0 0 8px;">資料品質 / 官方補證</h2><div class="rq-strip"><div class="rq-item "><div class="rq-k">資料日</div><div class="rq-v">20260521</div><div class="rq-s">產生：2026-05-21 21:18:59 台北</div></div><div class="rq-item "><div class="rq-k">資料信心</div><div class="rq-v">高</div><div class="rq-s">官方優先；缺資料降級判讀</div></div><div class="rq-item "><div class="rq-k">ETF / 樣本日</div><div class="rq-v">20260521</div><div class="rq-s">持股揭露與行情日期需分開看</div></div><div class="rq-item rq-ok"><div class="rq-k">資料缺口</div><div class="rq-v">無重大缺口</div><div class="rq-s">缺口不硬補結論</div></div></div><div class="rq-badges"><span class="rq-badge rq-ok">✓ 每日持股揭露</span><span class="rq-badge rq-ok">✓ 跨 ETF 異動彙整</span><span class="rq-badge rq-ok">✓ 可用歷史連續性</span><span class="rq-badge rq-ok">✓ 缺資料不硬補</span></div><div class="rq-links"><b>官方補證入口：</b><a href="https://www.twse.com.tw/zh/trading/historical/mi-index.html" target="_blank" rel="noopener noreferrer">TWSE MI_INDEX</a><a href="https://openapi.twse.com.tw/" target="_blank" rel="noopener noreferrer">TWSE OpenAPI</a></div></div>
   </section>
   <nav class="etf-nav" aria-label="ETF持股異動切換">
     <div class="etf-nav-title">切換查看範圍</div>
@@ -253,7 +255,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
         <section class="etf-market-overview" aria-label="全體ETF最後交易日行情與折溢價">
           <div class="market-overview-head">
             <h3>全體ETF最後交易日行情 / 折溢價一覽</h3>
-            <p>資料日：2026年5月21日；每單位淨值取自投信持股檔，估計淨值與折溢價取自 TWSE ETF 估計淨值揭露；總市值以 TWSE 受益權單位數 × 市價計算；漲跌點與漲跌幅以市價相對參考價估算。</p>
+            <p>資料日：2026年5月21日；每單位淨值取自投信持股檔，估計淨值與折溢價取自 TWSE ETF 估計淨值揭露；總市值以 TWSE 受益權單位數 × 市價計算；手上現金優先採投信網站明列現金欄，無明確現金欄時才以非股票殘值推估；漲跌點與漲跌幅以市價相對參考價估算。</p>
           </div>
           <div class="market-table-wrap">
             <table class="market-table">
@@ -268,6 +270,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
                   <th>估計淨值</th>
                   <th>折溢價幅度</th>
                   <th>總市值<br><span class="th-unit">億元台幣</span></th>
+                  <th>手上現金<br><span class="th-unit">億元台幣 / 比重</span></th>
                 </tr>
               </thead>
               <tbody>
@@ -281,6 +284,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">13.43</td>
             <td class="num up">+0.22%</td>
             <td class="num">206.23</td>
+            <td class="num cash-col"><strong>12.68</strong><span>6.16%・推估</span></td>
           </tr>
         
           <tr>
@@ -293,6 +297,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">12.71</td>
             <td class="num up">+0.07%</td>
             <td class="num">33.00</td>
+            <td class="num cash-col"><strong>2.40</strong><span>7.27%・推估</span></td>
           </tr>
         
           <tr>
@@ -305,6 +310,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">9.98</td>
             <td class="num up">+0.30%</td>
             <td class="num">1824.52</td>
+            <td class="num cash-col"><strong>389.48</strong><span>21.31%・揭露</span></td>
           </tr>
         
           <tr>
@@ -317,6 +323,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">22.52</td>
             <td class="num down">-0.13%</td>
             <td class="num">172.89</td>
+            <td class="num cash-col"><strong>21.81</strong><span>12.60%・推估</span></td>
           </tr>
         
           <tr>
@@ -329,6 +336,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">28.81</td>
             <td class="num up">+0.17%</td>
             <td class="num">2623.58</td>
+            <td class="num cash-col"><strong>43.74</strong><span>1.67%・揭露</span></td>
           </tr>
         
           <tr>
@@ -341,6 +349,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">22.13</td>
             <td class="num down">-0.14%</td>
             <td class="num">518.12</td>
+            <td class="num cash-col"><strong>27.03</strong><span>5.21%・推估</span></td>
           </tr>
         
           <tr>
@@ -353,6 +362,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">14.99</td>
             <td class="num down">-0.13%</td>
             <td class="num">67.81</td>
+            <td class="num cash-col"><strong>1.64</strong><span>2.42%・推估</span></td>
           </tr>
         
           <tr>
@@ -365,6 +375,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">20.86</td>
             <td class="num down">-0.05%</td>
             <td class="num">107.13</td>
+            <td class="num cash-col"><strong>5.19</strong><span>4.84%・推估</span></td>
           </tr>
         
           <tr>
@@ -377,6 +388,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">16.60</td>
             <td class="num up">+0.18%</td>
             <td class="num">33.53</td>
+            <td class="num cash-col"><strong>1.33</strong><span>3.96%・推估</span></td>
           </tr>
         
           <tr>
@@ -389,6 +401,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">17.84</td>
             <td class="num up">+0.45%</td>
             <td class="num">475.13</td>
+            <td class="num cash-col"><strong>15.71</strong><span>3.32%・推估</span></td>
           </tr>
         
           <tr>
@@ -401,6 +414,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">17.62</td>
             <td class="num up">+0.28%</td>
             <td class="num">509.42</td>
+            <td class="num cash-col"><strong>20.17</strong><span>3.97%・推估</span></td>
           </tr>
         
           <tr>
@@ -413,6 +427,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">12.77</td>
             <td class="num down">-0.31%</td>
             <td class="num">112.93</td>
+            <td class="num cash-col"><strong>2.61</strong><span>2.30%・推估</span></td>
           </tr>
         
           <tr>
@@ -425,6 +440,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">17.08</td>
             <td class="num flat">0.00%</td>
             <td class="num">53.41</td>
+            <td class="num cash-col"><strong>2.35</strong><span>4.40%・推估</span></td>
           </tr>
         
           <tr>
@@ -437,6 +453,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">16.66</td>
             <td class="num up">+0.06%</td>
             <td class="num">54.27</td>
+            <td class="num cash-col"><strong>2.49</strong><span>4.59%・推估</span></td>
           </tr>
         
           <tr>
@@ -449,6 +466,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">13.97</td>
             <td class="num down">-0.07%</td>
             <td class="num">46.33</td>
+            <td class="num cash-col"><strong>2.18</strong><span>4.71%・推估</span></td>
           </tr>
         
           <tr>
@@ -461,6 +479,7 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFa
             <td class="num">10.29</td>
             <td class="num down">-0.10%</td>
             <td class="num">169.00</td>
+            <td class="num cash-col"><strong>16.93</strong><span>10.01%・推估</span></td>
           </tr>
         </tbody>
             </table>
