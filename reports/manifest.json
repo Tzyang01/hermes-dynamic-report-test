@@ -4,10 +4,10 @@
     {
       "id": "active-etf-analysis",
       "name": "主動ETF持股分析報告",
-      "updated": "2026-05-20 20:45:15 CST",
+      "updated": "2026-05-21 19:32:00 CST",
       "url": "reports/active-etf-analysis/latest.html",
-      "source": "reports/主動ETF持股報告_新版.html",
-      "bytes": 23469,
+      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/主動ETF持股報告_新版.html",
+      "bytes": 23291,
       "schedule_desc": "每個交易日 19:30"
     },
     {
