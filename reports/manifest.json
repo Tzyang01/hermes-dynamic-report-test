@@ -40,10 +40,10 @@
     {
       "id": "taiwan-stock-evening-radar",
       "name": "晚間股票雷達",
-      "updated": "2026-05-21 19:31:08 CST",
+      "updated": "2026-05-22 19:30:19 CST",
       "url": "reports/taiwan-stock-evening-radar/latest.html",
-      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/晚間股票雷達_20260521_1931.html",
-      "bytes": 13923,
+      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/晚間股票雷達_20260522_1930.html",
+      "bytes": 14099,
       "schedule_desc": "每個交易日 19:30"
     },
     {
