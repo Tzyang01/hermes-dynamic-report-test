@@ -58,11 +58,11 @@
     {
       "id": "stock-2324",
       "name": "2324仁寶個股分析",
-      "updated": "2026-06-04 06:44:25 CST",
+      "updated": "2026-06-04 06:45:10 CST",
       "url": "reports/stock-2324/latest.html",
-      "source": "",
-      "bytes": 0,
-      "schedule_desc": "每個交易日 18:00"
+      "source": "/tmp/2324_pages.html",
+      "bytes": 60784,
+      "schedule_desc": ""
     }
   ]
 }
