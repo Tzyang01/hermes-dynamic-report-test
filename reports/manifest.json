@@ -2,6 +2,15 @@
   "generated_at": "2026-06-04 18:20:59 CST",
   "reports": [
     {
+      "id": "active-etf-holdings-change",
+      "name": "主動式ETF持股異動報告",
+      "updated": "2026-06-04 19:30:41 CST",
+      "url": "reports/active-etf-holdings-change/latest.html",
+      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/主動式ETF持股異動總覽_20260604.html",
+      "bytes": 271205,
+      "schedule_desc": "每個交易日 19:30"
+    },
+    {
       "id": "stock-3711",
       "name": "3711日月光投控個股分析",
       "updated": "2026-06-04 18:20:58 CST",
