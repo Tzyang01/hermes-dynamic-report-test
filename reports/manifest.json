@@ -9,6 +9,15 @@
       "source": "/tmp/3711_pages.html",
       "bytes": 88465,
       "schedule_desc": "每個交易日 18:00"
+    },
+    {
+      "id": "stock-2330",
+      "name": "2330台積電個股分析",
+      "updated": "2026-06-04 21:00:37 CST",
+      "url": "reports/stock-2330/latest.html",
+      "source": "/tmp/3711_pages.html",
+      "bytes": 87100,
+      "schedule_desc": ""
     }
   ]
 }
