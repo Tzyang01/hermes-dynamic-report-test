@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-06-04 20:33:46 CST",
+  "reports": [
+    {
+      "id": "stock-3711",
+      "name": "3711日月光投控個股分析",
+      "updated": "2026-06-04 20:33:45 CST",
+      "url": "reports/stock-3711/latest.html",
+      "source": "/tmp/3711_pages.html",
+      "bytes": 88465,
+      "schedule_desc": "每個交易日 18:00"
+    }
+  ]
+}
