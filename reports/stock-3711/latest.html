@@ -31,6 +31,39 @@
   .verdict{display:flex;align-items:center;gap:10px;padding:8px 14px;border-radius:8px;margin-top:10px;border:1px solid}
   .verdict-bull{font-weight:900;padding:3px 9px;border-radius:5px;font-size:12px;color:#0a0f1f}
   .verdict-text{font-size:12.5px;color:var(--ink);font-weight:700;line-height:1.5}
+  .dmatrix{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:10px}
+  .dm-card{background:#0a0f1f;border:1px solid var(--line);border-radius:8px;padding:7px 9px;text-align:center}
+  .dm-card.s5{border-color:var(--green);background:rgba(38,208,124,.08)}
+  .dm-card.s4{border-color:var(--cyan);background:rgba(51,214,224,.08)}
+  .dm-card.s3{border-color:var(--gold);background:rgba(255,209,102,.06)}
+  .dm-card.s2{border-color:var(--magenta);background:rgba(217,70,239,.06)}
+  .dm-card.s1{border-color:var(--red);background:rgba(239,83,80,.08)}
+  .dm-label{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.4px;margin-bottom:2px}
+  .dm-state{font-size:12px;font-weight:800;color:var(--ink);line-height:1.3}
+  .dm-state.g{color:var(--green)}
+  .dm-state.c{color:var(--cyan)}
+  .dm-state.n{color:var(--gold)}
+  .dm-state.m{color:var(--magenta)}
+  .dm-state.r{color:var(--red)}
+  .dm-aux{font-size:9.5px;color:var(--ink-2);font-weight:600;margin-top:1px}
+  .dm-summary{font-size:11.5px;color:var(--ink-2);font-weight:700;margin-top:8px;padding:6px 10px;background:#0a0f1f;border-radius:6px;border:1px solid var(--line);line-height:1.5}
+  .dm-summary b{color:var(--ink)}
+  .readiness{display:flex;align-items:center;gap:8px;margin-top:8px;padding:7px 12px;border-radius:8px;background:#0a0f1f;border:1px solid var(--line);font-size:11.5px;color:var(--ink-2);font-weight:700;line-height:1.5}
+  .readiness.r-now{border-color:var(--green);background:rgba(38,208,124,.06)}
+  .readiness.r-pull{border-color:var(--gold);background:rgba(255,209,102,.06)}
+  .readiness.r-no{border-color:var(--red);background:rgba(239,83,80,.06)}
+  .readiness-tag{font-size:11px;font-weight:900;padding:2px 7px;border-radius:4px;color:#0a0f1f}
+  .readiness-tag.r-now{background:var(--green)}
+  .readiness-tag.r-pull{background:var(--gold)}
+  .readiness-tag.r-no{background:var(--red)}
+  .exec-contract{background:var(--card);border:1px solid var(--cyan);border-radius:10px;padding:10px 14px;margin-top:8px}
+  .exec-contract h3{margin:0 0 8px;font-size:13.5px;font-weight:800;color:var(--cyan);display:flex;align-items:center;gap:6px;letter-spacing:.3px}
+  .exec-contract h3 .dot{width:7px;height:7px;background:var(--cyan);border-radius:50%;box-shadow:0 0 6px var(--cyan)}
+  .ec-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
+  .ec-item{padding:3px 0;font-size:11.5px;color:var(--ink-2);line-height:1.5}
+  .ec-item .ec-k{color:var(--muted);font-weight:700;font-size:10.5px;letter-spacing:.3px;display:inline-block;width:96px;vertical-align:top}
+  .ec-item .ec-v{color:var(--ink);font-weight:700;display:inline-block;max-width:calc(100% - 100px);vertical-align:top}
+  .ec-item .ec-v b{color:var(--cyan)}
   .price-bar{display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;background:linear-gradient(135deg,#0d1426 0%,#1a2340 100%);border:1px solid var(--cyan);border-radius:10px;padding:10px 16px;margin:8px 0}
   .price{font-size:26px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums}
   .chg{font-size:13px;color:var(--red);font-weight:800}
@@ -98,6 +131,8 @@
       <h4>🎯 進出場紀律（套用《量價 SOP》進場 10 戒律 + 《進階班》最可能買點）</h4>
       <ul><li><b>已有部位</b>：沿 5MA（564）續抱；收盤跌破 MA20（568）先降 1/3 部位</li><li><b>空手</b>：等回測 MA20（568）量縮止跌再分批；帶量突破 644 才加重</li><li><b>不追</b>：今日 -5.27% 後不追，等月線回測</li><li><b>關鍵價位</b>：前高壓 669 / 前低撐 513 / 大量撐 298（2026-02-06）/ 缺口壓 519</li><li><b>進場 10 戒律 ✅ 9 / ⚠ 1</b>：</li><li>  ✅ ①多頭突破月線  ②非連漲第 3 根以上  ③不在週線壓力前  ④回檔已站回月線  ⑤未跌破前低  ⑥非盤整區  ⑦非空頭反彈  ⑨非價漲黑 K  ⑩符合作多 SOP</li><li>  ⚠ ⑧<b>高檔大量長紅 K</b>（現價 539 已在 2026-02-06 大量 K 撐 298 之上 +241 元 / +80.9%）— 高檔拉回風險升高</li><li>  <b>總計 9 項通過 / 1 項警訊 — 可進場但小部位, 跌破 MA20 即降倉</b></li><li><b>《進階班》6 多買點判定</b>：目前不在 6 多買點候選區，<b>空手續等</b></li><li><b>《朱家泓 3 條件 SOP》— 看到頭/底後的進出場判斷</b>（不是確認頭底, 是確認是否該進場）:</li><li>  <b>頭部出現</b>（高點反轉） → 看 ① 高於 MA20 2%?  ② 攻擊量（>5日均量×1.3）?  ③ 後 3 日內 KD 死亡交叉?  → <b>3 項全過才是「高檔反轉」, 該減倉</b></li><li>  <b>底部出現</b>（低點反轉） → 看 ① 低於 MA20 2%?  ② 攻擊量（>5日均量×1.3）?  ③ 後 3 日內 KD 黃金交叉?  → <b>3 項全過才是「底部反轉」, 該進場</b></li><li>  <b>本週期 9 頭 / 8 底</b> — 套用 SOP 後, 朱家泓 3 條件確認: <b>1 個頭 / 1 個底</b></li></ul>
     </div></div>
+  <div class="dmatrix"><div class="dm-card s3"><div class="dm-label">A 技術</div><div class="dm-state n">整理待表態</div><div class="dm-aux">MA564/568/475 KD27 RSI48</div></div><div class="dm-card s5"><div class="dm-label">B 基本面</div><div class="dm-state g">基本面驗證</div><div class="dm-aux">月營收 YoY +1922.3% MoM +108.9% EPS 3.2</div></div><div class="dm-card s3"><div class="dm-label">C 事件</div><div class="dm-state n">事件空白</div><div class="dm-aux">近 5 條新聞 無近期</div></div><div class="dm-card s2"><div class="dm-label">D 籌碼</div><div class="dm-state m">籌碼鬆動</div><div class="dm-aux">5 日 -19,092 張 (外 -14,199 投 -5,409 自 +516)</div></div><div class="dm-card s3"><div class="dm-label">E 市場</div><div class="dm-state n">市場中性</div><div class="dm-aux">加權 43226 / 5MA>20MA / 10日-0.9% / 20日+3.5%</div></div></div><div class="dm-summary">final_action = <b style="color:var(--cyan)">不追高</b> ｜ 支持層數 <b>1 / 5</b> ｜ 拖累層：<b style="color:var(--red)">D 籌碼</b></div>
+  <div class="readiness r-no"><span class="readiness-tag r-no">NOT READY</span><span>主體沒壞但位階高 / 籌碼鬆動, 此時不宜追價, 等回落或確認</span></div>
   <div class="verdict" style="background:rgba(38,208,124,.12);border-color:var(--muted)">
     <span class="verdict-bull" style="background:var(--muted)">偏多觀察但不追價（依五口訣）</span>
     <span class="verdict-text">綜合判讀：<b>封測龍頭 + CoWoS 受惠</b>，盤整格局，KD 中段、MACD 死亡交叉。已有者沿 5MA 續抱；空手者<b>等回測月線 568 再分批</b>，不追當日大量長紅。<br><b>五口訣套用</b>：順勢不逆（盤整順勢） ✅、買低不追（等月線 568） ✅、停利不猶豫（達 593 區） ✅</span>
@@ -700,7 +735,7 @@
   <table class="t-fund">
     <colgroup><col style="width:30%"><col style="width:26%"><col style="width:44%"></colgroup>
     <thead><tr><th>項目</th><th class="num">數值</th><th>備註</th></tr></thead>
-    <tbody><tr class="highlight"><td>最新收盤</td><td class="num"><b style="color:#ffffff;">539 元</b></td><td>前收 569、單日 -5.27%</td></tr><tr><td>20 日最高 / 最低</td><td class="num"><b style="color:#ffffff;">642 / 472 元</b></td><td>bias20 = -5.1%</td></tr><tr><td>MA5 / MA20 / MA60</td><td class="num"><b style="color:#ffffff;">564 / 568 / 475 元</b></td><td>均線多排</td></tr><tr><td>RSI(14)</td><td class="num"><b style="color:#ffffff;">48</b></td><td>中性偏強</td></tr><tr><td>K 線型態</td><td class="num"><b style="color:#ffffff;">長陰線</b></td><td>視窗近期 K 線型態</td></tr><tr class="highlight"><td>月營收</td><td class="num"><b style="color:#ffffff;">622.5 億</b></td><td>YoY +1922.3% / MoM +108.9%</td></tr><tr class="highlight"><td>近 60 日累積漲跌</td><td class="num"><b style="color:#ffffff;">+57.8%</b></td><td>342 → 539</td></tr><tr><td>本益比 PE</td><td class="num"><b style="color:#ffffff;">52.8</b></td><td>股價領先法人目標價區間</td></tr><tr><td>殖利率</td><td class="num"><b style="color:#ffffff;">1.16%</b></td><td>低息殖利率股</td></tr><tr><td>股價淨值比 PB</td><td class="num"><b style="color:#ffffff;">7.12</b></td><td>高於半導體同業平均</td></tr><tr><td>季度 EPS</td><td class="num"><b style="color:#ffffff;">3.24 元</b></td><td>2026Q1 稅後淨利 146 億</td></tr><tr><td>營業利益</td><td class="num"><b style="color:#ffffff;">175 億</b></td><td>115QNone</td></tr></tbody>
+    <tbody><tr class="highlight"><td>最新收盤</td><td class="num"><b style="color:#ffffff;">539 元</b></td><td>前收 569、單日 -5.27%</td></tr><tr><td>20 日最高 / 最低</td><td class="num"><b style="color:#ffffff;">618 / 442 元</b></td><td>bias20 = -5.1%</td></tr><tr><td>MA5 / MA20 / MA60</td><td class="num"><b style="color:#ffffff;">564 / 568 / 475 元</b></td><td>均線多排</td></tr><tr><td>RSI(14)</td><td class="num"><b style="color:#ffffff;">48</b></td><td>中性偏強</td></tr><tr><td>K 線型態</td><td class="num"><b style="color:#ffffff;">長陰線</b></td><td>視窗近期 K 線型態</td></tr><tr class="highlight"><td>月營收</td><td class="num"><b style="color:#ffffff;">622.5 億</b></td><td>YoY +1922.3% / MoM +108.9%</td></tr><tr class="highlight"><td>近 60 日累積漲跌</td><td class="num"><b style="color:#ffffff;">+57.8%</b></td><td>342 → 539</td></tr><tr><td>本益比 PE</td><td class="num"><b style="color:#ffffff;">52.8</b></td><td>股價領先法人目標價區間</td></tr><tr><td>殖利率</td><td class="num"><b style="color:#ffffff;">1.16%</b></td><td>低息殖利率股</td></tr><tr><td>股價淨值比 PB</td><td class="num"><b style="color:#ffffff;">7.12</b></td><td>高於半導體同業平均</td></tr><tr><td>季度 EPS</td><td class="num"><b style="color:#ffffff;">3.24 元</b></td><td>2026Q1 稅後淨利 146 億</td></tr><tr><td>營業利益</td><td class="num"><b style="color:#ffffff;">175 億</b></td><td>115QNone</td></tr></tbody>
   </table>
 </div>
 
@@ -757,7 +792,7 @@
         <td class="num"><b style="color:#26d07c">-19,092.4</b></td>
       </tr></tbody>
   </table>
-  <p class="note">※ 近 5 日三大法人合計 <b style="color:#26d07c">-19,092.4 張（賣超）</b>，外資 -14,199.4 張、投信 -5,409.2 張、自營 +516.3 張。先不追價；若能站穩 MA5/MA20 再偏多續看，收盤跌破 567.95 元（MA20） 先降 33% 部位。</p>
+  <p class="note">※ 近 5 日三大法人合計 <b style="color:#26d07c">-19,092.4 張（賣超）</b>，外資 -14,199.4 張、投信 -5,409.2 張、自營 +516.3 張。偏多觀察但不追價；回測 514.12 元（MA20） 有守才試單，跌破則先降 33% 部位。</p>
 </div>
 
 <div class="panel">
@@ -804,6 +839,8 @@
   <h3><span class="dot"></span>產業趨勢：CoWoS 外溢 + LEAP 倍增</h3>
   <ul><li><b>CoWoS 外溢效應</b>：NVIDIA GB200/Rubin 推升台積電 CoWoS 需求，日月光投控承接 oSP 委外訂單、FoCoS 業務 2026 H2 開始放量（客戶 AMD、Broadcom）。2026 先進封裝營收上看 32 億美元（YoY +100%）。</li><li><b>LEAP 業務</b>：2025 LEAP 營收已翻倍，2026 全年上調 23%、年增率達 100%；CoWoS 月產能年底從 9,000 片倍增至 2 萬片。AI 業務占比由 2025 ~10% 升至 2026 ~20%。<b>風險：股價 539 領先多數法人目標價區間 520~600，5 日三大法人賣超 -19,092 張，追價風險升高</b>。</li></ul>
 </div>
+
+<div class="exec-contract"><h3><span class="dot"></span>⑥ 執行合約（不追高合約）</h3><div class="ec-grid"><div class="ec-item"><span class="ec-k">追價禁令原因</span><span class="ec-v"><b>位階高 + 籌碼/市場逆風</b>（bias20 -5.1%）</span></div><div class="ec-item"><span class="ec-k">最高追價幅度</span><span class="ec-v">現價 × 1.03 = 555（再高就等回測）</span></div><div class="ec-item"><span class="ec-k">重新進場條件</span><span class="ec-v">回測 MA20 (568) 量縮止跌 + KD 黃金交叉</span></div><div class="ec-item"><span class="ec-k">市價單禁用</span><span class="ec-v"><b>market_order_allowed = No</b>（避免瞬間波動滑價）</span></div><div class="ec-item"><span class="ec-k">現有部位</span><span class="ec-v">沿 5MA (564) 觀察, 不主動加碼</span></div></div></div>
 
 <div class="foot">
   資料來源：TWSE 3711 日成交（過去 120 個交易日, 共 118 筆）｜三大法人買賣超（近 5 日）｜融資融券｜工商時報 / Yahoo 股市 / FTNN / 經濟日報 / cmnews
