@@ -27,6 +27,15 @@
       "source": "/tmp/2330_v2_dryrun.html",
       "bytes": 95729,
       "schedule_desc": ""
+    },
+    {
+      "id": "market-twii",
+      "name": "台股加權指數大盤分析",
+      "updated": "2026-06-15 11:42:16 CST",
+      "url": "reports/market-twii/latest.html",
+      "source": "/tmp/market_twii_dryrun.html",
+      "bytes": 97969,
+      "schedule_desc": ""
     }
   ]
 }
