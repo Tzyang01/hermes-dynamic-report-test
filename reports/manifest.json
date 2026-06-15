@@ -22,10 +22,10 @@
     {
       "id": "stock-2330",
       "name": "2330台積電個股分析",
-      "updated": "2026-06-15 16:11:49 CST",
+      "updated": "2026-06-15 16:13:20 CST",
       "url": "reports/stock-2330/latest.html",
       "source": "/tmp/2330_v2_dryrun.html",
-      "bytes": 99897,
+      "bytes": 99889,
       "schedule_desc": ""
     },
     {
