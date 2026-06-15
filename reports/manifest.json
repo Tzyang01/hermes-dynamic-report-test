@@ -31,10 +31,10 @@
     {
       "id": "market-twii",
       "name": "台股加權指數大盤分析",
-      "updated": "2026-06-15 15:55:30 CST",
+      "updated": "2026-06-15 15:58:56 CST",
       "url": "reports/market-twii/latest.html",
       "source": "/tmp/market_twii_dryrun.html",
-      "bytes": 98731,
+      "bytes": 98724,
       "schedule_desc": ""
     }
   ]
