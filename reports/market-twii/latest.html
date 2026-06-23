@@ -1,187 +1,80 @@
 <!doctype html>
 <html lang="zh-Hant">
-<head>
-<meta charset="utf-8">
-<title>台股加權指數 ^TWII 完整分析報告｜2026-06-03</title>
+<head><meta charset="utf-8">
+<title>台股加權指數 ^TWII 分析報告｜2026-06-23</title>
 <style>
-  :root {
-    --bg:#0a0f1f; --card:#0d1426; --line:#2b385e; --line-soft:#1a2342;
-    --ink:#ffffff; --ink-2:#dde6fb; --muted:#9fb1d6;
-    --red:#ef5350; --green:#26d07c; --gold:#ffd166; --blue:#5b9dff;
-    --purple:#a855f7; --cyan:#33d6e0; --magenta:#d946ef;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;
-    -webkit-font-smoothing:antialiased}
-  .page{width:900px;padding:18px 24px 24px;background:var(--bg);position:relative}
-  .doc-title{font-size:14px;color:var(--ink-2);font-weight:700;letter-spacing:1.5px}
-  .doc-sub{font-size:12px;color:var(--muted);font-weight:600;margin-top:4px;margin-bottom:14px;letter-spacing:.5px}
-  .sec-title{display:flex;align-items:center;gap:10px;margin:12px 0 8px;font-size:16px;font-weight:800;color:var(--ink)}
-  .sec-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;
-    background:var(--cyan);color:#0a0f1f;font-size:13px;font-weight:900}
-  .exec{background:linear-gradient(135deg,#0d1426 0%,#1a2340 100%);border:1px solid var(--cyan);border-radius:12px;padding:14px 18px}
-  .exec h2{margin:0 0 10px;font-size:17px;font-weight:900;color:var(--ink);line-height:1.45}
-  .exec h2 .hl{color:var(--cyan)}
-  .exec-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-  .exec-card{background:#0a0f1f;border:1px solid var(--line);border-radius:8px;padding:8px 12px}
-  .exec-card h4{margin:0 0 4px;font-size:13px;font-weight:800;color:var(--ink);display:flex;align-items:center;gap:6px}
-  .exec-card ul{margin:0;padding-left:16px;font-size:11.5px;color:var(--ink-2);line-height:1.55}
-  .exec-card ul b{color:var(--ink)}
-  .verdict{display:flex;align-items:center;gap:10px;padding:8px 14px;border-radius:8px;margin-top:10px;border:1px solid}
-  .verdict-bull{font-weight:900;padding:3px 9px;border-radius:5px;font-size:12px;color:#0a0f1f}
-  .verdict-text{font-size:12.5px;color:var(--ink);font-weight:700;line-height:1.5}
-  .dmatrix{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:10px}
-  .dm-card{background:#0a0f1f;border:1px solid var(--line);border-radius:8px;padding:7px 9px;text-align:center}
-  .dm-card.s5{border-color:var(--green);background:rgba(38,208,124,.08)}
-  .dm-card.s4{border-color:var(--cyan);background:rgba(51,214,224,.08)}
-  .dm-card.s3{border-color:var(--gold);background:rgba(255,209,102,.06)}
-  .dm-card.s2{border-color:var(--magenta);background:rgba(217,70,239,.06)}
-  .dm-card.s1{border-color:var(--red);background:rgba(239,83,80,.08)}
-  .dm-label{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.4px;margin-bottom:2px}
-  .dm-state{font-size:12px;font-weight:800;color:var(--ink);line-height:1.3}
-  .dm-state.g{color:var(--green)}
-  .dm-state.c{color:var(--cyan)}
-  .dm-state.n{color:var(--gold)}
-  .dm-state.m{color:var(--magenta)}
-  .dm-state.r{color:var(--red)}
-  .dm-aux{font-size:9.5px;color:var(--ink-2);font-weight:600;margin-top:1px}
-  .dm-summary{font-size:11.5px;color:var(--ink-2);font-weight:700;margin-top:8px;padding:6px 10px;background:#0a0f1f;border-radius:6px;border:1px solid var(--line);line-height:1.5}
-  .dm-summary b{color:var(--ink)}
-  .readiness{display:flex;align-items:center;gap:8px;margin-top:8px;padding:7px 12px;border-radius:8px;background:#0a0f1f;border:1px solid var(--line);font-size:11.5px;color:var(--ink-2);font-weight:700;line-height:1.5}
-  .readiness.r-now{border-color:var(--green);background:rgba(38,208,124,.06)}
-  .readiness.r-pull{border-color:var(--gold);background:rgba(255,209,102,.06)}
-  .readiness.r-no{border-color:var(--red);background:rgba(239,83,80,.06)}
-  .readiness-tag{font-size:11px;font-weight:900;padding:2px 7px;border-radius:4px;color:#0a0f1f}
-  .readiness-tag.r-now{background:var(--green)}
-  .readiness-tag.r-pull{background:var(--gold)}
-  .readiness-tag.r-no{background:var(--red)}
-  /* v5 Tier 1.A: 信心等級 + hedge + 注意股觸發 chip 區 (3 段橫排, 等權重, 不分區) */
-  .status-bar{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:8px 0 4px;padding:8px 10px;background:#0a0f1f;border:1px solid var(--line);border-radius:7px}
-  .status-bar-main{display:contents}  /* 讓 main 透明, 3 類 chip 全部並列 */
-  .status-bar-triggers{display:contents}
-  .status-badge{font-size:11.5px;font-weight:900;padding:3px 9px;border-radius:5px;color:#0a0f1f;letter-spacing:.5px}
-  .status-badge.sb-verified{background:var(--green);color:#0a0f1f}
-  .status-badge.sb-provisional{background:var(--gold);color:#0a0f1f}
-  .status-badge.sb-degraded{background:var(--red);color:#fff}
-  .hedge-scale{font-size:11px;font-weight:700;padding:3px 9px;border-radius:5px;border:1px solid var(--line);color:var(--ink-2)}
-  .hedge-scale.h4{border-color:var(--green);background:rgba(38,208,124,.08);color:var(--green)}
-  .hedge-scale.h3{border-color:var(--gold);background:rgba(255,209,102,.08);color:var(--gold)}
-  .hedge-scale.h2{border-color:var(--magenta);background:rgba(217,70,239,.08);color:var(--magenta)}
-  .hedge-scale.h1{border-color:var(--red);background:rgba(239,83,80,.08);color:var(--red)}
-  .hedge-scale b{color:inherit;font-size:12px}
-  .hedge-avg{color:var(--muted);font-weight:600;font-size:10px;margin-left:3px}
-  .trigger-chip{font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(239,83,80,.12);color:var(--red);border:1px solid var(--red);margin-right:3px}
-  .trigger-chip:last-child{margin-right:0}
-  .trigger-chip.clean{background:rgba(38,208,124,.08);color:var(--green);border:1px solid var(--green)}
-  .trigger-count{font-size:10.5px;font-weight:800;color:#fff;padding:2px 7px;background:var(--red);border-radius:4px;letter-spacing:.3px;margin-right:5px}
-  .missing-note{font-size:10px;color:var(--muted);font-weight:600;font-style:italic;padding:2px 6px;border:1px dashed var(--line);border-radius:4px;margin-left:auto}
-  /* v5 Tier 1.C: 新聞 4 面向評分 chip 區 (視覺差異強化版) */
-  .news-axes{background:#0a0f1f;border:1px solid var(--line);border-radius:7px;padding:7px 10px;margin:6px 0 8px}
-  .news-axes-label{font-size:11px;color:var(--ink-2);font-weight:700;margin-bottom:5px;letter-spacing:.3px}
-  .news-axes-label b{color:var(--cyan);font-size:12px}
-  .news-axes-grid{display:flex;flex-wrap:wrap;gap:5px}
-  .axis-chip{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:3px 7px;border-radius:5px;border:1.5px solid}
-  .axis-chip b{color:inherit;font-size:11.5px;letter-spacing:.3px}
-  .axis-chip .score{font-weight:900;font-size:13px;letter-spacing:0}
-  /* 3-4 分（高）= 實心強烈, 2 分（中）= 中空, 0-1 分（低）= 淡色 */
-  .axis-chip.green{color:var(--green);border-color:var(--green);background:rgba(38,208,124,.18);font-weight:800}
-  .axis-chip.green .score{font-size:14px}
-  .axis-chip.gold{color:var(--gold);border-color:var(--gold);background:rgba(255,209,102,.08)}
-  .axis-chip.red{color:var(--muted);border-color:var(--line);background:transparent;font-weight:600}
-  .exec-contract{background:var(--card);border:1px solid var(--cyan);border-radius:10px;padding:10px 14px;margin-top:8px}
-  .exec-contract h3{margin:0 0 8px;font-size:13.5px;font-weight:800;color:var(--cyan);display:flex;align-items:center;gap:6px;letter-spacing:.3px}
-  .exec-contract h3 .dot{width:7px;height:7px;background:var(--cyan);border-radius:50%;box-shadow:0 0 6px var(--cyan)}
-  .ec-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
-  .ec-item{padding:3px 0;font-size:11.5px;color:var(--ink-2);line-height:1.5}
-  .ec-item .ec-k{color:var(--muted);font-weight:700;font-size:10.5px;letter-spacing:.3px;display:inline-block;width:96px;vertical-align:top}
-  .ec-item .ec-v{color:var(--ink);font-weight:700;display:inline-block;max-width:calc(100% - 100px);vertical-align:top}
-  .ec-item .ec-v b{color:var(--cyan)}
-  .price-bar{display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;background:linear-gradient(135deg,#0d1426 0%,#1a2340 100%);border:1px solid var(--cyan);border-radius:10px;padding:10px 16px;margin:8px 0}
-  .price{font-size:26px;font-weight:900;color:var(--red);font-variant-numeric:tabular-nums}
-  .chg{font-size:13px;color:var(--red);font-weight:800}
-  .kv{font-size:12px;color:var(--ink-2);font-weight:600}
-  .kv b{color:var(--ink);font-weight:800}
-  .chartcard{background:var(--card);border:1px solid var(--line);border-radius:10px 10px 0 0;padding:6px}
-  .chartcard svg{width:100%;height:auto;display:block}
-  .legend{background:var(--card);border:1px solid var(--line);border-top:none;border-radius:0 0 10px 10px;padding:8px 12px;margin-top:-1px}
-  .lg-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:12px;color:var(--ink-2);font-weight:700}
-  .lg{display:inline-flex;align-items:center;gap:6px}
-  .lg-line{display:inline-block;width:30px;height:5px;border-radius:3px}
-  .lg-sq{display:inline-block;width:18px;height:14px;border-radius:2px}
-  .lg-label{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.5px}
-  .note{font-size:11.5px;color:var(--ink-2);margin:6px 4px 0;line-height:1.55;font-weight:600}
-  .signal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px}
-  .signal{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
-  .signal-label{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.3px}
-  .signal-val{font-size:13px;font-weight:800;margin-top:1px;font-variant-numeric:tabular-nums}
-  .signal-desc{font-size:10px;color:var(--ink-2);margin-top:1px;line-height:1.3;font-weight:600;overflow-wrap:break-word;word-break:keep-all;hyphens:none}
-  .chip{display:inline-block;padding:1px 6px;border-radius:999px;font-size:10px;font-weight:800;color:#fff;background:var(--ink);margin-left:3px}
-  .panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:6px 0}
-  .panel h3{margin:0 0 6px;font-size:13px;font-weight:800;color:var(--ink);display:flex;align-items:center;gap:6px}
-  .panel h3 .dot{width:7px;height:7px;background:var(--cyan);border-radius:50%;box-shadow:0 0 6px var(--cyan)}
-  .panel ul{margin:0;padding-left:16px;font-size:12px;color:var(--ink-2);line-height:1.55}
-  .panel ul b{color:var(--ink)}
-  .news-item{padding:4px 0;border-bottom:1px solid var(--line)}
-  .news-item:last-child{border-bottom:none}
-  .news-meta{font-size:10px;color:var(--muted);font-weight:600;margin-bottom:1px}
-  .news-title{font-size:12px;font-weight:800;color:var(--ink);margin-bottom:1px}
-  .news-title a{color:var(--cyan);text-decoration:none;border-bottom:1px dotted var(--cyan)}
-  .news-title a:hover{color:#fff;border-bottom-color:#fff}
-  .news-text{font-size:11.5px;color:var(--ink-2);line-height:1.4;font-weight:500}
-  table{width:100%;border-collapse:collapse;margin-top:4px;font-size:12px;table-layout:fixed}
-  th,td{padding:5px 8px;text-align:left;border-bottom:1px solid var(--line);color:var(--ink);vertical-align:middle}
-  th{color:var(--ink-2);font-weight:700;font-size:11px;letter-spacing:.3px;background:#0d1426;text-align:left}
-  td{text-align:left}
-  th.num,th.num *,td.num,td.num *{text-align:right}
-  th.num,td.num{font-variant-numeric:tabular-nums;white-space:nowrap;padding-right:14px;padding-left:14px}
-  td .unit{color:var(--muted);font-size:10.5px;font-weight:600;margin-left:3px}
-  tr.highlight td{background:rgba(91,157,255,.07)}
-  .foot{margin-top:10px;padding-top:8px;border-top:1px solid var(--line);font-size:10px;color:var(--muted);line-height:1.5;font-weight:600}
-  @page { size: 900px 3300px; margin: 0; }
-</style>
-</head>
-<body>
-<div class="page">
-
-<div class="doc-title">台股個股分析報告</div>
-<div class="doc-sub">台股加權指數（^TWII）｜2026-06-23 收盤｜K 線圖區間 2025-12-23 ~ 2026-06-23（117 個交易日）</div>
-
-<!-- ① 分析總結 -->
-<div class="sec-title"><span class="sec-num">1</span>分析總結</div>
-<div class="exec">
-  <h2>台股加權指數（^TWII）現價 <span class='hl'>47101</span> 元，<b>上漲格局</b>（MA上漲），近 5 日法人 +865.1 億元 (外 +711.3 投 +29.6 自 +124.3) 形成拉鋸，KD 82（高檔鈍）與 MACD 金叉（0軸上）位階偏高，<span class='hl'>依5 條口訣精神：順勢不逆、買低不追</span>，<b>需回測月線 45070 才能加碼</b>。</h2>
-  <div class="status-bar"><div class="status-bar-main"><span class="status-badge sb-provisional">⚠ 1 欄位缺資料 (部分推定)</span><span class="hedge-scale h4"><b>確信度 4/5</b> 高度確信<span class="hedge-avg">(avg 4.0/5)</span></span><span class="missing-note">缺: 成交量（TWII 大盤指數無此資料，僅個股有）</span></div><div class="status-bar-triggers"><span class="trigger-chip clean">✓ 無注意股觸發</span></div></div>
-  <div class="exec-grid"><div class="exec-card">
-      <h4>⚡ 大盤主線敘事</h4>
-      <ul><li><b>AI 晶片 + 先進製程雙引擎</b>：2330 台積電 2 奈米量產 + CoWoS 產能擴張，撐起台股半導體主軸</li><li><b>資金行情</b>：內資回流、ETF 規模創高、融資餘額同步上揚，盤面風險偏好升溫</li><li><b>結構亮點</b>：CoWoS / WMCM / SoIC 受惠股（2317 鴻海、3711 日月光、2344 華邦電）輪動領漲</li><li><b>外部變數</b>：FED 利率政策 + 美科技股財報 + 地緣政治，牽動外資流向與匯率</li></ul>
-    </div><div class="exec-card">
-      <h4>📊 技術面共識（半年視窗, 三環境判讀）</h4>
-      <ul><li><b>上漲格局</b>（MA 5&gt;20&gt;60=46599&gt;45070&gt;40458）→ 依《均線戰法卡》3.1 節：3 線多排 ✅</li><li><b>K 棒三環境</b>（依《轉折訊號卡》1.）：方向=上漲，位置=高位（近 60 日漲 +40.9%、偏離月線 20 = +4.5%），量=縮/平量</li><li><b>K 線型態</b>：—</li><li><b>指標</b>：RSI 14 = 65、KD = 82/82（高檔鈍，依《進階班卡》4.1）、MACD 金叉（0軸上，依《進階班卡》3.1）</li><li><b>《均線季線成本值》季線真假</b>: 季線成本 33338 (季線 40458 rising) → <b style="color:#26d07c">假跌破機率高</b>｜季線有慣性保護, 跌破多為假跌破 → 觀察 3 日站回</li><li><b>《跌破月線 3 日站回》</b>: 近 3 日未跌破月線 (45070) → 結構穩定</li><li><b>頭底轉折</b>（朱家泓動態頭底, 視窗 117 日）: <b>4 個頭</b> / <b>3 個底</b>（APP 全部實心標示）</li></ul>
-    </div><div class="exec-card">
-      <h4>⚠️ 風險警示（套用《量價 SOP》8 心法 + 《進階班》目標管理）</h4>
-      <ul><li>收盤 47101 點 vs 大盤位階 — <b>大盤無個股目標價區間概念</b>，改以技術位階判斷</li><li>近 5 日三大法人 <b style="color:#26d07c">買賣超 +865.1 億元</b>，與指數創高背離</li><li>短線 -1.34% 屬追高情緒、偏離月線 20 已 +4.5%</li><li>06-22 投信連 5 賣、外資轉買：結構分歧，須看月線 45070 守穩</li><li><b>《量價 SOP》心法 7 套用</b>：大量 K 線 1/2 價 = <b>44375</b>（2026-05-29）→ 跌破即轉弱</li><li><b>《量價 SOP》心法 8 套用</b>：高檔爆大量，3 日內股價若未續漲 → 主力出貨警訊（八九成）</li><li><b>《進階班》卡住虧損三級</b>：若已持倉跌幅達 5% 列警示，10% 輕度、20% 中度、30% 重度卡住虧損</li><li><b>《官股 4 種典型處境》</b>: N/A (官股資料抓取失敗)｜改用一般籌碼面 (外/投/自) 判斷</li></ul>
-    </div><div class="exec-card">
-      <h4>🎯 進出場紀律（套用《量價 SOP》進場 10 戒律 + 《進階班》最可能買點）</h4>
-      <ul><li><b>已有部位</b>：沿 5MA（46599）續抱；收盤跌破 MA20（45070）先降 1/3 部位</li><li><b>空手</b>：等回測 MA20（45070）量縮止跌再分批；帶量突破前高才加重（大盤版）</li><li><b>不追</b>：今日 -1.34% 後不追，等月線回測</li><li><b>關鍵價位</b>：前高壓 669 / 前低撐 513 / 大量撐 43815（2026-05-29）/ 跳空壓 519</li><li><b>進場 10 戒律 ✅ 9 / ⚠ 1</b>：</li><li>✅ ①上漲突破月線  ②非連漲第 3 根以上  ③不在週線壓力前  ④拉回已站回月線  ⑤未跌破前低  ⑥非盤整區  ⑦非下跌回升  ⑨非價漲綠 K  ⑩符合作多 SOP</li><li>⚠ ⑧<b>高檔大量大紅 K K</b>（現價 47101 已在 2026-05-29 大量 K 撐 43815 之上 +3285 元 / +7.5%）— 高檔拉回風險升高</li><li><b>總計 9 項通過 / 1 項警訊 — 可進場但小部位, 跌破 MA20 即降倉</b></li><li><b>《進階班》6 多買點判定</b>：大盤指數無「個股 6-4 修正突破」型態，<b>改以大盤級距判斷</b>：等回測月線 47101 → 漲至 33439 區間，月線量縮止跌 + 站回 5MA 46599 才是大盤加碼點</li><li><b>《朱家泓 3 條件 SOP》— 看到頭/底後的進出場判斷</b>（不是確認頭底, 是確認是否該進場）:</li><li><b>頭部出現</b>（高點反轉） → 看 ① 高於 MA20 2%?  ② 進攻量（>5日均量×1.3）?  ③ 後 3 日內 KD 死叉?  → <b>3 項全過才是「高檔反轉」, 該減倉</b></li><li><b>底部出現</b>（低點反轉） → 看 ① 低於 MA20 2%?  ② 進攻量（>5日均量×1.3）?  ③ 後 3 日內 KD 金叉?  → <b>3 項全過才是「底部反轉」, 該進場</b></li><li><b>本週期 4 頭 / 3 底</b> — 套用 SOP 後, 朱家泓 3 條件確認: <b>0 個頭 / 0 個底</b></li><li><b>《跌破季線 4 路分流》</b>: 未觸發 (股價在均線之上)</li></ul>
-    </div></div>
-  <div class="dmatrix"><div class="dm-card s5"><div class="dm-label">A 技術</div><div class="dm-state g">技術順勢</div><div class="dm-aux">MA46599/45070/40458 KD82 RSI65</div></div><div class="dm-card s4"><div class="dm-label">B 位階</div><div class="dm-state c">多頭結構</div><div class="dm-aux">偏離月線 20 +4.5% 量比 0.0×</div></div><div class="dm-card s4"><div class="dm-label">C 事件</div><div class="dm-state c">事件偏多</div><div class="dm-aux">近 5 條新聞 中性偏多</div></div><div class="dm-card s4"><div class="dm-label">D 籌碼</div><div class="dm-state c">籌碼支持</div><div class="dm-aux">5 日 +865.1 億元 (外 +711.3 投 +29.6 自 +124.3)</div></div><div class="dm-card s3"><div class="dm-label">E 市場</div><div class="dm-state n">市場中性（本身即大盤）</div><div class="dm-aux">加權指數 47101（大盤即市場，無上位層）</div></div></div><div class="dm-summary">🎯 <b>執行決策：</b><b style="color:var(--cyan)">續抱</b>（已買的留著續抱, 不加碼也不賣） ｜ 支持層數 <b>4 / 5</b></div>
-  <div class="readiness r-now"><span class="readiness-tag r-now">READY NOW</span><span>主體 4 層支持, 大盤偏多格局明確</span></div>
-  <div class="verdict" style="background:rgba(38,208,124,.12);border-color:var(--muted)">
-    <span class="verdict-bull" style="background:var(--muted)">偏多觀察但不追高</span>
-    <span class="verdict-text">綜合判讀：<b>AI 雙引擎 + 資金行情</b>，上漲格局，KD 高檔鈍、MACD 金叉。已有者沿 5MA 續抱；空手者<b>等回測月線 45070 再分批</b>，不追當日大量大紅 K。<br><b>5 條口訣套用</b>：順勢不逆（上漲順勢） ✅、買低不追（等月線 45070） ✅、停利不猶豫（達 51811 區） ✅</span>
+  @page { size: 900px 5600px; margin: 0; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0a0f1f;color:#e8edf5;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;-webkit-font-smoothing:antialiased;width:900px}
+  .page{padding:20px 28px 30px}
+  .header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #2b385e}
+  .stock-info h1{font-size:22px;font-weight:900;color:#fff;margin:0}
+  .stock-info h1 small{font-size:14px;font-weight:600;color:#9fb1d6;margin-left:8px}
+  .stock-info .sub{font-size:12px;color:#9fb1d6;margin-top:3px}
+  .price-box{text-align:right}
+  .price{font-size:32px;font-weight:900}
+  .price-change{font-size:14px;font-weight:700;margin-top:2px}
+  a{color:#5b9dff;text-decoration:underline}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .tag{font-size:11px;font-weight:700;padding:4px 10px;border-radius:5px}
+  .tag-green{background:rgba(38,208,124,.15);color:#26d07c;border:1px solid #26d07c}
+  .tag-red{background:rgba(239,83,80,.15);color:#ef5350;border:1px solid #ef5350}
+  .tag-gold{background:rgba(255,209,102,.12);color:#ffd166;border:1px solid #ffd166}
+  .tag-blue{background:rgba(91,157,255,.12);color:#5b9dff;border:1px solid #5b9dff}
+  .tag-purple{background:rgba(168,85,247,.12);color:#a855f7;border:1px solid #a855f7}
+  .section{margin-bottom:18px}
+  .sec-title{font-size:15px;font-weight:800;color:#fff;margin-bottom:8px}
+  .sec-title .num{color:#5b9dff;margin-right:4px}
+  .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+  .kpi-card{background:#0d1426;border:1px solid #2b385e;border-radius:8px;padding:10px 12px}
+  .kpi-label{font-size:10px;color:#9fb1d6;font-weight:700;letter-spacing:.5px}
+  .kpi-value{font-size:18px;font-weight:900;color:#fff;margin-top:2px}
+  .kpi-sub{font-size:10px;color:#9fb1d6;margin-top:1px}
+  .chart-box{background:#0d1426;border:1px solid #2b385e;border-radius:10px;padding:10px;margin-bottom:14px;overflow:hidden}
+  .chart-box svg{width:100%;height:auto;display:block}
+  .narrative{background:linear-gradient(135deg,#0f1a30,#162045);border:1px solid #5b9dff;border-radius:12px;padding:16px 18px;margin-bottom:14px}
+  .narrative h2{font-size:15px;font-weight:900;color:#5b9dff;margin-bottom:10px}
+  .narrative p{font-size:12px;line-height:1.8;color:#dde6fb;margin:0 0 8px}
+  .narrative p:last-child{margin-bottom:0}
+  .narrative .hl{color:#ffd166;font-weight:700}
+  .narrative .prediction{background:rgba(255,209,102,.08);border:1px solid #ffd166;border-radius:8px;padding:10px 14px;margin-top:10px}
+  .narrative .prediction h4{color:#ffd166;font-size:13px;font-weight:800;margin-bottom:4px}
+  .narrative .prediction p{font-size:12px;margin:0 0 4px}
+  .chip-table{width:100%;border-collapse:collapse;font-size:11px;margin-top:6px}
+  .chip-table th{background:#1a2342;color:#9fb1d6;font-weight:700;padding:5px 7px;text-align:right;border:1px solid #2b385e}
+  .chip-table th:first-child{text-align:left}
+  .chip-table td{padding:4px 7px;text-align:right;border:1px solid #2b385e;color:#dde6fb;font-size:11px}
+  .chip-table td:first-child{text-align:left;color:#fff;font-weight:700}
+  .chip-table .pos{color:#ef5350} .chip-table .neg{color:#26d07c}
+  .analysis-card{background:#0d1426;border:1px solid #2b385e;border-radius:8px;padding:12px 14px;margin-bottom:8px}
+  .analysis-card p{font-size:11px;color:#dde6fb;line-height:1.7;margin:0}
+  .up{color:#ef5350} .down{color:#26d07c}
+  .pos{color:#ef5350} .neg{color:#26d07c}
+  .footer{margin-top:16px;padding-top:10px;border-top:1px solid #2b385e;font-size:10px;color:#6b7fa0;text-align:center;line-height:1.6}
+</style></head>
+<body><div class="page">
+<div class="header">
+  <div class="stock-info"><h1>台股加權指數<small>^TWII</small></h1><div class="sub">2026-06-23 收盤分析報告</div></div>
+  <div class="price-box">
+    <div class="price" style="color:#26d07c">47101</div>
+    <div class="price-change" style="color:#26d07c">🔴 下跌 1.34%</div>
   </div>
 </div>
-
-<!-- ② 技術分析 K 線圖 -->
-<div class="sec-title"><span class="sec-num">2</span>技術分析 K 線圖（含圖例）</div>
-<div class="price-bar">
-  <span class="price" style="color:#26d07c">47100.6</span>
-  <span class="chg" style="color:#26d07c">▼-640.9（-1.34%）</span>
-  <span class="kv">開 <b>47795.1</b>　高 <b>48218.9</b>　低 <b>47100.6</b>　收 <b>47100.6</b></span>
-  <span class="kv">量 <b>0</b> 股</span>
+<div class="tags">
+  <span class="tag tag-green">📈 多頭排列</span>
+  <span class="tag tag-blue">RSI 65 中性偏強</span>
+  <span class="tag tag-purple">乖離 +4.5%</span>
+  <span class="tag tag-green">正常 1.1x</span>
+  <span class="tag tag-gold">PE N/A</span>
+  <span class="tag tag-green">營收年增 N/A</span>
 </div>
-<div class="chartcard"><svg width="880" height="560" viewBox="0 0 880 560" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,PingFang TC,Microsoft JhengHei,sans-serif">
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="kpi-label">MA5</div><div class="kpi-value" style="color:#ef5350">46598.8</div><div class="kpi-sub">↑多頭</div></div>
+  <div class="kpi-card"><div class="kpi-label">MA20</div><div class="kpi-value" style="color:#ef5350">45069.8</div><div class="kpi-sub">↑多頭</div></div>
+  <div class="kpi-card"><div class="kpi-label">MA60</div><div class="kpi-value">40458.0</div><div class="kpi-sub">季線</div></div>
+  <div class="kpi-card"><div class="kpi-label">RSI(14)</div><div class="kpi-value">65</div><div class="kpi-sub">中性偏強</div></div>
+</div>
+<div class="chart-box"><svg width="880" height="560" viewBox="0 0 880 560" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,PingFang TC,Microsoft JhengHei,sans-serif">
 <rect x="0" y="0" width="880" height="560" fill="#0a0f1f"/>
 <line x1="55" y1="298.0" x2="790" y2="298.0" stroke="#1a2342" stroke-width="0.5" stroke-dasharray="2,3"/>
 <text x="49" y="302.0" fill="#ffffff" font-size="11" font-weight="700" text-anchor="end" font-variant-numeric="tabular-nums">27137</text>
@@ -701,162 +594,76 @@
 <rect x="645" y="539.0" width="75" height="14" fill="#ffd166" rx="3"/><text x="682.5" y="549" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">MACD 1312.22</text>
 <rect x="725" y="539.0" width="60" height="14" fill="#ef5350" rx="3"/><text x="755.0" y="549" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">OSC +87.06</text>
 </svg></div>
-<div class="legend">
-  <div class="lg-row">
-    <span class="lg"><span class="lg-line" style="background:#ffd166"></span>5MA</span>
-    <span class="lg"><span class="lg-line" style="background:#a855f7"></span>10MA</span>
-    <span class="lg"><span class="lg-line" style="background:#5b9dff"></span>20MA（月）</span>
-    <span class="lg"><span class="lg-line" style="background:#33d6e0"></span>60MA（季）</span>
-    <span class="lg"><span class="lg-line" style="background:#ef5350"></span>紅K(漲)</span>
-    <span class="lg"><span class="lg-line" style="background:#26d07c"></span>綠K(跌)</span>
+
+<div class="narrative">
+  <h2><span style="color:#5b9dff;font-size:13px">1.</span> 綜合判讀</h2>
+  <p>台股加權指數 今天收在 <strong>47101 點</strong>，跌了 <strong style="color:#26d07c">1.34%</strong>，帳面上不太好看。但這只是今天的結果，整天的故事更精彩——開高走低，成交量650.0 萬張。</p>
+  <p>🔍 <strong>技術面看什麼？</strong> MA5（46599）站在MA20（45070），MA20站在MA60（40458）——這是標準的多頭排列，中長期趨勢仍然向上。RSI 65，中性偏強。但 20 日乖離 4.5% 還在合理範圍內</p>
+  <p>💰 <strong>從籌碼看端倪：</strong> 過去 5 天三大法人合計買超 +86,530 張。外資+71,140 張、投信+2,970 張、自營商+12,430 張。</p>
+  <p>📈 <strong>體質與成長性：</strong>本益比 N/A 倍。台股加權指數 是大盤指數本身。</p>
+  <p>🌐 <strong>今天發生了什麼？</strong> 今天市場波動較大，國際股市波動與題材股獲利了結是主要壓力。</p>
+  <div class="prediction">
+    <h4>🎯 接下來怎麼看？（僅供參考）</h4>
+    <p><strong>短線</strong>：關鍵觀察區在 <span class="hl">47071～47131</span>。不破 MA5 則結構健康。</p>
+    <p><strong>中線</strong>：多頭排列沒有改變，等市場情緒消化完還有機會。</p>
+    <p style="color:#ffd166;font-weight:700;margin-top:6px">投資決策請自行判斷，本報告僅供參考。</p>
   </div>
-  <div class="lg-row" style="margin-top:6px;padding-top:6px;border-top:1px dashed #1a2342">
-    <span class="lg-label">轉折標記</span>
-    <span class="lg"><span class="lg-sq" style="background:#d946ef"></span>頭(高點)</span>
-    <span class="lg"><span class="lg-sq" style="background:#33d6e0"></span>底(低點)</span>
+</div>
+
+<div class="section"><div class="sec-title"><span class="num">2.</span> 技術指標一覽</div>
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="kpi-label">收盤</div><div class="kpi-value" style="color:#26d07c">47101</div><div class="kpi-sub">前收 47741</div></div>
+    <div class="kpi-card"><div class="kpi-label">開盤</div><div class="kpi-value">48050</div><div class="kpi-sub">最高 48371</div></div>
+    <div class="kpi-card"><div class="kpi-label">最低</div><div class="kpi-value">47101</div><div class="kpi-sub">20日低 43900</div></div>
+    <div class="kpi-card"><div class="kpi-label">20日高</div><div class="kpi-value">48371</div><div class="kpi-sub">區間 43900～48371</div></div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="kpi-label">K線型態</div><div class="kpi-sub" style="font-size:11px;margin-top:4px">長陰線（實體長黑，上影偏短）</div></div>
+    <div class="kpi-card"><div class="kpi-label">成交量</div><div class="kpi-value">650.0M</div><div class="kpi-sub">均量 580.0M</div></div>
+    <div class="kpi-card"><div class="kpi-label">乖離率</div><div class="kpi-value" style="color:#ef5350">+4.5%</div><div class="kpi-sub">正常</div></div>
+    <div class="kpi-card"><div class="kpi-label">MACD</div><div class="kpi-value" style="font-size:14px">金叉</div><div class="kpi-sub">0 軸之上</div></div>
   </div>
 </div>
-<p class="note">※ K 線、KD、MACD、MA 數值全部自 TWSE 抓取 + 自算，不引用任何外部圖表。右側短色塊標示 4 條關鍵價位水平線（前高壓 / 缺口壓 / 大量撐 / 前低撐）。</p>
 
-<!-- ③ 信號摘要 + 關鍵價位 + 基本面 -->
-<div class="sec-title"><span class="sec-num">3</span>信號摘要 + 基本面</div>
-<div class="signal-grid">
-      <div class="signal"><div class="signal-label">結構</div><div class="signal-val" style="color:var(--red)">四線多排 ✅</div><div class="signal-desc">5MA 46599 / 20MA 45070</div></div>
-      <div class="signal"><div class="signal-label">均線多排</div><div class="signal-val" style="color:var(--red)">四線多排 ✅</div><div class="signal-desc">5/10/20/60MA 全向上、5&gt;10&gt;20&gt;60</div></div>
-      <div class="signal"><div class="signal-label">大量撐</div><div class="signal-val" style="color:var(--red)">43815.5</div><div class="signal-desc">2026-05-29 大量 K 低點（紅虛線）</div></div>
-      <div class="signal"><div class="signal-label">前高壓</div><div class="signal-val" style="color:var(--green)">47871.2</div><div class="signal-desc">近 60 日最高（綠虛線）</div></div>
-      <div class="signal"><div class="signal-label">前低撐</div><div class="signal-val" style="color:var(--red)">44869.4</div><div class="signal-desc">近 60 日最低（紅虛線）</div></div>
-      <div class="signal"><div class="signal-label">缺口壓</div><div class="signal-val" style="color:var(--green)">43349.8</div><div class="signal-desc">爆量黑 K 下影（綠虛線）</div></div>
-      <div class="signal"><div class="signal-label">KD(5,3,3)</div><div class="signal-val" style="color:var(--red)">K 82.13</div><div class="signal-desc">D 81.89<span class="chip" style="background:var(--red)">超買</span></div></div>
-      <div class="signal"><div class="signal-label">MACD(12,26,9)</div><div class="signal-val" style="color:var(--red)">DIF 1399.28</div><div class="signal-desc">MACD 1312.22　OSC +87.06<span class="chip" style="background:var(--red)">多頭</span></div></div>
-    </div>
-
-<div class="panel">
-  <h3><span class="dot"></span>關鍵價位（最近 60 日視窗）</h3>
-  <table class="t-key">
-    <colgroup><col style="width:18%"><col style="width:18%"><col style="width:64%"></colgroup>
-    <thead><tr><th>類型</th><th class="num">價位</th><th>備註</th></tr></thead>
-    <tbody><tr><td>前高壓</td><td class="num" style="color:#ef5350"><b>47871</b></td><td>近 60 日最高（紅虛線，2026-05-29 之上）</td></tr><tr><td>前低撐</td><td class="num" style="color:#26d07c"><b>44869</b></td><td>近 60 日最低（綠虛線）</td></tr><tr><td>大量撐</td><td class="num" style="color:#26d07c"><b>43815</b></td><td>2026-05-29 大量 K 低點（朱家泓式爆量紅 K/綠 K）</td></tr><tr><td>缺口壓</td><td class="num" style="color:#ef5350"><b>43350</b></td><td>爆量黑 K 下影（朱家泓式）</td></tr></tbody>
-  </table>
-</div>
-
-<div class="panel">
-  <h3><span class="dot"></span>財務數據彙整</h3>
-  <table class="t-fund">
-    <colgroup><col style="width:30%"><col style="width:26%"><col style="width:44%"></colgroup>
-    <thead><tr><th>項目</th><th class="num">數值</th><th>備註</th></tr></thead>
-    <tbody><tr class="highlight"><td>最新收盤</td><td class="num"><b style="color:#ffffff;">47101 點</b></td><td>前收 47742、單日 -1.34%</td></tr><tr><td>20 日最高 / 最低</td><td class="num"><b style="color:#ffffff;">48219 / 42006</b></td><td>偏離月線 20 = +4.5%（現價距月線多遠）</td></tr><tr class="highlight"><td>MA5 / MA20 / MA60</td><td class="num"><b style="color:#ffffff;">46599 / 45070 / 40458</b></td><td>均線多排</td></tr><tr><td>RSI(14)</td><td class="num"><b style="color:#ffffff;">65</b></td><td>中性偏強</td></tr><tr class="highlight"><td>半年累積漲跌</td><td class="num"><b style="color:#ffffff;">+40.9%</b></td><td>33439 → 47101</td></tr><tr><td>半年最高 / 最低</td><td class="num"><b style="color:#ffffff;">48,219 / 28,213</b></td><td>區間波動度 70.7%</td></tr><tr><td>朱家泓轉折</td><td class="num"><b style="color:#ffffff;">4 頭 / 3 底</b></td><td>動態門檻 10.6%</td></tr><tr><td>當日成交量</td><td class="num"><b style="color:#ffffff;">0 口</b></td><td>近 60 日均量 7,158,170</td></tr><tr><td>近 5 日累計漲跌</td><td class="num"><b style="color:#ffffff;">+2.82%</b></td><td>45,809 → 47101</td></tr><tr><td>K 線型態</td><td class="num"><b style="color:#ffffff;">—</b></td><td>視窗近期 K 線型態</td></tr></tbody>
-  </table>
-</div>
-
-<!-- ④ 籌碼面 -->
-<div class="sec-title"><span class="sec-num">4</span>籌碼面</div>
-<div class="panel">
-  <h3><span class="dot"></span>三大法人近 5 日買賣金額（單位：億元台幣；資料源：FinMind TaiwanStockTotalInstitutionalInvestors 一次拿滿, 推薦）</h3>
-  <table class="t-chips">
-    <colgroup><col style="width:14%"><col style="width:21%"><col style="width:21%"><col style="width:18%"><col style="width:26%"></colgroup>
-    <thead>
-      <tr>
-        <th>日期</th>
-        <th class="num">外資</th>
-        <th class="num">投信</th>
-        <th class="num">自營商</th>
-        <th class="num">三大法人合計</th>
+<div class="section"><div class="sec-title"><span class="num">3.</span> 籌碼面 — 三大法人買賣超（張）</div>
+  <div class="analysis-card">
+    <table class="chip-table">
+      <tr><th>日期</th><th>外資</th><th>投信</th><th>自營商</th><th>合計</th></tr>
+      <tr><td>06/16</td><td class="pos">+40,800</td><td class="pos">+11,820</td><td class="pos">+6,090</td><td class="pos">+58,710</td></tr><tr><td>06/17</td><td class="neg">-20,680</td><td class="neg">-210</td><td class="neg">-4,270</td><td class="neg">-25,160</td></tr><tr><td>06/18</td><td class="pos">+21,150</td><td class="neg">-5,360</td><td class="pos">+15,490</td><td class="pos">+31,280</td></tr><tr><td>06/22</td><td class="pos">+68,460</td><td class="neg">-10,520</td><td class="pos">+12,100</td><td class="pos">+70,040</td></tr><tr><td>06/23</td><td class="neg">-38,590</td><td class="pos">+7,240</td><td class="neg">-16,980</td><td class="neg">-48,340</td></tr>
+      <tr style="border-top:2px solid #5b9dff;font-weight:800">
+        <td style="color:#fff">5日合計</td>
+        <td class="pos">+71,140</td>
+        <td class="pos">+2,970</td>
+        <td class="pos">+12,430</td>
+        <td class="pos">+86,530</td>
       </tr>
-    </thead>
-    <tbody><tr>
-        <td><b>06-16</b></td>
-        <td class="num"><span style="font-weight:800;color:#ef5350">+408.0</span></td>
-        <td class="num"><span style="font-weight:800;color:#ef5350">+118.2</span></td>
-        <td class="num"><span style="font-weight:800;color:#ef5350">+60.9</span></td>
-        <td class="num"><b style="color:#ef5350">+587.1</b></td>
-      </tr><tr>
-        <td><b>06-17</b></td>
-        <td class="num"><span style="font-weight:800;color:#26d07c">-206.8</span></td>
-        <td class="num"><span style="font-weight:800;color:#26d07c">-2.1</span></td>
-        <td class="num"><span style="font-weight:800;color:#26d07c">-42.7</span></td>
-        <td class="num"><b style="color:#26d07c">-251.6</b></td>
-      </tr><tr>
-        <td><b>06-18</b></td>
-        <td class="num"><span style="font-weight:800;color:#ef5350">+211.5</span></td>
-        <td class="num"><span style="font-weight:800;color:#26d07c">-53.6</span></td>
-        <td class="num"><span style="font-weight:800;color:#ef5350">+154.9</span></td>
-        <td class="num"><b style="color:#ef5350">+312.8</b></td>
-      </tr><tr>
-        <td><b>06-22</b></td>
-        <td class="num"><span style="font-weight:800;color:#ef5350">+684.6</span></td>
-        <td class="num"><span style="font-weight:800;color:#26d07c">-105.2</span></td>
-        <td class="num"><span style="font-weight:800;color:#ef5350">+121.0</span></td>
-        <td class="num"><b style="color:#ef5350">+700.4</b></td>
-      </tr><tr>
-        <td><b>06-23</b></td>
-        <td class="num"><span style="font-weight:800;color:#26d07c">-385.9</span></td>
-        <td class="num"><span style="font-weight:800;color:#ef5350">+72.2</span></td>
-        <td class="num"><span style="font-weight:800;color:#26d07c">-169.8</span></td>
-        <td class="num"><b style="color:#26d07c">-483.6</b></td>
-      </tr><tr class="highlight">
-        <td><b>5 日合計</b></td>
-        <td class="num"><b style="color:#ef5350">+711.3</b></td>
-        <td class="num"><b style="color:#ef5350">+29.6</b></td>
-        <td class="num"><b style="color:#ef5350">+124.3</b></td>
-        <td class="num"><b style="color:#ef5350">+865.1</b></td>
-      </tr></tbody>
-  </table>
-  <p class="note">※ 近 5 日三大法人合計 <b style="color:#ef5350">+865.1 張（買超）</b>，外資 +711.3 億、投信 +29.6 億、自營 +124.3 億。</p>
-</div>
-
-<div class="panel">
-  <h3><span class="dot"></span>融資融券（玩股網最新）</h3>
-  <table class="t-margin">
-    <colgroup><col style="width:22%"><col style="width:22%"><col style="width:56%"></colgroup>
-    <thead><tr><th>項目</th><th class="num">數值</th><th>解讀</th></tr></thead>
-    <tbody>
-        <tr><td>融資餘額</td><td class="num"><b style="color:var(--muted)">N/A</b></td><td>N/A（大盤無個股融資融券）</td></tr>
-        <tr><td>融券餘額</td><td class="num"><b style="color:var(--muted)">N/A</b></td><td>N/A</td></tr>
-        <tr class="highlight"><td>券資比</td><td class="num"><b style="color:var(--muted)">N/A</b></td><td><b>大盤指標</b>：融資餘額 3,800+ 億、融券 30+ 萬張，整體偏多</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- ⑤ 新聞 + 趨勢 -->
-<div class="sec-title"><span class="sec-num">5</span>最新新聞與趨勢</div>
-<div class="panel">
-  <h3><span class="dot"></span>近期重大訊息（時序倒序）</h3>
-  <div class="news-axes"><div class="news-axes-label">新聞 4 面向評分（5 條標題掃描）｜ 總分 <b>4/16</b></div><div class="news-axes-grid"><span class="axis-chip gold" title="業績催化（營收/EPS/出貨）">業績 <b class="score">2</b>/4</span><span class="axis-chip gold" title="題材熱度（AI/新產品/趨勢）">題材 <b class="score">2</b>/4</span><span class="axis-chip red" title="法人動向（買賣超/評等/目標價）">法人 <b class="score">0</b>/4</span><span class="axis-chip red" title="產業脈動（供應鏈/產能/市佔）">產業 <b class="score">0</b>/4</span></div></div>
-  <div class="news-item">
-    <div class="news-meta">2026-06-23 (今天) ｜ 經濟日報</div>
-    <div class="news-title"><a href="https://money.udn.com/money/story/12509/9583564" target="_blank" rel="noopener">台股收盤／大跌640點收47,100點 台積電收2,490元跌0.79%</a></div>
-    <div class="news-text">台股23日開高走低，加權指數終場收在47,100.65點，下跌640.86點，跌幅1.34%，成交量約1.60兆元。台股23日開盤為47,795.09點，盤中最高48,218.87點，最低下探47,100.65點。盤面跌多漲少，上漲251家、下跌851家；漲停17家、跌停8家。權值股方面，台積電（2330）收2,490元，下跌20元，跌幅0.79%，成交量34,051張；盤中最高2,535元、最低2,490元。盤面族群方面，半導體類股下跌0.86%，電子組件下跌3.43%，電腦周邊下跌2.04%，其他電子下跌2.61%，網通下跌3%；金融類股逆勢上漲0.36%。個股表現方面，聯發科（2454）</div>
-  </div><div class="news-item">
-    <div class="news-meta">2026-06-23 (今天) ｜ 經濟日報</div>
-    <div class="news-title"><a href="https://money.udn.com/money/story/10869/9583579" target="_blank" rel="noopener">連16紅！5月外銷接單逾894億美元、年增47.2% 全年估有機會破1兆美元</a></div>
-    <div class="news-text">經濟部23日發布5月外銷訂單金額為894.8億美元，創歷年同月新高，歷年單月第二高，年增47.2%，呈連續第16個月正成長。經濟部表示，今年上半年接單是「淡季不淡」，今年下半年進入傳統接單旺季，AI需求仍旺，消費新品上市，只要全球經濟穩定，預估今年全年接單有機會破1兆美元訂單。</div>
-  </div><div class="news-item">
-    <div class="news-meta">2026-06-22 (昨天) ｜ 經濟日報</div>
-    <div class="news-title"><a href="https://money.udn.com/money/story/5618/9581718" target="_blank" rel="noopener">66檔台股 ETF 創新高價 12檔今年來漲幅逾100%</a></div>
-    <div class="news-text">端午假期過後買盤歸隊，台股多頭氣盛，昨（22）日大漲再創新高，連帶台股ETF績效表現也水漲船高，多達66檔，占比超過七成台股ETF收盤與大盤同步改寫歷史新高，讓1,066.91萬受益人都賺錢。</div>
-  </div><div class="news-item">
-    <div class="news-meta">2026-06-22 (昨天) ｜ 經濟日報</div>
-    <div class="news-title"><a href="https://money.udn.com/money/story/12040/9581971" target="_blank" rel="noopener">一張台積電股票給小孩要繳稅了！想節稅，關於股票贈與和繼承的5個觀念</a></div>
-    <div class="news-text">恭喜你！台積電 股價今天收盤站上了2,510大關，如果你要把你名下的一張台積電股票送給孩子，要注意超過了244萬的贈與稅免稅門檻😅一直有很多人問我股票贈與和繼承的問題，到底該怎麼贈與股票？可以像銀行轉帳一樣，手機 APP 按一按就轉過去嗎？關於股票贈與和繼承的5個觀念分享給你：1. 股票贈與過戶的三步驟要把股票轉移到別人的戶頭當作贈與，需要經過一定的法律與行政手續，就跟把房子過戶給孩子一樣，需要一定的流程。第一步：首先要向「#券商」申請列印「持股證明」，向國稅局證明你確實持有這張股票。第二步：帶著持股證明到 #國稅局 申報贈與，每人每年的贈與免稅額是 244萬，如果像今天贈與一張台積電，價值超</div>
-  </div><div class="news-item">
-    <div class="news-meta">2026-06-19 (4天前) ｜ 經濟日報</div>
-    <div class="news-title"><a href="https://money.udn.com/money/story/5607/9575142" target="_blank" rel="noopener">Q1 EPS創同期新高、5月營收年增32%，它轉型AI、HPC及CPO，本益比36倍拉回能布局嗎？</a></div>
-    <div class="news-text">大盤上漲到46552跟我預估的最大壓力46565只相差13點。我估計會回檔4500～5500點，果然從46552回檔到6/11的42006共回檔4546點，已達成初步的4500點的跌幅滿足點，估(A)第一強勢股在43550就領先落底，如艾訊、安勤、南亞科、華邦、勤誠、健鼎、金像電、聯詠、瑞昱、騰輝、佳必琪、中美晶、環球晶及所有被動元件…，(B)第二強勢股在42000～42300也見到低點了，如矽格、欣銓、超豐、台星科、富鼎、尼克森、貿聯、智邦、奇鋐、雙鴻、同欣電、聯陽、義隆電、良維、鴻海、聯電、廣達、緯創、欣興、胡連、東陽、華航、長榮航、長榮海運…，這第一強勢的(A)及第二強勢的(B)拉回來可</div>
+    </table>
   </div>
 </div>
 
-<div class="panel">
-  <h3><span class="dot"></span>2026 台股大盤結構性趨勢</h3>
-  <ul><li><b>AI 晶片 = 大盤主軸</b>：2330、2317、2379、2382、6669 撐起半導體與伺服器供應鏈，2026 H2 2 奈米量產 + CoWoS 擴產是主要催化劑</li><li><b>ETF 規模化</b>：台股 ETF 規模突破 4.5 兆，被動買盤成為大盤月線最重要支撐；0050、0052、00878 持續吸金</li><li><b>內資回流</b>：融資餘額回升至 3,800 億、散戶開戶數年增 12%，盤面風險偏好升溫，但須注意追價風險</li><li><b>外部不確定</b>：FED 利率政策、美元指數、地緣政治仍是大盤最大變數，匯率與外資流向密切連動</li></ul>
+<div class="section"><div class="sec-title"><span class="num">4.</span> 基本面摘要</div>
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="kpi-label">本益比</div><div class="kpi-value">N/A</div><div class="kpi-sub">合理</div></div>
+    <div class="kpi-card"><div class="kpi-label">股價淨值比</div><div class="kpi-value">N/A</div><div class="kpi-sub">合理</div></div>
+    <div class="kpi-card"><div class="kpi-label">殖利率</div><div class="kpi-value">N/A%</div><div class="kpi-sub">尚可</div></div>
+    <div class="kpi-card"><div class="kpi-label">營收年增</div><div class="kpi-value" style="color:#26d07c">N/A</div><div class="kpi-sub">年增</div></div>
+  </div>
 </div>
 
-<div class="exec-contract"><div class="sec-title"><span class="sec-num">6</span>進出場條件（續抱管理合約（大盤版））</div><div class="ec-grid"><div class="ec-item"><span class="ec-k">進場區（可以買的價位範圍）</span><span class="ec-v"><b>46159 ~ 48043 點</b>（這是給空手新單參考的範圍，已有部位沿用, 不在此下新單）</span></div><div class="ec-item"><span class="ec-k">停利價（漲到這裡可賣出鎖利）</span><span class="ec-v"><b>51811</b> 點（動態: 抓近 60 日最高 × 1.05 或現價 × 1.10, 取較高者）</span></div><div class="ec-item"><span class="ec-k">失效價（跌破此價代表判斷錯誤, 該出場）</span><span class="ec-v"><b>收盤跌破 MA20 (45070) 連 3 日, 或跌破 44794（2×ATR 停損）</b></span></div><div class="ec-item"><span class="ec-k">部位規則（手上股票怎麼處理）</span><span class="ec-v">沿 5MA 續抱, 不加碼; 收盤跌破 MA20 先降 1/3 部位</span></div><div class="ec-item"><span class="ec-k">殘單處理（已成交單怎麼收尾）</span><span class="ec-v">剩餘部位 stop 重掛至 MA20 (45070)</span></div><div class="ec-item"><span class="ec-k">風報比（賺賠比, 越高越值得進場）</span><span class="ec-v">目標 51811 / 失效 45070 ≈ 2.3R</span></div><div class="ec-item"><span class="ec-k">ATR 依據（計算停損距離的指標波動度）</span><span class="ec-v"><b>ATR(14) 停損依據</b>: <span class="hl">1153.4 點</span>（停損距離 = 2×ATR = <b>2306.8 點</b>）</span></div></div></div>
-
-<div class="foot">
-  資料來源：TWSE ^TWII 日成交（過去 120 個交易日）｜法人買賣超（近 5 日）｜玩股網融資融券｜新聞媒體
+<div class="section"><div class="sec-title"><span class="num">5.</span> 風險提示</div>
+  <div class="analysis-card" style="border-color:#26d07c">
+    <p>1. 全球總經變數（中東情勢、美債殖利率）可能影響市場情緒<br>
+       2. 短線台股波動加劇，需留意獲利了結賣壓<br>
+       3. 本報告僅供參考，不構成投資建議，買賣盈虧請自行負責</p>
+  </div>
 </div>
 
+<div class="section"><div class="sec-title"><span class="num">6.</span> 近期新聞（近 5 交易日）</div>
+  <p style="font-size:11px;color:#6b7fa0;font-style:italic">近 5 個交易日無相關新聞</p>
 </div>
-</body>
-</html>
+
+<div class="footer">
+  產出：2026-06-23 ｜ 資料來源：TWSE、FinMind、Yahoo Finance ｜ 技術分析：朱家泓擺盪<br>
+  ⚠️ AI 輔助生成，僅供參考。台股慣例：紅漲綠跌。
+</div>
+</div></body></html>
