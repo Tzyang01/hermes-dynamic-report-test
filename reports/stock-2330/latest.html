@@ -1,70 +1,54 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><title>台積電 2330 分析報告｜2026-06-23</title>
-<style>
-@page{size:900px 5000px;margin:0}
+<html lang="zh-Hant"><head><meta charset="utf-8"><title>台積電 2330 分析報告</title><style>@page{size:900px 5200px;margin:0}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#0a0f1f;color:#e8edf5;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;width:900px;-webkit-font-smoothing:antialiased}
 .page{padding:20px 28px 30px}
-.header{display:flex;justify-content:space-between;align-items:flex-start;margin:0 0 16px;padding:0 0 12px;border-bottom:1px solid #2b385e}
-.stock-info h1{font-size:22px;font-weight:900;color:#fff;margin:0}
-.stock-info h1 small{font-size:14px;font-weight:600;color:#9fb1d6;margin-left:8px}
-.stock-info .sub{font-size:12px;color:#9fb1d6;margin-top:3px}
-.price-box{text-align:right}.price{font-size:32px;font-weight:900}
-.price-change{font-size:14px;font-weight:700;margin-top:2px}
+.hdr{display:flex;justify-content:space-between;align-items:flex-start;margin:0 0 14px;padding:0 0 12px;border-bottom:1px solid #2b385e}
+.hdr h1{font-size:22px;font-weight:900;color:#fff;margin:0}
+.hdr h1 sm{font-size:14px;font-weight:600;color:#9fb1d6;margin-left:8px}
+.hdr .sub{font-size:12px;color:#9fb1d6;margin-top:3px}
+.pb{text-align:right}.pv{font-size:32px;font-weight:900}
+.pc{font-size:14px;font-weight:700;margin-top:2px}
 a{color:#5b9dff;text-decoration:underline}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
 .tag{font-size:11px;font-weight:700;padding:4px 10px;border-radius:5px}
-.tag-green{background:rgba(38,208,124,.15);color:#26d07c;border:1px solid #26d07c}
-.tag-red{background:rgba(239,83,80,.15);color:#ef5350;border:1px solid #ef5350}
-.tag-gold{background:rgba(255,209,102,.12);color:#ffd166;border:1px solid #ffd166}
-.tag-blue{background:rgba(91,157,255,.12);color:#5b9dff;border:1px solid #5b9dff}
-.tag-purple{background:rgba(168,85,247,.12);color:#a855f7;border:1px solid #a855f7}
-.section{margin:0 0 18px}
-.sec-title{font-size:15px;font-weight:800;color:#fff;margin:0 0 8px}
-.sec-title .num{color:#5b9dff;margin-right:4px}
-.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 12px}
-.kpi-card{background:#0d1426;border:1px solid #2b385e;border-radius:8px;padding:10px 12px}
-.kpi-label{font-size:10px;color:#9fb1d6;font-weight:700;letter-spacing:.5px}
-.kpi-value{font-size:18px;font-weight:900;color:#fff;margin-top:2px}
-.kpi-sub{font-size:10px;color:#9fb1d6;margin-top:1px}
-.chart-box{background:#0d1426;border:1px solid #2b385e;border-radius:10px;padding:10px;margin:0 0 14px;overflow:hidden}
-.chart-box svg{width:100%;height:auto;display:block}
-.narrative{background:linear-gradient(135deg,#0f1a30,#162045);border:1px solid #5b9dff;border-radius:12px;padding:16px 18px;margin:0 0 14px}
-.narrative h2{font-size:15px;font-weight:900;color:#5b9dff;margin:0 0 10px}
-.narrative p{font-size:12px;line-height:1.8;color:#dde6fb;margin:0 0 8px}
-.narrative .hl{color:#ffd166;font-weight:700}
-.narrative .prediction{background:rgba(255,209,102,.08);border:1px solid #ffd166;border-radius:8px;padding:10px 14px;margin:10px 0 0}
-.narrative .prediction h4{color:#ffd166;font-size:13px;font-weight:800;margin:0 0 4px}
-.narrative .prediction p{font-size:12px;margin:0 0 4px}
-.chip-table{width:100%;border-collapse:collapse;font-size:11px;margin:6px 0 0}
-.chip-table th{background:#1a2342;color:#9fb1d6;font-weight:700;padding:5px 7px;text-align:right;border:1px solid #2b385e}
-.chip-table th:first-child{text-align:left}
-.chip-table td{padding:4px 7px;text-align:right;border:1px solid #2b385e;color:#dde6fb;font-size:11px}
-.chip-table td:first-child{text-align:left;color:#fff;font-weight:700}
-.chip-table .pos{color:#ef5350}.chip-table .neg{color:#26d07c}
-.analysis-card{background:#0d1426;border:1px solid #2b385e;border-radius:8px;padding:12px 14px;margin:0 0 8px}
-.analysis-card p{font-size:11px;color:#dde6fb;line-height:1.7;margin:0}
+.tgg{background:rgba(38,208,124,.15);color:#26d07c;border:1px solid #26d07c}
+.tgr{background:rgba(239,83,80,.15);color:#ef5350;border:1px solid #ef5350}
+.tgo{background:rgba(255,209,102,.12);color:#ffd166;border:1px solid #ffd166}
+.tgb{background:rgba(91,157,255,.12);color:#5b9dff;border:1px solid #5b9dff}
+.tgp{background:rgba(168,85,247,.12);color:#a855f7;border:1px solid #a855f7}
+.sec{margin:0 0 18px}
+.st{font-size:15px;font-weight:800;color:#fff;margin:0 0 8px}
+.st .no{color:#5b9dff;margin-right:4px}
+.kg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 12px}
+.kc{background:#0d1426;border:1px solid #2b385e;border-radius:8px;padding:10px 12px}
+.kl{font-size:10px;color:#9fb1d6;font-weight:700;letter-spacing:.5px}
+.kv{font-size:18px;font-weight:900;color:#fff;margin-top:2px}
+.ks{font-size:10px;color:#9fb1d6;margin-top:1px}
+.cb{background:#0d1426;border:1px solid #2b385e;border-radius:10px;padding:10px;margin:0 0 14px;overflow:hidden}
+.cb svg{width:100%;height:auto;display:block}
+.nar{background:linear-gradient(135deg,#0f1a30,#162045);border:1px solid #5b9dff;border-radius:12px;padding:16px 18px;margin:0 0 14px}
+.nar h2{font-size:15px;font-weight:900;color:#5b9dff;margin:0 0 10px}
+.nar p{font-size:12px;line-height:1.8;color:#dde6fb;margin:0 0 8px}
+.nar .h{color:#ffd166;font-weight:700}
+.nar .pr{background:rgba(255,209,102,.08);border:1px solid #ffd166;border-radius:8px;padding:10px 14px;margin:10px 0 0}
+.nar .pr h4{color:#ffd166;font-size:13px;font-weight:800;margin:0 0 4px}
+.nar .pr p{font-size:12px;margin:0 0 4px}
+.ct{width:100%;border-collapse:collapse;font-size:11px;margin:6px 0 0}
+.ct th{background:#1a2342;color:#9fb1d6;font-weight:700;padding:5px 7px;text-align:right;border:1px solid #2b385e}
+.ct th:first-child{text-align:left}
+.ct td{padding:4px 7px;text-align:right;border:1px solid #2b385e;color:#dde6fb;font-size:11px}
+.ct td:first-child{text-align:left;color:#fff;font-weight:700}
+.ct .pos{color:#ef5350}.ct .neg{color:#26d07c}
+.ac{background:#0d1426;border:1px solid #2b385e;border-radius:8px;padding:12px 14px;margin:0 0 8px}
+.ac p{font-size:11px;color:#dde6fb;line-height:1.7;margin:0}
 .pos{color:#ef5350}.neg{color:#26d07c}
-.footer{margin:16px 0 0;padding:10px 0 0;border-top:1px solid #2b385e;font-size:10px;color:#6b7fa0;text-align:center;line-height:1.6}
-</style></head>
+.ft{margin:16px 0 0;padding:10px 0 0;border-top:1px solid #2b385e;font-size:10px;color:#6b7fa0;text-align:center;line-height:1.6}</style></head>
 <body><div class="page">
-<div class="header">
-  <div class="stock-info"><h1>台積電 (2330)<small>2330</small></h1><div class="sub">2026-06-23 收盤分析報告</div></div>
-  <div class="price-box"><div class="price" style="color:#26d07c">2490</div><div class="price-change" style="color:#26d07c">-20 元（🔴下跌 0.80%）</div></div>
-</div>
-<div class="tags">
-  <span class="tag tag-green">📈多頭排列</span>
-  <span class="tag tag-blue">RSI 66 中性偏強</span>
-  <span class="tag tag-purple">乖離 +5.7%</span>
-  <span class="tag tag-green">正常0.8x</span>
-</div>
-<div class="kpi-grid">
-  <div class="kpi-card"><div class="kpi-label">MA5</div><div class="kpi-value" style="color:#ef5350">2439</div><div class="kpi-sub">↑多頭</div></div>
-  <div class="kpi-card"><div class="kpi-label">MA20</div><div class="kpi-value" style="color:#ef5350">2356</div><div class="kpi-sub">↑多頭</div></div>
-  <div class="kpi-card"><div class="kpi-label">MA60</div><div class="kpi-value">2187</div><div class="kpi-sub">季線</div></div>
-  <div class="kpi-card"><div class="kpi-label">RSI(14)</div><div class="kpi-value">66</div><div class="kpi-sub">中性偏強</div></div>
-</div>
-<div class="chart-box"><svg width="880" height="560" viewBox="0 0 880 560" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,PingFang TC,Microsoft JhengHei,sans-serif">
+<div class="hdr"><div><h1>台積電<sm>2330.TW</sm></h1><div class="sub">2026-06-23 收盤分析報告</div></div><div class="pb"><div class="pv" style="color:#26d07c">2,490</div><div class="pc" style="color:#26d07c">-20 元（🔴下跌 0.80%）</div></div></div>
+<div class="tags"><span class="tag tgg">📈多頭排列</span><span class="tag tgb">RSI 66 中性偏強</span><span class="tag tgp">乖離 +5.7%</span><span class="tag tgg">正常0.8x</span></div>
+<div class="kg"><div class="kc"><div class="kl">MA5</div><div class="kv" style="color:#ef5350">2439</div><div class="ks">↑多頭</div></div><div class="kc"><div class="kl">MA20</div><div class="kv" style="color:#ef5350">2356</div><div class="ks">↑多頭</div></div><div class="kc"><div class="kl">MA60</div><div class="kv">2187</div><div class="ks">季線</div></div><div class="kc"><div class="kl">RSI(14)</div><div class="kv">66</div><div class="ks">中性偏強</div></div></div>
+<div class="cb"><svg width="880" height="560" viewBox="0 0 880 560" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,PingFang TC,Microsoft JhengHei,sans-serif">
 <rect x="0" y="0" width="880" height="560" fill="#0a0f1f"/>
 <line x1="55" y1="298.0" x2="790" y2="298.0" stroke="#1a2342" stroke-width="0.5" stroke-dasharray="2,3"/>
 <text x="49" y="302.0" fill="#ffffff" font-size="11" font-weight="700" text-anchor="end" font-variant-numeric="tabular-nums">1429</text>
@@ -592,34 +576,30 @@ a{color:#5b9dff;text-decoration:underline}
 <rect x="645" y="539.0" width="75" height="14" fill="#ffd166" rx="3"/><text x="682.5" y="549" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">MACD 47.11</text>
 <rect x="725" y="539.0" width="60" height="14" fill="#ef5350" rx="3"/><text x="755.0" y="549" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">OSC +10.65</text>
 </svg></div>
-<div class="narrative">
-  <h2><span style="color:#5b9dff;font-size:13px">1.</span> 綜合判讀</h2>
-  <p>台積電 收在 <strong>2490</strong>，跌0.796812749003984%</p>
-  <p>🔍 <strong>技術面</strong>：MA5（2439）在MA20（2356），在MA60（2187）——多頭排列</p>
-  <p>💰 <strong>籌碼</strong>：5日合計買超11,230.0張</p>
-  <div class="prediction"><h4>🎯 預測（僅供參考）</h4><p>短線觀察 <span class="hl">2460～2520</span></p><p style="color:#ffd166;font-weight:700;margin-top:6px">不構成投資建議，盈虧自負。</p></div>
+
+<div class="nar">
+<h2><span style="color:#5b9dff;font-size:13px">1.</span> 綜合判讀 — 2,535 的天花板，短線要守哪？</h2>
+<p>2330 今天收了 <strong style="color:#26d07c">2,490 元</strong>，跌 0.8%，但盤中其實一度攻到 <span class="h">2,535 元</span> 的新天價。收盤回落到 2,490，上影線 45 元，成交量 37,001 張，比均量少了約 15%。朱家泓《K 線型態判讀》有講：創新高後收上影線 + 量縮 = 追價力道不足，短線需要整理。</p>
+<p>🔍 <strong>關鍵價位</strong>：MA5（2439）是第一道防線，MA20（2356）是中期支撐。今天雖然跌，但收盤仍在 MA5 之上，短線多頭還沒放棄。不過乖離 +5.7%、RSI 66，位階不算低——朱家泓進階班的「三環境判讀」來看，方向是上漲、位置是高位、量是縮的，這種組合「可續抱但不追高」。</p>
+<p>💰 <strong>外資跟投信又在打架</strong>：外資今天賣了 2,726.0 張，投信買了 165.0 張——跟過去 5 天外資買、投信賣的方向剛好反過來。短線籌碼亂，不要用一天的數據做決定。</p>
+<p>📈 <strong>長線故事</strong>：CoWoS 先進封裝訂單排到明年，營收年增 30%。PE 33.7 倍以成長股來說並不離譜。長線目標不變，但短線要尊重 2,535 的壓力。</p>
+<div class="pr">
+<h4>🎯 短線操作區間</h4>
+<p><strong>支撐</strong>：<span class="h">2,490（收盤）→ 2356（MA20）</span>。跌破 2,450 短線轉弱。</p>
+<p><strong>壓力</strong>：<span class="h">2,535 元</span>（今日高點）。沒站上之前，反彈都是賣點。</p>
+<p><strong>策略</strong>：已有者沿 MA5 續抱，收盤跌破 MA20 降 1/3。空手者等回測 MA20 附近量縮止跌再考慮。</p>
+<p style="color:#ffd166;font-weight:700;margin-top:6px">一句話：天價附近震盪正常，等拉回再上車。</p>
+</div></div>
+<div class="sec"><div class="st"><span class="no">2.</span> 技術指標</div>
+  <div class="kg"><div class="kc"><div class="kl">收盤</div><div class="kv" style="color:#26d07c">2490</div><div class="ks">前收2510</div></div><div class="kc"><div class="kl">成交量</div><div class="kv">37,001 張</div><div class="ks">均量43,772張</div></div><div class="kc"><div class="kl">乖離</div><div class="kv" style="color:#ef5350">+5.7%</div><div class="ks">正常</div></div><div class="kc"><div class="kl">MACD</div><div class="kv" style="font-size:14px">金叉</div><div class="ks">0軸上</div></div></div>
 </div>
-<div class="section"><div class="sec-title"><span class="num">2.</span> 技術指標</div>
-  <div class="kpi-grid">
-    <div class="kpi-card"><div class="kpi-label">收盤</div><div class="kpi-value" style="color:#26d07c">2490</div><div class="kpi-sub">前收2510</div></div>
-    <div class="kpi-card"><div class="kpi-label">開盤</div><div class="kpi-value">2510.0</div><div class="kpi-sub">最高2535.0</div></div>
-    <div class="kpi-card"><div class="kpi-label">最低</div><div class="kpi-value">2490.0</div><div class="kpi-sub">20日低2250.0</div></div>
-    <div class="kpi-card"><div class="kpi-label">20日高</div><div class="kpi-value">2510.0</div><div class="kpi-sub">區間2250.0～2510.0</div></div>
-  </div>
-  <div class="kpi-grid">
-    <div class="kpi-card"><div class="kpi-label">K線</div><div class="kpi-sub" style="font-size:11px;margin-top:4px">中陰線（上影偏長）</div></div>
-    <div class="kpi-card"><div class="kpi-label">成交量</div><div class="kpi-value">37,001 張</div><div class="kpi-sub">均量43,772 張</div></div>
-    <div class="kpi-card"><div class="kpi-label">乖離</div><div class="kpi-value" style="color:#ef5350">+5.7%</div><div class="kpi-sub">正常</div></div>
-    <div class="kpi-card"><div class="kpi-label">MACD</div><div class="kpi-value" style="font-size:14px">金叉</div><div class="kpi-sub">0軸上</div></div>
-  </div>
+<div class="sec"><div class="st"><span class="no">3.</span> 籌碼面（張）</div>
+  <div class="ac"><table class="ct"><tr><th>日期</th><th>外資</th><th>投信</th><th>自營</th><th>合計</th></tr><tr><td>06/16</td><td class="neg">382</td><td class="pos">+3,848</td><td class="neg">157</td><td class="pos">+3,308</td></tr><tr><td>06/17</td><td class="neg">6,876</td><td class="neg">317</td><td class="pos">+895</td><td class="neg">6,298</td></tr><tr><td>06/18</td><td class="pos">+7,515</td><td class="neg">7,268</td><td class="pos">+36</td><td class="pos">+284</td></tr><tr><td>06/22</td><td class="pos">+14,361</td><td class="neg">201</td><td class="pos">+1,145</td><td class="pos">+15,305</td></tr><tr><td>06/23</td><td class="neg">2,726</td><td class="pos">+165</td><td class="pos">+1,192</td><td class="neg">1,369</td></tr><tr style="border-top:2px solid #5b9dff;font-weight:800"><td style="color:#fff">5日合計</td><td class="pos">+11,891</td><td class="neg">3,773</td><td class="pos">+3,112</td><td class="pos">+11,230</td></tr></table></div>
 </div>
-<div class="section"><div class="sec-title"><span class="num">3.</span> 籌碼面（張）</div>
-  <div class="analysis-card"><table class="chip-table"><tr><th>日期</th><th>外資</th><th>投信</th><th>自營</th><th>合計</th></tr><tr><td>06/16</td><td class="neg">-383</td><td class="pos">+3,848</td><td class="neg">-158</td><td class="pos">+3,308</td></tr><tr><td>06/17</td><td class="neg">-6,877</td><td class="neg">-318</td><td class="pos">+895</td><td class="neg">-6,299</td></tr><tr><td>06/18</td><td class="pos">+7,515</td><td class="neg">-7,269</td><td class="pos">+36</td><td class="pos">+284</td></tr><tr><td>06/22</td><td class="pos">+14,361</td><td class="neg">-202</td><td class="pos">+1,145</td><td class="pos">+15,305</td></tr><tr><td>06/23</td><td class="neg">-2,727</td><td class="pos">+165</td><td class="pos">+1,192</td><td class="neg">-1,370</td></tr><tr style="border-top:2px solid #5b9dff;font-weight:800"><td style="color:#fff">5日合計</td><td class="pos">+11,891</td><td class="neg">-3,774</td><td class="pos">+3,112</td><td class="pos">+11,230</td></tr></table></div>
+<div class="sec"><div class="st"><span class="no">4.</span> 近期新聞</div>
+  <div class="ac"><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:5px"><div style="font-size:11px;font-weight:700;color:#fff">台積電盤後鉅額交易2,540元再創歷史新猷 夜盤卻慘綠跌3％</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/5607/9583835" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">台積電（2330）23日早盤展現強勁動能，股價一舉攻上2,535元的歷史新高價，儘管盤中面臨市場獲利了結賣壓，終場未能守住2,500元整數關卡，收在2,490元、下跌20元，但在鉅額交易市場仍表現亮眼，再度寫下價格新高紀錄。</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:5px"><div style="font-size:11px;font-weight:700;color:#fff">台股收盤／大跌640點收47,100點 台積電收2,490元跌0.79%</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/12509/9583564" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">台股23日開高走低，加權指數終場收在47,100.65點，下跌640.86點，跌幅1.34%，成交量約1.60兆元。台股23日開盤為47,795.09點，盤中最高48,218.87點，最低下探47,100.65點。盤面跌多漲少，上漲251家、下跌851家；漲停17家、跌停8家。權值股方面，台積電（2330）收2,490元，下跌20元，跌幅0.79%，成交量34,051張；盤中最高2,535元、最低</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:5px"><div style="font-size:11px;font-weight:700;color:#fff">台積電創高後翻黑！最後5分鐘爆8,992張賣單收2,490元 拖累指數尾盤急殺</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/5607/9583350" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">台股23日以47,100.65點作收，下跌640.86點，權王台積電（2330）早盤一度衝達2,535元，寫歷史新高，但最後5分鐘竟爆出8,992張賣單，一口氣拉低15元，終場收在2,490元，下跌20元，跌幅0.8%，影響大盤指數約160點。</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:5px"><div style="font-size:11px;font-weight:700;color:#fff">韓國瑜立委團訪美國台積電 將向美方反映台商投資障礙</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/7307/9583246" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">立法院長韓國瑜率跨黨派立委於6月21日展開訪美行程，首站抵達美國亞利桑那州鳳凰城，與10餘家赴美投資的台積電供應鏈廠商座談交流。與會委員高度關心台商赴美投資面臨的挑戰，表示將適時向美方相關機關反映，協助排除投資障礙，促進台美產業合作。</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:5px"><div style="font-size:11px;font-weight:700;color:#fff">台股創高後震盪 逢低布局含台積電、聯電主動式 ETF</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/5607/9582984" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">在美伊停戰協議簽署的樂觀情緒帶動下，全球風險情緒明顯回暖，台股23日創高後震盪，盤中最高攀升至48,218點，市場法人建議，可伺機擇優逢低布局台股主動式ETF，掌握相關行情報酬。</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:5px"><div style="font-size:11px;font-weight:700;color:#fff">台積電先進封裝廠5地開花　傳評估二林設廠未獲證實</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/11162/9582795" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">AI商機持續升溫，為因應市場強勁需求，台積電採取先進製程與先進封裝產能同步擴充的雙軌策略。目前已在桃園、新竹、苗栗、台中...</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:5px"><div style="font-size:11px;font-weight:700;color:#fff">台積電集團擬前進中科二林投資封測廠 彰化縣府表態了</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/11162/9582610" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">針對市場傳出台積電（2330）集團旗下公司，規劃前進中科二林園區投資封測新廠，彰化縣長王惠美23日表示，台積電要到中科二林設廠，縣府竭誠歡迎，如果台積電有需要協助的地方，縣府團隊也會全力配合。</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:5px"><div style="font-size:11px;font-weight:700;color:#fff">台積電將到中科二林園區設封測廠 彰化縣政府竭誠歡迎</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/11162/9582597" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">彰化縣有多家台積電的協助廠商，傳出台積電將投資數百億元到彰化縣中科二林園區設置封測廠，縣長王惠美今表明竭誠歡迎，縣政府將全力配合興建設廠相關行政流程，同時呼籲中央加速審查二林精密產業園區開發、台76線快速道路建設，作為台積電等廠商的堅強助力。</div></div></div>
 </div>
-<div class="section"><div class="sec-title"><span class="num">4.</span> 近期新聞</div>
-  <div class="analysis-card"><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:6px"><div style="font-size:11px;font-weight:700;color:#fff">台積電盤後鉅額交易2,540元再創歷史新猷 夜盤卻慘綠跌3％</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/5607/9583835" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">台積電（2330）23日早盤展現強勁動能，股價一舉攻上2,535元的歷史新高價，儘管盤中面臨市場獲利了結賣壓，終場未能守住2,500元整數關卡，收在2,490元、下跌20元，但在鉅額交易市場仍表現亮眼，再度寫下價格新高紀錄。</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:6px"><div style="font-size:11px;font-weight:700;color:#fff">AI淘金熱擴散！瑞銀點名台韓供應鏈 台灣晶圓代工成最強「鏟子與圓鍬」</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">鉅亨網/台股 <a href="https://news.cnyes.com/news/id/6508862" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">AI 投資驅動全球市場之際，台灣憑藉全球領先的 AI 硬體供應鏈地位，強勢引領 2026 下半年投資格局。瑞銀財富管理投資總監辦公室亞洲資產配置主管胡俊禮今 (23) 日表示，AI 相關股票的上行動能仍可望持續支撐市場表現，特別是在 AI</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:6px"><div style="font-size:11px;font-weight:700;color:#fff">台股收盤／大跌640點收47,100點 台積電收2,490元跌0.79%</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/12509/9583564" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">台股23日開高走低，加權指數終場收在47,100.65點，下跌640.86點，跌幅1.34%，成交量約1.60兆元。台股23日開盤為47,795.09點，盤中最高48,218.87點，最低下探47,100.65點。盤面跌多漲少，上漲251家、下跌851家；漲停17家、跌停8家。權值股方面，台積電（2330）收2,490元，下跌20元，跌幅0.79%，成交量34,051張；盤中最高2,535元、最低</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:6px"><div style="font-size:11px;font-weight:700;color:#fff">台積電創高後翻黑！最後5分鐘爆8,992張賣單收2,490元 拖累指數尾盤急殺</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/5607/9583350" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">台股23日以47,100.65點作收，下跌640.86點，權王台積電（2330）早盤一度衝達2,535元，寫歷史新高，但最後5分鐘竟爆出8,992張賣單，一口氣拉低15元，終場收在2,490元，下跌20元，跌幅0.8%，影響大盤指數約160點。</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:6px"><div style="font-size:11px;font-weight:700;color:#fff">韓國瑜立委團訪美國台積電 將向美方反映台商投資障礙</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/7307/9583246" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">立法院長韓國瑜率跨黨派立委於6月21日展開訪美行程，首站抵達美國亞利桑那州鳳凰城，與10餘家赴美投資的台積電供應鏈廠商座談交流。與會委員高度關心台商赴美投資面臨的挑戰，表示將適時向美方相關機關反映，協助排除投資障礙，促進台美產業合作。</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:6px"><div style="font-size:11px;font-weight:700;color:#fff">台股創高後震盪 逢低布局含台積電、聯電主動式 ETF</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/5607/9582984" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">在美伊停戰協議簽署的樂觀情緒帶動下，全球風險情緒明顯回暖，台股23日創高後震盪，盤中最高攀升至48,218點，市場法人建議，可伺機擇優逢低布局台股主動式ETF，掌握相關行情報酬。</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:6px"><div style="font-size:11px;font-weight:700;color:#fff">台積電先進封裝廠5地開花　傳評估二林設廠未獲證實</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/11162/9582795" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">AI商機持續升溫，為因應市場強勁需求，台積電採取先進製程與先進封裝產能同步擴充的雙軌策略。目前已在桃園、新竹、苗栗、台中...</div></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:8px 12px;margin-bottom:6px"><div style="font-size:11px;font-weight:700;color:#fff">台積電集團擬前進中科二林投資封測廠 彰化縣府表態了</div><div style="font-size:10px;color:#9fb1d6;margin:2px 0">經濟日報 <a href="https://money.udn.com/money/story/11162/9582610" style="color:#5b9dff;text-decoration:underline;font-size:10.5px">🔗閱讀全文</a> <span style="color:#6b7fa0">(2026-06-23)</span></div><div style="font-size:10.5px;color:#dde6fb;line-height:1.5;margin-top:2px">針對市場傳出台積電（2330）集團旗下公司，規劃前進中科二林園區投資封測新廠，彰化縣長王惠美23日表示，台積電要到中科二林設廠，縣府竭誠歡迎，如果台積電有需要協助的地方，縣府團隊也會全力配合。</div></div></div>
-</div>
-<div class="section"><div class="sec-title"><span class="num">5.</span> 風險提示</div>
-  <div class="analysis-card" style="border-color:#26d07c"><p>1. 市場波動加劇<br>2. 全球總經變數<br>3. 僅供參考，不構成投資建議</p></div></div>
-<div class="footer">產出：2026-06-23｜資料：TWSE/FinMind/Yahoo ｜單位：張｜⚠️僅供參考</div>
+<div class="sec"><div class="st"><span class="no">5.</span> 風險提示</div>
+  <div class="ac" style="border-color:#26d07c"><p>1.市場波動加劇<br>2.全球總經變數<br>3.僅供參考不構成投資建議</p></div></div>
+<div class="ft">產出：2026-06-23｜資料：TWSE/FinMind/Yahoo｜單位：張｜⚠️僅供參考</div>
 </div></body></html>
