@@ -30,11 +30,11 @@
     },
     {
       "id": "market-twii",
-      "name": "台股加權指数大盘分析",
-      "updated": "2026-06-25 19:39:10 CST",
+      "name": "台股加權指數大盤分析",
+      "updated": "2026-06-25 20:37:22 CST",
       "url": "reports/market-twii/latest.html",
       "source": "/tmp/vault_round_html/twii.html",
-      "bytes": 13152,
+      "bytes": 34114,
       "schedule_desc": "每個交易日 18:00"
     }
   ]

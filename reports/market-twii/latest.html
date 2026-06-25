@@ -1,76 +1,466 @@
-<!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><title>台股加權指數 TWII 分析報告</title><style>@page{size:900px 5200px;margin:0}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a0f1f;color:#e8edf5;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;width:900px;-webkit-font-smoothing:antialiased}
-.page{padding:20px 28px 30px}
-.hdr{display:flex;justify-content:space-between;align-items:flex-start;margin:0 0 14px;padding:0 0 12px;border-bottom:1px solid #2b385e}
-.hdr h1{font-size:22px;font-weight:900;color:#fff;margin:0}
-.hdr h1 sm{font-size:14px;font-weight:600;color:#9fb1d6;margin-left:8px}
-.hdr .sub{font-size:12px;color:#9fb1d6;margin-top:3px}
-.pb{text-align:right}.pv{font-size:32px;font-weight:900}
-.pc{font-size:14px;font-weight:700;margin-top:2px}
-a{color:#5b9dff;text-decoration:underline}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
-.tag{font-size:11px;font-weight:700;padding:4px 10px;border-radius:5px}
-.tgg{background:rgba(38,208,124,.15);color:#26d07c;border:1px solid #26d07c}
-.tgr{background:rgba(239,83,80,.15);color:#ef5350;border:1px solid #ef5350}
-.tgo{background:rgba(255,209,102,.12);color:#ffd166;border:1px solid #ffd166}
-.tgb{background:rgba(91,157,255,.12);color:#5b9dff;border:1px solid #5b9dff}
-.tgp{background:rgba(168,85,247,.12);color:#a855f7;border:1px solid #a855f7}
-.sec{margin:0 0 18px}
-.st{font-size:15px;font-weight:800;color:#fff;margin:0 0 8px}
-.st .no{color:#5b9dff;margin-right:4px}
-.kg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 12px}
-.kc{background:#0d1426;border:1px solid #2b385e;border-radius:8px;padding:10px 12px}
-.kl{font-size:10px;color:#9fb1d6;font-weight:700;letter-spacing:.5px}
-.kv{font-size:18px;font-weight:900;color:#fff;margin-top:2px}
-.ks{font-size:10px;color:#9fb1d6;margin-top:1px}
-.cb{background:#0d1426;border:1px solid #2b385e;border-radius:10px;padding:10px;margin:0 0 14px;overflow:hidden}
-.cb svg{width:100%;height:auto;display:block}
-.nar{background:linear-gradient(135deg,#0f1a30,#162045);border:1px solid #5b9dff;border-radius:12px;padding:16px 18px;margin:0 0 14px}
-.nar h2{font-size:15px;font-weight:900;color:#5b9dff;margin:0 0 10px}
-.nar p{font-size:12px;line-height:1.8;color:#dde6fb;margin:0 0 8px}
-.nar .h{color:#ffd166;font-weight:700}
-.nar .pr{background:rgba(255,209,102,.08);border:1px solid #ffd166;border-radius:8px;padding:10px 14px;margin:10px 0 0}
-.nar .pr h4{color:#ffd166;font-size:13px;font-weight:800;margin:0 0 4px}
-.nar .pr p{font-size:12px;margin:0 0 4px}
-.ct{width:100%;border-collapse:collapse;font-size:11px;margin:6px 0 0}
-.ct th{background:#1a2342;color:#9fb1d6;font-weight:700;padding:5px 7px;text-align:right;border:1px solid #2b385e}
-.ct th:first-child{text-align:left}
-.ct td{padding:4px 7px;text-align:right;border:1px solid #2b385e;color:#dde6fb;font-size:11px}
-.ct td:first-child{text-align:left;color:#fff;font-weight:700}
-.ct .pos{color:#ef5350}.ct .neg{color:#26d07c}
-.ac{background:#0d1426;border:1px solid #2b385e;border-radius:8px;padding:12px 14px;margin:0 0 8px}
-.ac p{font-size:11px;color:#dde6fb;line-height:1.7;margin:0}
-.pos{color:#ef5350}.neg{color:#26d07c}
-.ft{margin:16px 0 0;padding:10px 0 0;border-top:1px solid #2b385e;font-size:10px;color:#6b7fa0;text-align:center;line-height:1.6}</style></head>
-<body><div class="page">
-<div class="hdr"><div><h1>台股加權指數<sm>^TWII</sm></h1><div class="sub">20260625 收盤分析報告</div></div><div class="pb"><div class="pv" style="color:#ef5350">46,255.0</div><div class="pc" style="color:#ef5350">+211.7 點（上漲 0.46%）</div></div></div>
-<div class="tags"><span class="tag tgg">指標待補</span><span class="tag tgb">RSI N/A 無資料</span><span class="tag tgp">乖離 +0.0%</span></div>
-<div class="kg"><div class="kc"><div class="kl">MA5</div><div class="kv" style="color:#ef5350">N/A</div><div class="ks">N/A</div></div><div class="kc"><div class="kl">MA20</div><div class="kv" style="color:#ef5350">N/A</div><div class="ks">N/A</div></div><div class="kc"><div class="kl">MA60</div><div class="kv">N/A</div><div class="ks">季線</div></div><div class="kc"><div class="kl">RSI(14)</div><div class="kv">N/A</div><div class="ks">無資料</div></div></div>
-<div class="cb"></div>
-<div class="nar">
-<h2><span style="color:#5b9dff;font-size:13px">1.</span> 綜合判讀 — 反彈虎頭蛇尾、外資史上最大賣超，4 萬 6 保衛戰才剛開始</h2>
-<p>加權指數今天收 46,255 點、漲 211 點，看似在前一天暴跌 1,057 點之後稍稍回了一點血。但你若看到盤中走勢，大概會倒抽一口涼氣——早盤在美光財報激勵下，指數一度狂拉近 750 點、直衝 5 日線而去，多頭氣勢如虹；結果外資賣壓像潮水般湧出，漲幅一路被啃食，盤中最慘的時候只剩漲 5 點，終場勉強守住 211 點的漲幅。這種「開高走低、虎頭蛇尾」的反彈，比直接續跌更傷多頭士氣——因為它告訴你，每次拉高都有人在倒貨。</p>
-<p>技術面上，昨天（6/24）那根暴跌 1,057 點的長黑 K，不只是點數上的紀錄，最重要的是它一口氣貫破了過去三週大盤在 46,500～47,500 所建立的整理平台。今天反彈的高點連這個平台的下緣（46,500）都摸不到，最高只到約 46,800 就折返，收盤 46,255 更是在平台下方——這是標準的「跌破後反彈確認壓力」的劇本，確認了整理平台已經從支撐區變成壓力區。目前 5 日線快速下彎，月線也開始走平，短中期均線結構正在鬆動，若 46,000 整數關卡再失守，下方空間就會打開。</p>
-<p>今天的籌碼故事只有一個主角：外資。新聞標題「外資史上最大賣超發威」已經說明一切。從台積電的籌碼數據可以反推——外資光在台積電一檔就連續五天大賣，這股賣壓蔓延到整個權值股板塊，直接拖垮大盤。今天早盤的反彈，更像是看到美光利多就衝進去的散戶跟短線當沖客，被外資倒貨倒到措手不及。當市場結構是「外資賣、內資接」，反彈就注定走不遠——內資的銀彈畢竟有限，接不住外資這種規模的拋售。</p>
-<p>從大局來看，費城半導體指數 5 日跌幅僅 0.1%，不算特別弱但也沒有任何轉強訊號。聯準會方向中性，沒有新的總經利多刺激。盤面上較明顯的亮點是記憶體族群受美光帶動反彈，以及部分中小型股相對抗跌——但這些都不是足以扭轉大盤結構的力量。關鍵還是在權值股：只要台積電繼續被外資提款，加權指數就很難站穩。短線 46,000 是重要心理關卡，昨天低點 45,800 若再跌破，下一站看前波整理區 44,500 附近。在融資餘額數據無法取得的情況下，散戶到底接了多少、斷頭壓力多大，也是一個必須留意的變數。</p>
-<div class="pr">
-<h4>🎯 短線操作</h4>
-<p><strong>支撐</strong>：45,800（昨日低）→ 44,500（前波整理區）</p>
-<p><strong>壓力</strong>：46,500（平台下緣）→ 47,000（5 日線附近）</p>
-<p><strong>一句話</strong>：外資賣壓未消，反彈宜減碼而非追價。</p>
-</div></div>
-<div class="sec"><div class="st"><span class="no">2.</span> 技術指標</div>
-  <div class="kg"><div class="kc"><div class="kl">收盤</div><div class="kv" style="color:#ef5350">46,255.0</div><div class="ks">前收46,044.0</div></div><div class="kc"><div class="kl">成交量</div><div class="kv">無資料</div><div class="ks">均量待查</div></div><div class="kc"><div class="kl">乖離</div><div class="kv" style="color:#ef5350">+0.0%</div><div class="ks">正常</div></div><div class="kc"><div class="kl">MACD</div><div class="kv" style="font-size:14px">N/A</div><div class="ks">0軸上</div></div></div>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台股加權指數 TWII 分析報告 - 2026-06-25</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background: #0a0f1f;
+    color: #e2e8f0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+    line-height: 1.7;
+    padding: 24px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+.header {
+    background: linear-gradient(135deg, #1a1f3a 0%, #0f1529 100%);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+}
+.header-top {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 12px;
+}
+.header-code { font-size: 14px; color: #64748b; }
+.header-date { font-size: 12px; color: #475569; }
+.header-title { font-size: 28px; font-weight: 700; color: #f1f5f9; margin-bottom: 8px; }
+.header-price {
+    display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+}
+.price-close { font-size: 36px; font-weight: 800; color: #ef4444; }
+.price-change { font-size: 18px; font-weight: 600; color: #ef4444; }
+.price-detail { font-size: 13px; color: #94a3b8; margin-top: 12px; line-height: 1.8; }
+.section {
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+}
+.section-title {
+    font-size: 18px; font-weight: 700; color: #f1f5f9;
+    border-left: 3px solid #3b82f6;
+    padding-left: 12px;
+    margin-bottom: 16px;
+}
+.narrative {
+    font-size: 14px; color: #cbd5e1; line-height: 1.9;
+}
+.narrative p { margin-bottom: 10px; }
+.narrative .highlight { color: #f59e0b; font-weight: 600; }
+.narrative .bullish { color: #ef4444; font-weight: 600; }
+.narrative .bearish { color: #22c55e; font-weight: 600; }
+table {
+    width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px;
+}
+th {
+    background: #1a2340; color: #94a3b8; font-weight: 600;
+    padding: 10px 12px; text-align: center; border-bottom: 2px solid #1e293b;
+    font-size: 12px;
+}
+td {
+    padding: 9px 12px; text-align: center; border-bottom: 1px solid #1e293b;
+    color: #cbd5e1;
+}
+tr:hover td { background: #1a2340; }
+.indicator-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px; margin-top: 12px;
+}
+.indicator-card {
+    background: #1a2340; border-radius: 8px; padding: 14px 16px;
+    border: 1px solid #1e293b;
+}
+.indicator-label { font-size: 11px; color: #64748b; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+.indicator-value { font-size: 20px; font-weight: 700; }
+.indicator-sub { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+.chart-container { text-align: center; margin: 16px 0; overflow-x: auto; }
+.chart-container svg { max-width: 100%; height: auto; }
+.news-item {
+    padding: 10px 0; border-bottom: 1px solid #1e293b;
+    font-size: 13px; line-height: 1.6;
+}
+.news-item:last-child { border-bottom: none; }
+.news-source { color: #3b82f6; font-weight: 600; margin-right: 8px; font-size: 12px; }
+.news-date { color: #475569; margin-left: 8px; font-size: 11px; }
+.news-item a { color: #93c5fd; text-decoration: none; }
+.news-item a:hover { text-decoration: underline; }
+.stance-box {
+    background: linear-gradient(135deg, #1a2340 0%, #0f1529 100%);
+    border: 1px solid #f59e0b; border-radius: 8px; padding: 16px 20px;
+    margin-top: 16px; font-size: 15px;
+}
+.stance-label { color: #f59e0b; font-weight: 700; font-size: 13px; }
+.stance-text { color: #e2e8f0; margin-top: 4px; }
+.risk-box {
+    background: #1a1520; border: 1px solid #312e3a;
+    border-radius: 8px; padding: 14px 18px; margin-top: 16px;
+}
+.risk-box h4 { color: #a78bfa; font-size: 13px; margin-bottom: 8px; }
+.risk-box li { color: #94a3b8; font-size: 12px; margin-left: 18px; margin-bottom: 4px; }
+.atmos-tag {
+    display: inline-block; padding: 3px 10px; border-radius: 4px;
+    font-size: 11px; font-weight: 600; margin-left: 8px;
+}
+.footer { text-align: center; font-size: 11px; color: #475569; padding: 16px; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <div class="header-top">
+        <span class="header-code">TWII 加權指數</span>
+        <span class="header-date">2026-06-25 收盤分析報告</span>
+    </div>
+    <div class="header-title">台股加權指數</div>
+    <div class="header-price">
+        <span class="price-close">46,255</span>
+        <span class="price-change">+211.7 (+0.46%)</span>
+    </div>
+    <div class="price-detail">
+        昨收 46,044 ｜ 早盤高點約 46,940 ｜ 低點約 46,220<br>
+        市場氛圍：無明顯氛圍訊號 &nbsp;<span class="atmos-tag" style="background:#334155; color:#94a3b8;">中性</span>
+    </div>
 </div>
-<div class="sec"><div class="st"><span class="no">3.</span> 籌碼面（億元）</div>
-  <div class="ac"><table class="ct"><tr><th>日期</th><th>外資</th><th>投信</th><th>自營</th><th>合計</th></tr><tr><td colspan="5" style="color:#6b7fa0;font-style:italic;text-align:center;padding:12px">大盤籌碼資料未提供（TWII無個股法人進出明細）</td></tr></table></div>
+
+<!-- K-line Chart -->
+<div class="section">
+    <div class="section-title">📈 加權指數 K線圖（60日）</div>
+    <div class="chart-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" width="720" height="320">
+<rect width="720" height="320" fill="#0d1428" rx="4"/>
+<line x1="70" y1="15.0" x2="700" y2="15.0" stroke="#1e293b" stroke-width="0.5"/>
+<text x="65" y="19.0" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">48942.2</text>
+<line x1="70" y1="82.5" x2="700" y2="82.5" stroke="#1e293b" stroke-width="0.5"/>
+<text x="65" y="86.5" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">44514.2</text>
+<line x1="70" y1="150.0" x2="700" y2="150.0" stroke="#1e293b" stroke-width="0.5"/>
+<text x="65" y="154.0" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">40086.3</text>
+<line x1="70" y1="217.5" x2="700" y2="217.5" stroke="#1e293b" stroke-width="0.5"/>
+<text x="65" y="221.5" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">35658.3</text>
+<line x1="70" y1="285.0" x2="700" y2="285.0" stroke="#1e293b" stroke-width="0.5"/>
+<text x="65" y="289.0" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">31230.4</text>
+<line x1="75.25" y1="257.8764531544475" x2="75.25" y2="268.2929094499732" stroke="#22c55e" stroke-width="1"/>
+<rect x="71.575" y="257.8764531544475" width="7.35" height="7.492787458659734" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="85.75" y1="266.35675438990575" x2="85.75" y2="277.7500535816531" stroke="#22c55e" stroke-width="1"/>
+<rect x="82.075" y="266.880847067373" width="7.35" height="10.610056557417295" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="96.25" y1="255.24623353344094" x2="96.25" y2="274.9094651721344" stroke="#ef4444" stroke-width="1"/>
+<rect x="92.575" y="255.35903998525183" width="7.35" height="19.550425186882563" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="106.75" y1="250.43884939248446" x2="106.75" y2="265.387838433541" stroke="#22c55e" stroke-width="1"/>
+<rect x="103.075" y="254.70049421251815" width="7.35" height="9.841448273592277" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="117.25" y1="253.99621609445558" x2="117.25" y2="263.0314031199024" stroke="#ef4444" stroke-width="1"/>
+<rect x="113.575" y="254.5206136542251" width="7.35" height="8.510789465677306" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="127.75" y1="231.17333671699998" x2="127.75" y2="252.23887450462342" stroke="#ef4444" stroke-width="1"/>
+<rect x="124.075" y="231.17333671699998" width="7.35" height="21.06553778762344" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="138.25" y1="229.29724347046425" x2="138.25" y2="233.3690990573836" stroke="#ef4444" stroke-width="1"/>
+<rect x="134.575" y="229.6522789113662" width="7.35" height="1.2378221468977983" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="148.75" y1="221.16633735331752" x2="148.75" y2="228.284729344886" stroke="#ef4444" stroke-width="1"/>
+<rect x="145.075" y="221.16633735331752" width="7.35" height="7.118391991568473" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="159.25" y1="219.11356481266182" x2="159.25" y2="223.5459437219226" stroke="#ef4444" stroke-width="1"/>
+<rect x="155.575" y="220.5648045710936" width="7.35" height="1" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="169.75" y1="207.08672019696027" x2="169.75" y2="218.63185077519918" stroke="#ef4444" stroke-width="1"/>
+<rect x="166.075" y="207.77758349372633" width="7.35" height="10.854267281472858" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="180.25" y1="196.06949332496612" x2="180.25" y2="206.66491553187825" stroke="#ef4444" stroke-width="1"/>
+<rect x="176.575" y="201.283285574744" width="7.35" height="5.381629957134237" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="190.75" y1="194.98121594729335" x2="190.75" y2="200.8419684423218" stroke="#ef4444" stroke-width="1"/>
+<rect x="187.075" y="195.03502767363025" width="7.35" height="5.678280437166649" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="201.25" y1="194.82709794353553" x2="201.25" y2="200.45796918271145" stroke="#22c55e" stroke-width="1"/>
+<rect x="197.575" y="194.82709794353553" width="7.35" height="5.203121369201227" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="211.75" y1="191.7959580951471" x2="211.75" y2="199.3305144292071" stroke="#ef4444" stroke-width="1"/>
+<rect x="208.075" y="197.67561329291127" width="7.35" height="1.6549011362958481" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="222.25" y1="185.1292492342754" x2="222.25" y2="196.26629485103084" stroke="#ef4444" stroke-width="1"/>
+<rect x="218.575" y="187.82318925644" width="7.35" height="8.443105594590833" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="232.75" y1="180.32659076900296" x2="232.75" y2="187.54467927338808" stroke="#ef4444" stroke-width="1"/>
+<rect x="229.075" y="183.65605795008577" width="7.35" height="3.830388803583702" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="243.25" y1="167.74912871554352" x2="243.25" y2="194.54081346177767" stroke="#22c55e" stroke-width="1"/>
+<rect x="239.575" y="182.2350015395709" width="7.35" height="3.9259694053207284" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="253.75" y1="166.71268132924322" x2="253.75" y2="183.8972198511193" stroke="#ef4444" stroke-width="1"/>
+<rect x="250.075" y="167.58982771264834" width="7.35" height="16.30739213847096" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="264.25" y1="148.34382750450413" x2="264.25" y2="157.29486701454607" stroke="#22c55e" stroke-width="1"/>
+<rect x="260.575" y="153.47697838535223" width="7.35" height="3.682368445869713" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="274.75" y1="149.7720486491204" x2="274.75" y2="158.6060133551208" stroke="#22c55e" stroke-width="1"/>
+<rect x="271.075" y="158.45052338100317" width="7.35" height="1" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="285.25" y1="158.2028065104725" x2="285.25" y2="168.1401402681041" stroke="#ef4444" stroke-width="1"/>
+<rect x="281.575" y="161.93273659548402" width="7.35" height="1.9399660888449262" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="295.75" y1="153.62896221299474" x2="295.75" y2="167.67778625683067" stroke="#22c55e" stroke-width="1"/>
+<rect x="292.075" y="157.84792351072153" width="7.35" height="9.829862746109143" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="306.25" y1="139.79797657407477" x2="306.25" y2="163.0777220813644" stroke="#ef4444" stroke-width="1"/>
+<rect x="302.575" y="140.56597509329526" width="7.35" height="22.51174698806915" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="316.75" y1="137.82340634393108" x2="316.75" y2="143.34589192467791" stroke="#ef4444" stroke-width="1"/>
+<rect x="313.075" y="139.58806510901582" width="7.35" height="1" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="327.25" y1="127.29292406738584" x2="327.25" y2="141.9205671619324" stroke="#ef4444" stroke-width="1"/>
+<rect x="323.575" y="133.95444992912027" width="7.35" height="2.3751855752232984" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="337.75" y1="118.44798359850657" x2="337.75" y2="132.10823514819927" stroke="#ef4444" stroke-width="1"/>
+<rect x="334.075" y="121.83644550506351" width="7.35" height="10.271789643135762" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="348.25" y1="120.23855735927755" x2="348.25" y2="134.05506108884344" stroke="#22c55e" stroke-width="1"/>
+<rect x="344.575" y="122.56435200154584" width="7.35" height="4.300212431260775" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="358.75" y1="120.49496337542064" x2="358.75" y2="128.00314739034104" stroke="#ef4444" stroke-width="1"/>
+<rect x="355.075" y="124.02732972861207" width="7.35" height="1.1594673952344579" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="369.25" y1="116.96381655143803" x2="369.25" y2="128.8824279498615" stroke="#ef4444" stroke-width="1"/>
+<rect x="365.575" y="122.37700182684914" width="7.35" height="1" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="379.75" y1="123.93799921406993" x2="379.75" y2="135.84959831954296" stroke="#22c55e" stroke-width="1"/>
+<rect x="376.075" y="123.93799921406993" width="7.35" height="6.42417498947826" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="390.25" y1="117.6924852536758" x2="390.25" y2="128.50650807125925" stroke="#ef4444" stroke-width="1"/>
+<rect x="386.575" y="124.61133177845996" width="7.35" height="3.8951762927992917" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="400.75" y1="114.59732012182708" x2="400.75" y2="135.81606126630183" stroke="#22c55e" stroke-width="1"/>
+<rect x="397.075" y="123.4120772427895" width="7.35" height="10.031542389008806" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="411.25" y1="134.6104042022854" x2="411.25" y2="148.72111935346618" stroke="#22c55e" stroke-width="1"/>
+<rect x="407.575" y="134.6104042022854" width="7.35" height="3.1097994823538784" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="421.75" y1="136.8095202479931" x2="421.75" y2="148.746424584548" stroke="#22c55e" stroke-width="1"/>
+<rect x="418.075" y="137.84825425155975" width="7.35" height="10.790699321465809" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="432.25" y1="144.62243412395392" x2="432.25" y2="151.81704669107032" stroke="#22c55e" stroke-width="1"/>
+<rect x="428.575" y="148.20297188089154" width="7.35" height="2.7948560641900997" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="442.75" y1="126.81928941093116" x2="442.75" y2="147.3032642071243" stroke="#ef4444" stroke-width="1"/>
+<rect x="439.075" y="130.45805968758748" width="7.35" height="16.84520451953682" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="453.25" y1="115.37568463932223" x2="453.25" y2="129.24295127220302" stroke="#ef4444" stroke-width="1"/>
+<rect x="449.575" y="116.74201467659364" width="7.35" height="12.500936595609375" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="463.75" y1="95.73852043746618" x2="463.75" y2="110.64589304427341" stroke="#ef4444" stroke-width="1"/>
+<rect x="460.075" y="95.75955731631733" width="7.35" height="14.88633572795608" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="474.25" y1="88.85046702520341" x2="474.25" y2="100.25093095105234" stroke="#22c55e" stroke-width="1"/>
+<rect x="470.575" y="94.7764643329007" width="7.35" height="2.7976000049096683" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="484.75" y1="77.86525279493935" x2="484.75" y2="92.74335670073624" stroke="#ef4444" stroke-width="1"/>
+<rect x="481.075" y="86.42406122321182" width="7.35" height="6.31929547752442" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="495.25" y1="75.79449219845435" x2="495.25" y2="101.97976604562952" stroke="#22c55e" stroke-width="1"/>
+<rect x="491.575" y="86.66796706496508" width="7.35" height="9.212933407624476" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="505.75" y1="76.10150867676123" x2="505.75" y2="93.15159410337073" stroke="#ef4444" stroke-width="1"/>
+<rect x="502.075" y="79.16572825493742" width="7.35" height="13.985865848433306" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="516.25" y1="60.900839295245625" x2="516.25" y2="77.03338143340969" stroke="#ef4444" stroke-width="1"/>
+<rect x="512.575" y="69.94349593709606" width="7.35" height="7.089885496313627" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="526.75" y1="61.13224496260903" x2="526.75" y2="77.08582118938666" stroke="#ef4444" stroke-width="1"/>
+<rect x="523.075" y="66.59893708205473" width="7.35" height="2.566804102150712" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="537.25" y1="51.4333291652911" x2="537.25" y2="65.02650660850179" stroke="#ef4444" stroke-width="1"/>
+<rect x="533.575" y="52.85103187048184" width="7.35" height="12.17547473801995" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="547.75" y1="54.30059477625167" x2="547.75" y2="64.76735665163893" stroke="#22c55e" stroke-width="1"/>
+<rect x="544.075" y="54.30059477625167" width="7.35" height="10.466761875387263" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="558.25" y1="65.64602744655502" x2="558.25" y2="87.14465054444162" stroke="#22c55e" stroke-width="1"/>
+<rect x="554.575" y="65.64602744655502" width="7.35" height="8.367189901345071" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="568.75" y1="82.60251400639181" x2="568.75" y2="115.08208298231172" stroke="#22c55e" stroke-width="1"/>
+<rect x="565.075" y="82.60251400639181" width="7.35" height="15.315914891743986" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="579.25" y1="77.81250815666021" x2="579.25" y2="95.10070666128136" stroke="#ef4444" stroke-width="1"/>
+<rect x="575.575" y="79.60018553556039" width="7.35" height="15.50052112572098" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="589.75" y1="80.02625855287314" x2="589.75" y2="102.14470737111516" stroke="#22c55e" stroke-width="1"/>
+<rect x="586.075" y="81.47505925288746" width="7.35" height="20.6696481182277" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="600.25" y1="98.52438247374151" x2="600.25" y2="120.72957030695704" stroke="#22c55e" stroke-width="1"/>
+<rect x="596.575" y="102.95767602990895" width="7.35" height="1" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="610.75" y1="78.16053130461194" x2="610.75" y2="96.62496573108814" stroke="#ef4444" stroke-width="1"/>
+<rect x="607.075" y="87.76188476522842" width="7.35" height="8.863080965859723" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="621.25" y1="67.72212348332846" x2="621.25" y2="83.51136814922477" stroke="#ef4444" stroke-width="1"/>
+<rect x="617.575" y="69.04287361642227" width="7.35" height="14.468494532802495" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="631.75" y1="62.759249368254196" x2="631.75" y2="71.03451725548867" stroke="#ef4444" stroke-width="1"/>
+<rect x="628.075" y="62.759249368254196" width="7.35" height="4.712108421521641" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="642.25" y1="61.71960071778104" x2="642.25" y2="72.66304607264476" stroke="#ef4444" stroke-width="1"/>
+<rect x="638.575" y="61.71960071778104" width="7.35" height="2.9286993948521385" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="652.75" y1="51.22692384670753" x2="652.75" y2="60.27339151733534" stroke="#ef4444" stroke-width="1"/>
+<rect x="649.075" y="52.7589574152201" width="7.35" height="7.5144341021152385" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="663.25" y1="31.325884012304613" x2="663.25" y2="49.49107645917986" stroke="#ef4444" stroke-width="1"/>
+<rect x="659.575" y="33.30274085971465" width="7.35" height="16.188335599465205" fill="#ef4444" stroke="#ef4444" stroke-width="0.5"/>
+<line x1="673.75" y1="26.025810071006546" x2="673.75" y2="43.07208446883877" stroke="#22c55e" stroke-width="1"/>
+<rect x="670.075" y="32.48596117214356" width="7.35" height="10.586123296695206" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="684.25" y1="45.978679896781955" x2="684.25" y2="62.5988812773015" stroke="#22c55e" stroke-width="1"/>
+<rect x="680.575" y="45.978679896781955" width="7.35" height="13.20719644863616" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<line x1="694.75" y1="47.87702955137778" x2="694.75" y2="59.10813135835927" stroke="#22c55e" stroke-width="1"/>
+<rect x="691.075" y="54.672398743774274" width="7.35" height="1.286908197550538" fill="#22c55e" stroke="#22c55e" stroke-width="0.5"/>
+<polyline points="117.25,263.456348072697 127.75,256.6171672934755 138.25,247.04944235079074 148.75,240.21090182440392 159.25,231.4154742414005 169.75,222.06686820930074 180.25,216.0888579808495 190.75,209.16540773330235 201.25,204.93818412518624 211.75,200.3603458695498 222.25,196.3694670220924 232.75,192.8440214971608 243.25,191.06921015141313 253.75,184.58113183139542 264.25,176.47787853905757 274.75,170.63444335879373 285.25,166.28977908787334 295.75,162.59314215026117 306.25,157.18837162639048 316.75,153.67411528194933 327.25,148.74380259674922 337.75,140.72454437866514 348.25,132.56190001386034 358.75,129.25417094092376 369.25,125.81195828449022 379.75,125.09350313937585 390.25,125.64848039405518 400.75,126.9642914338535 411.25,129.70286622505895 421.75,134.9552565742943 432.25,139.08238732260094 442.75,140.25173290442643 453.25,136.91141191338545 463.75,128.5192826397211 474.25,118.30630479267799 484.75,105.3915514483041 495.25,98.47611960530452 505.75,90.96086232097329 516.25,85.79765004512898 526.75,79.60262459397786 537.25,72.88801872343195 547.75,66.66530995924184 558.25,65.6348077778344 568.75,71.2297943700423 579.25,73.83004406074346 589.75,83.68877916087003 600.25,91.39620376027271 610.75,94.1459372437383 621.25,88.37082618739566 631.75,85.00263895393437 642.25,76.91761762326749 652.75,66.80851317658124 663.25,55.91668439547851 673.75,50.722526565961765 684.25,50.00785196139455 694.75,48.85579320610331" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.9"/>
+<polyline points="274.75,213.1317816657209 285.25,207.95995646483985 295.75,202.46930059644185 306.25,196.729647351844 316.75,190.48195348298935 327.25,184.45364529673407 337.75,178.9868007361372 348.25,173.84741501220918 358.75,168.99046463097392 369.25,164.08107449376166 379.75,160.21030402925274 390.25,156.37670633943858 400.75,153.297135937347 411.25,150.18163515594216 421.75,147.72980216994782 432.25,145.88853410437994 442.75,143.2286341912551 453.25,139.75768637784012 463.75,136.16617285802357 474.25,133.18690873335305 484.75,129.57781112675758 495.25,126.2752193206128 505.75,121.8496164205181 516.25,118.31849246270822 526.75,114.66903606136022 537.25,110.61386515842815 547.75,107.76041071575702 558.25,105.11784336151172 568.75,103.8123983199878 579.25,101.67355750542345 589.75,100.26268416380184 600.25,99.19734155731139 610.75,96.91325481398283 621.25,93.47938831057203 631.75,89.18540310033339 642.25,84.72149173896842 652.75,80.8365366253501 663.25,76.66457293450611 673.75,74.03019929213217 684.25,72.11078989251251 694.75,70.58755217841824" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity="0.9"/>
+<text x="75.25" y="312" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">03/30</text>
+<text x="169.75" y="312" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">04/14</text>
+<text x="274.75" y="312" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">04/28</text>
+<text x="379.75" y="312" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">05/13</text>
+<text x="484.75" y="312" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">05/27</text>
+<text x="589.75" y="312" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">06/10</text>
+<text x="694.75" y="312" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">06/25</text>
+<line x1="520" y1="12" x2="540" y2="12" stroke="#f59e0b" stroke-width="2"/>
+<text x="545" y="15" fill="#94a3b8" font-size="9" font-family="sans-serif">MA5</text>
+<line x1="580" y1="12" x2="600" y2="12" stroke="#8b5cf6" stroke-width="2"/>
+<text x="605" y="15" fill="#94a3b8" font-size="9" font-family="sans-serif">MA20</text>
+<rect x="660" y="6" width="10" height="10" fill="#ef4444" rx="1"/>
+<text x="675" y="15" fill="#94a3b8" font-size="9" font-family="sans-serif">漲</text>
+<rect x="695" y="6" width="10" height="10" fill="#22c55e" rx="1"/>
+<text x="710" y="15" fill="#94a3b8" font-size="9" font-family="sans-serif">跌</text>
+</svg>
+    </div>
 </div>
-<div class="sec"><div class="st"><span class="no">4.</span> 近期新聞</div>
-  <div class="ac"><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:6px 10px;margin-bottom:4px"><div style="line-height:1.4;margin-bottom:2px"><a href="https://money.udn.com/money/story/12509/9588203" target="_blank" style="color:#5b9dff;text-decoration:none;font-size:11.5px;font-weight:700;line-height:1.5">台股收盤／漲211點收46255點 台積電收2390元持平</a></div><span style="font-size:9.5px;color:#9fb1d6;margin:1px 0 2px;display:block">經濟日報 <span style="color:#6b7fa0">(2026-06-25)</span></span></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:6px 10px;margin-bottom:4px"><div style="line-height:1.4;margin-bottom:2px"><a href="https://money.udn.com/money/story/5607/9587317" target="_blank" style="color:#5b9dff;text-decoration:none;font-size:11.5px;font-weight:700;line-height:1.5">外資史上最大賣超發威！大盤指數溜滑梯 一度僅剩漲5點</a></div><span style="font-size:9.5px;color:#9fb1d6;margin:1px 0 2px;display:block">經濟日報 <span style="color:#6b7fa0">(2026-06-25)</span></span></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:6px 10px;margin-bottom:4px"><div style="line-height:1.4;margin-bottom:2px"><a href="https://money.udn.com/money/story/5618/9586556" target="_blank" style="color:#5b9dff;text-decoration:none;font-size:11.5px;font-weight:700;line-height:1.5">無懼大盤重挫 台股 ETF 強悍資金挺 00631L衝上第一</a></div><span style="font-size:9.5px;color:#9fb1d6;margin:1px 0 2px;display:block">經濟日報 <span style="color:#6b7fa0">(2026-06-24)</span></span></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:6px 10px;margin-bottom:4px"><div style="line-height:1.4;margin-bottom:2px"><a href="https://money.udn.com/money/story/12509/9585609" target="_blank" style="color:#5b9dff;text-decoration:none;font-size:11.5px;font-weight:700;line-height:1.5">台股收盤／大跌1057點收46043點 台積電收2390元跌4.01%</a></div><span style="font-size:9.5px;color:#9fb1d6;margin:1px 0 2px;display:block">經濟日報 <span style="color:#6b7fa0">(2026-06-24)</span></span></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:6px 10px;margin-bottom:4px"><div style="line-height:1.4;margin-bottom:2px"><a href="https://money.udn.com/money/story/5607/9585561" target="_blank" style="color:#5b9dff;text-decoration:none;font-size:11.5px;font-weight:700;line-height:1.5">台股收盤跌1,057點奮力守住46,000點 台積電跌100元、收2,390元</a></div><span style="font-size:9.5px;color:#9fb1d6;margin:1px 0 2px;display:block">經濟日報 <span style="color:#6b7fa0">(2026-06-24)</span></span></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:6px 10px;margin-bottom:4px"><div style="line-height:1.4;margin-bottom:2px"><a href="https://money.udn.com/money/story/5607/9585227" target="_blank" style="color:#5b9dff;text-decoration:none;font-size:11.5px;font-weight:700;line-height:1.5">無畏大盤跌千點 神準搶進後量子加密 股價漲幅逾6%</a></div><span style="font-size:9.5px;color:#9fb1d6;margin:1px 0 2px;display:block">經濟日報/股市 <span style="color:#6b7fa0">(2026-06-24)</span></span></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:6px 10px;margin-bottom:4px"><div style="line-height:1.4;margin-bottom:2px"><a href="https://money.udn.com/money/story/5607/9585184" target="_blank" style="color:#5b9dff;text-decoration:none;font-size:11.5px;font-weight:700;line-height:1.5">台積電重挫拖累大盤 聯電擔綱多頭信心 世界、力積電齊撐盤</a></div><span style="font-size:9.5px;color:#9fb1d6;margin:1px 0 2px;display:block">經濟日報/股市 <span style="color:#6b7fa0">(2026-06-24)</span></span></div><div style="background:#0d1426;border:1px solid #2b385e;border-radius:6px;padding:6px 10px;margin-bottom:4px"><div style="line-height:1.4;margin-bottom:2px"><a href="https://money.udn.com/money/story/5618/9584049" target="_blank" style="color:#5b9dff;text-decoration:none;font-size:11.5px;font-weight:700;line-height:1.5">台股科技基金紅火 前十強報酬超越大盤 法人建議逢回伺機布局</a></div><span style="font-size:9.5px;color:#9fb1d6;margin:1px 0 2px;display:block">經濟日報 <span style="color:#6b7fa0">(2026-06-23)</span></span></div></div>
+
+<!-- Technical Indicators Summary -->
+<div class="section">
+    <div class="section-title">📊 技術指標摘要</div>
+    <div class="indicator-grid">
+        <div class="indicator-card">
+            <div class="indicator-label">MA5</div>
+            <div class="indicator-value" style="color:#ef4444">46,721</div>
+            <div class="indicator-sub">↓ 空</div>
+        </div>
+        <div class="indicator-card">
+            <div class="indicator-label">MA20</div>
+            <div class="indicator-value" style="color:#94a3b8">45,296</div>
+            <div class="indicator-sub">↑ 站上</div>
+        </div>
+        <div class="indicator-card">
+            <div class="indicator-label">MA60</div>
+            <div class="indicator-value" style="color:#94a3b8">40,889</div>
+            <div class="indicator-sub">↑ 站上</div>
+        </div>
+        <div class="indicator-card">
+            <div class="indicator-label">RSI(14)</div>
+            <div class="indicator-value" style="color:#f59e0b">53</div>
+            <div class="indicator-sub">偏多區</div>
+        </div>
+        <div class="indicator-card">
+            <div class="indicator-label">乖離率 (20日)</div>
+            <div class="indicator-value" style="color:#ef4444">+2.1%</div>
+            <div class="indicator-sub">正乖離</div>
+        </div>
+        <div class="indicator-card">
+            <div class="indicator-label">均線排列</div>
+            <div class="indicator-value" style="color:#ef4444; font-size:13px;">多頭排列（MA5 > MA20 > MA60）</div>
+            <div class="indicator-sub">MA5/MA20/MA60</div>
+        </div>
+    </div>
 </div>
-<div class="sec"><div class="st"><span class="no">5.</span> 風險提示</div>
-  <div class="ac" style="border-color:#26d07c"><p>1.市場波動加劇<br>2.全球總經變數<br>3.僅供參考不構成投資建議</p></div></div>
-<div class="ft">產出：20260625｜資料：TWSE/FinMind/Yahoo｜單位：億元｜僅供參考</div>
-</div></body></html>
+
+<!-- Section 1: Comprehensive Analysis -->
+<div class="section">
+    <div class="section-title">🔍 一、大盤綜合判讀</div>
+    <div class="narrative">
+        <p>
+            加權指數今日收在 <span class="highlight">46,255</span> 點，
+            較前日上漲<span class="bullish"> +211.7 點（+0.46%）</span>。
+            美光財報優於預期帶動費半上漲，激勵台股早盤大漲近 750 點（高約 46,940），
+            然盤中外資賣壓湧現——創史上最大單日賣超規模——漲勢快速收斂，
+            最低一度僅剩漲 5 點，終場勉強守住 46,000 關卡。
+        </p>
+        <p>
+            <strong>技術面：</strong>均線結構仍為多頭排列（MA5 46,721 > MA20 45,296 > MA60 40,889），
+            指數收盤 46,255 不僅低於 5 日線（46,721），更已連續 2 日未站回。
+            月線（45,296）為目前最關鍵支撐，乖離率 +2.1% 屬正常水準。
+            RSI(14) 位於 53，動能中性偏弱。今日 K 線留極長上影線（46,940 → 46,255），
+            顯示高檔賣壓極度沉重。以昨日大跌 1,057 點、今日反彈僅 211 點計算，
+            反彈幅度不到跌幅的 20%，屬於弱勢反彈，多方力道明顯不足。
+        </p>
+        <p>
+            <strong>關鍵觀察：</strong>前一日（6/24）大盤重挫 1,057 點，今日雖開高但無力維持，
+            形成「大跌後弱彈」格局。若明日無法站回 5 日線 46,721，則短線空方優勢確立，
+            下檔將測試月線 45,296 支撐。更宏觀來看，大盤自 47,643 高點回落後，
+            已形成短線下降趨勢，需觀察月線能否有效守穩。
+        </p>
+        <p>
+            <strong>籌碼面：</strong>今日外資賣超創史上最大，盤中指數自高點回落近 700 點，
+            外資調節力道為大盤短線最大壓力來源。投信與自營商進出方向需後續追蹤。
+            前一日（6/24）外資同樣大賣，連續兩日外資狂倒貨，籌碼面持續偏空。
+        </p>
+        <p>
+            <strong>市場氛圍：</strong>無明顯氛圍訊號。
+            Fed 政策中性（無近期訊號）、費半 5 日 -0.1% 持平。
+            美光財報亮眼為半導體族群帶來底部支撐，但外資瘋狂調節壓制大盤反彈。
+            融資餘額數據無法取得，散戶動向不明。
+        </p>
+        <p>
+            <strong>結論與建議：</strong>
+            短線支撐 45,296（月線），壓力 46,721（5日線）→ 47,643（近高）。
+            大盤弱勢反彈格局下，操作應以防守為主：持股水位降至 4～5 成，
+            靜待指數回測月線 45,296 確認支撐後再行加碼。
+            若月線失守，則中線轉弱，建議進一步降低持股。
+        </p>
+    </div>
+    <div class="stance-box">
+        <div class="stance-label">⚡ 大盤操作建議</div>
+        <div class="stance-text">
+            支撐：45,296（月線）｜ 壓力：46,721（5日線）、47,643（近高區）<br>
+            弱勢反彈格局，短線保守操作。月線不破中期偏多，月線若破則轉趨謹慎。
+        </div>
+    </div>
+</div>
+
+<!-- Section 2: Technical Indicators Table -->
+<div class="section">
+    <div class="section-title">📋 二、技術指標表</div>
+    <table>
+        <tr><th>指標</th><th>數值</th><th>狀態</th></tr>
+        <tr><td>收盤指數</td><td>46,255</td><td style="color:#ef4444">+211.7</td></tr>
+        <tr><td>前收盤指數</td><td>46,044</td><td>—</td></tr>
+        <tr><td>MA5</td><td>46,721</td><td style="color:#22c55e">↓ 指數跌破MA5</td></tr>
+        <tr><td>MA20</td><td>45,296</td><td style="color:#ef4444">↑ 指數站上月線</td></tr>
+        <tr><td>MA60</td><td>40,889</td><td style="color:#ef4444">↑ 指數站上季線</td></tr>
+        <tr><td>乖離率 (20日)</td><td style="color:#ef4444">+2.1%</td><td>正常區間</td></tr>
+        <tr><td>RSI(14)</td><td style="color:#f59e0b">53</td><td>偏多區</td></tr>
+    </table>
+</div>
+
+<!-- Section 3: Market Atmosphere -->
+<div class="section">
+    <div class="section-title">🌐 三、市場氛圍分析</div>
+    <table>
+        <tr><th>因子</th><th>方向</th><th>影響</th></tr>
+        <tr>
+            <td>Fed 政策</td>
+            <td style="color:#94a3b8">中性</td>
+            <td>無近期 Fed 訊號，貨幣政策影響中性</td>
+        </tr>
+        <tr>
+            <td>融資餘額</td>
+            <td style="color:#94a3b8">未取得</td>
+            <td>無法取得融資餘額數據</td>
+        </tr>
+        <tr>
+            <td>費城半導體</td>
+            <td style="color:#94a3b8">中性</td>
+            <td>費半 5日 -0.1%，持平盤整</td>
+        </tr>
+        <tr>
+            <td>綜合判讀</td>
+            <td style="color:#94a3b8">中性</td>
+            <td>無明顯氛圍訊號，市場焦點回歸基本面與外資動向</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Section 4: News -->
+<div class="section">
+    <div class="section-title">📰 四、近期市場新聞</div>
+    <div class="news-item">
+            <span class="news-source">[經濟日報]</span>
+            <a href="https://money.udn.com/money/story/12509/9588203" target="_blank">台股收盤／漲211點收46255點 台積電收2390元持平</a>
+            <span class="news-date">2026-06-25</span>
+        </div><div class="news-item">
+            <span class="news-source">[經濟日報]</span>
+            <a href="https://money.udn.com/money/story/5607/9587317" target="_blank">外資史上最大賣超發威！大盤指數溜滑梯 一度僅剩漲5點</a>
+            <span class="news-date">2026-06-25</span>
+        </div><div class="news-item">
+            <span class="news-source">[經濟日報]</span>
+            <a href="https://money.udn.com/money/story/5618/9586556" target="_blank">無懼大盤重挫 台股 ETF 強悍資金挺 00631L衝上第一</a>
+            <span class="news-date">2026-06-24</span>
+        </div><div class="news-item">
+            <span class="news-source">[經濟日報]</span>
+            <a href="https://money.udn.com/money/story/12509/9585609" target="_blank">台股收盤／大跌1057點收46043點 台積電收2390元跌4.01%</a>
+            <span class="news-date">2026-06-24</span>
+        </div><div class="news-item">
+            <span class="news-source">[經濟日報]</span>
+            <a href="https://money.udn.com/money/story/5607/9585561" target="_blank">台股收盤跌1,057點奮力守住46,000點 台積電跌100元、收2,390元</a>
+            <span class="news-date">2026-06-24</span>
+        </div>
+</div>
+
+<!-- Section 5: Risk -->
+<div class="section">
+    <div class="section-title">⚠️ 五、風險提示</div>
+    <div class="risk-box">
+        <ol>
+            <li>本報告僅供參考，不構成任何投資建議。投資人應自行判斷市場風險並自負盈虧。</li>
+            <li>大盤指數受國際政經情勢、外資動向、總體經濟數據等多重因素影響，走勢難以精確預測。</li>
+            <li>歷史數據與技術指標僅反映過去走勢，不保證未來績效。投資人應做好風險管理與資金配置。</li>
+        </ol>
+    </div>
+</div>
+
+<div class="footer">
+    台股加權指數 TWII 分析報告 ｜ 生成日期：2026-06-25 ｜ 資料來源：TWSE / Yahoo Finance<br>
+    本報告由自動化系統生成，僅供參考，不構成投資建議。
+</div>
+
+</body>
+</html>
