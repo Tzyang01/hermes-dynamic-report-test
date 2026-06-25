@@ -3,38 +3,38 @@
   "reports": [
     {
       "id": "active-etf-holdings-change",
-      "name": "主動式ETF持股異動總覽",
-      "updated": "2026-06-24 19:31:07 CST",
+      "name": "主動式ETF持股異動總覽_20260623",
+      "updated": "2026-06-23T19:31:12+08:00",
       "url": "reports/active-etf-holdings-change/latest.html",
-      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/主動式ETF持股異動總覽_20260624.html",
-      "bytes": 549066,
+      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/主動式ETF持股異動總覽_20260623.html",
+      "bytes": 480093,
       "schedule_desc": "每個交易日 19:30"
     },
     {
       "id": "stock-3711",
       "name": "3711日月光投控個股分析",
-      "updated": "2026-06-25 20:37:22 CST",
+      "updated": "2026-06-24 19:28:32 CST",
       "url": "reports/stock-3711/latest.html",
       "source": "/tmp/vault_round_html/3711.html",
-      "bytes": 35104,
+      "bytes": 103042,
       "schedule_desc": "每個交易日 18:00"
     },
     {
       "id": "stock-2330",
       "name": "2330台積電個股分析",
-      "updated": "2026-06-25 20:37:22 CST",
+      "updated": "2026-06-24 19:28:32 CST",
       "url": "reports/stock-2330/latest.html",
       "source": "/tmp/vault_round_html/2330.html",
-      "bytes": 35416,
+      "bytes": 78379,
       "schedule_desc": "每個交易日 18:00"
     },
     {
       "id": "market-twii",
       "name": "台股加權指數大盤分析",
-      "updated": "2026-06-25 20:37:22 CST",
+      "updated": "2026-06-24 19:28:32 CST",
       "url": "reports/market-twii/latest.html",
       "source": "/tmp/vault_round_html/twii.html",
-      "bytes": 34114,
+      "bytes": 77987,
       "schedule_desc": "每個交易日 18:00"
     }
   ]
