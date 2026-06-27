@@ -48,6 +48,16 @@
   .dm-aux{font-size:9.5px;color:var(--ink-2);font-weight:600;margin-top:1px}
   .dm-summary{font-size:11.5px;color:var(--ink-2);font-weight:700;margin-top:8px;padding:6px 10px;background:#0a0f1f;border-radius:6px;border:1px solid var(--line);line-height:1.5}
   .dm-summary b{color:var(--ink)}
+  /* v6: 綜合判讀（LLM 敘事區塊）— 用金色高亮，搭配原本 panel 樣式 */
+  .comprehensive{background:linear-gradient(135deg,#1a1a0d 0%,#0d1426 100%);border:1px solid var(--gold);border-radius:10px;padding:10px 14px;margin:6px 0}
+  .comprehensive h3{margin:0 0 8px;font-size:13px;font-weight:900;color:var(--gold);display:flex;align-items:center;gap:6px}
+  .comprehensive h3 .dot{width:7px;height:7px;background:var(--gold);border-radius:50%;box-shadow:0 0 6px var(--gold)}
+  .comprehensive .sub-title{font-size:12px;font-weight:800;color:var(--cyan);margin:10px 0 4px;padding-left:2px;border-left:3px solid var(--cyan);padding:2px 8px;background:rgba(51,214,224,.05)}
+  .comprehensive p{margin:4px 0;font-size:12px;color:var(--ink-2);line-height:1.6}
+  .comprehensive p b{color:var(--ink)}
+  .comprehensive .evidence{font-size:11.5px;color:var(--muted);font-style:italic;line-height:1.5;margin:2px 0 6px;padding-left:10px;border-left:2px solid var(--line)}
+  .comprehensive .outlook{font-size:11.5px;color:var(--ink-2);line-height:1.55;margin:4px 0}
+  .comprehensive .empty{font-size:11.5px;color:var(--muted);font-style:italic;padding:8px;text-align:center}
   .readiness{display:flex;align-items:center;gap:8px;margin-top:8px;padding:7px 12px;border-radius:8px;background:#0a0f1f;border:1px solid var(--line);font-size:11.5px;color:var(--ink-2);font-weight:700;line-height:1.5}
   .readiness.r-now{border-color:var(--green);background:rgba(38,208,124,.06)}
   .readiness.r-pull{border-color:var(--gold);background:rgba(255,209,102,.06)}
@@ -147,39 +157,16 @@
 <div class="doc-title">台股個股分析報告</div>
 <div class="doc-sub">日月光投控（3711）｜2026-06-26 收盤｜K 線圖區間 2025-12-26 ~ 2026-06-26（118 個交易日）</div>
 
-<!-- ① 分析總結 -->
-<div class="sec-title"><span class="sec-num">1</span>分析總結</div>
-<div class="exec">
-  日月光投控（3711）現價 <span class='hl'>641.0</span> 元，<b>高檔震盪回檔</b>（MA多排但乖離大），5 日法人 -3,502 張（土洋對作：外資 +28,439、投信 -33,294），KD 60 中段、RSI 60、<b>偏離月線 6.7%</b>，短線 -1.83% 屬高檔獲利了結，<span class='hl'>依 5 條口訣精神：順勢不逆、買低不追</span>，<b>等回測月線 601 再分批</b>，跌破 5MA（649）先降倉。
-  <div class="status-bar"><div class="status-bar-main"><span class="status-badge sb-verified">✓ 9 欄位齊全 (高度可信)</span><span class="hedge-scale h4"><b>確信度 4/5</b> 高度確信<span class="hedge-avg">(avg 4.4/5)</span></span></div><div class="status-bar-triggers"><span class="trigger-count">⚠ 2 注意股</span><span class="trigger-chip" data-axis="估值">⚠ 估值: PE 59.5 偏高</span><span class="trigger-chip" data-axis="集中度">⚠ 集中度: 外資佔 465%</span></div></div>
-  <div class="exec-grid"><div class="exec-card">
-      <h4>⚡ 主線敘事（先進封裝受惠）</h4>
-      <ul><li><b>全球封測龍頭</b>：3711 投控封裝 / EMS / 測試三引擎，封裝營收占比 50%+</li><li><b>CoWoS / WMCM / SoIC 受惠層</b>：台積電 CoWoS 委外訂單 + FoCoS 2026 H2 放量</li><li><b>2026 目標</b>：先進封裝營收倍增至 32 億美元、LEAP 年增 100%、總營收 年增 60%+</li><li><b>擴產</b>：高雄楠梓 178 億三期、49 億美元 Capex</li></ul>
-    </div><div class="exec-card">
-      <h4>📊 技術面共識（半年視窗, 三環境判讀）</h4>
-      <ul><li><b>上漲格局</b>（MA 5&gt;20&gt;60=649&gt;601&gt;520）→ 依《均線戰法卡》3.1 節：3 線多排 ✅</li><li><b>K 棒三環境</b>（依《轉折訊號卡》1.）：方向=上漲，位置=高位（近 60 日漲 +78.8%、偏離月線 20 = +5.1%），量=爆大量</li><li><b>K 線型態</b>：短陰線（上影偏長） + 連三黑上漲續弱</li><li><b>指標</b>：RSI 14 = 60、KD ≈ 60（中段，依《進階班卡》4.1）、MACD 金叉（0軸上，依《進階班卡》3.1）</li><li><b>《均線季線成本值》季線真假</b>: 季線成本 328 (季線 525 rising) → <b style="color:#26d07c">假跌破機率高</b>｜季線有慣性保護, 跌破多為假跌破 → 觀察 3 日站回</li><li><b>《跌破月線 3 日站回》</b>: 近 3 日未跌破月線 (601) → 結構穩定</li><li><b>《主力 9 階段定位》</b>: <b style="color:#7DD3FC">軋</b>（low）｜高檔 + 法人買 → 主力軋空/換手, 風險升高</li><li><b>頭底轉折</b>（朱家泓動態頭底, 視窗 118 日）: <b>9 個頭</b> / <b>8 個底</b>（APP 全部實心標示）</li></ul>
-    </div><div class="exec-card">
-      <h4>⚠️ 風險警示（套用《量價 SOP》8 心法 + 《進階班》目標管理）</h4>
-      <ul><li>現價 641 vs 法人目標價區間 520~600 元，<b>已過多數目標價</b></li><li>5 日三大法人 <b style="color:#ef5350">賣超 -3,502 張</b>，與股價創高背離</li><li>短線 -1.83% 屬高檔獲利了結、偏離月線 20 已 +6.7%</li><li>近 5 日投信連賣 -33,294 張、外資連買 +28,439 張：土洋強烈對作，須看月線 601 守穩</li><li><b>《量價 SOP》心法 7 套用</b>：大量 K 線 1/2 價 = <b>304</b>（2026-02-06）→ 跌破即轉弱</li><li><b>《量價 SOP》心法 8 套用</b>：高檔爆大量，3 日內股價若未續漲 → 主力出貨警訊（八九成）</li><li><b>《進階班》卡住虧損三級</b>：若已持倉跌幅達 5% 列警示，10% 輕度、20% 中度、30% 重度卡住虧損</li><li><b>《土洋不同調三維》</b>: <b>強烈對作</b>｜淨額差極大, 結構性換手訊號｜投信 -33,294 張 vs 外資 +28,439 張, 淨額差 -61,733 張 (未知股)</li><li><b>《次日沖出貨三型態》</b>: <b>持平整理</b>｜開盤近持平, 無典型次日沖訊號</li><li><b>《M 頭逃命坡》</b>: 頸線 662 跌破, 但尚未回升, 觀察 1~2 日</li></ul>
-    </div><div class="exec-card">
-      <h4>🎯 進出場紀律（套用《量價 SOP》進場 10 戒律 + 《進階班》最可能買點）</h4>
-      <ul><li><b>已有部位</b>：沿 5MA（649）續抱；收盤跌破 MA20（601）先降 1/3 部位</li><li><b>空手</b>：等回測 MA20（601）量縮止跌再分批；帶量突破 650 才加重</li><li><b>不追</b>：今日 -1.83% 後不追，等月線回測</li><li><b>關鍵價位</b>：前高壓 669 / 前低撐 513 / 大量撐 298（2026-02-06）/ 跳空壓 519</li><li><b>進場 10 戒律 ✅ 9 / ⚠ 1</b>：</li><li>✅ ①上漲突破月線  ②非連漲第 3 根以上  ③不在週線壓力前  ④拉回已站回月線  ⑤未跌破前低  ⑥非盤整區  ⑦非下跌回升  ⑨非價漲綠 K  ⑩符合作多 SOP</li><li>⚠ ⑧<b>高檔大量大紅 K K</b>（現價 641 已在 2026-02-06 大量 K 撐 298 之上 +334 元 / +112.1%）— 高檔拉回風險升高</li><li><b>總計 9 項通過 / 1 項警訊 — 可進場但小部位, 跌破 MA20 即降倉</b></li><li><b>《進階班》6 多買點判定</b>：依目前位置 3711 屬「6-4 ABC 修正突破」候選 — 近 60 日從 354 漲至 632 後回測，需等跌破 MA20 601 量縮止跌 + 站回 5MA 649 才是 6-4 進場價</li><li><b>《朱家泓 3 條件 SOP》— 看到頭/底後的進出場判斷</b>（不是確認頭底, 是確認是否該進場）:</li><li><b>頭部出現</b>（高點反轉） → 看 ① 高於 MA20 2%?  ② 進攻量（>5日均量×1.3）?  ③ 後 3 日內 KD 死叉?  → <b>3 項全過才是「高檔反轉」, 該減倉</b></li><li><b>底部出現</b>（低點反轉） → 看 ① 低於 MA20 2%?  ② 進攻量（>5日均量×1.3）?  ③ 後 3 日內 KD 金叉?  → <b>3 項全過才是「底部反轉」, 該進場</b></li><li><b>本週期 9 頭 / 8 底</b> — 套用 SOP 後, 朱家泓 3 條件確認: <b>2 個頭 / 1 個底</b></li><li><b>《跌破季線 4 路分流》</b>: 未觸發 (股價在均線之上)</li></ul>
-    </div></div>
-  <div class="dmatrix"><div class="dm-card s5"><div class="dm-label">A 技術</div><div class="dm-state g">技術順勢</div><div class="dm-aux">MA649/601/520 KD48 RSI58</div></div><div class="dm-card s5"><div class="dm-label">B 基本面</div><div class="dm-state g">基本面驗證</div><div class="dm-aux">月營收 YoY +2856.9% MoM +126.3% EPS 3.2</div></div><div class="dm-card s4"><div class="dm-label">C 事件</div><div class="dm-state c">事件已落地</div><div class="dm-aux">近 5 條新聞 中性偏多</div></div><div class="dm-card s2"><div class="dm-label">D 籌碼</div><div class="dm-state b">籌碼轉弱</div><div class="dm-aux">5 日 -3,502 張 (外 +28,439 投 -33,294 自 +1,350)</div></div><div class="dm-card s2"><div class="dm-label">E 市場</div><div class="dm-state b">市場轉弱</div><div class="dm-aux">加權 44572 / 跌破月線 / 10日-3.6% / 20日-3.7%｜無明顯氛圍訊號</div></div></div><div class="dm-summary">🎯 <b>執行決策：</b><b style="color:var(--gold)">保守續抱</b>（已買的留著續抱, 投信賣超可降 1/3） ｜ 支持層數 <b>3 / 5</b> ｜ 📰 新聞偏多 (+0.5)</div>
-  <div class="readiness r-now"><span class="readiness-tag r-now">READY NOW</span><span>主體 4 層支持, 可直接給進場區/失效價/目標價（見 ⑥ 段）</span></div>
-  <div class="verdict" style="background:rgba(38,208,124,.12);border-color:var(--muted)">
-    <span class="verdict-bull" style="background:var(--muted)">偏多觀察但不追高（依5 條口訣）</span>
-    <span class="verdict-text">綜合判讀：<b>封測龍頭 + CoWoS 受惠</b>，高檔震盪回檔，MA 5/20/60 多排 (649/601/520) 結構未破，KD 60 中段、RSI 60 偏強。投信連 5 賣 (-33,294 張) 與外資連買 (+28,439 張) 強烈對作，屬「土洋不同調」結構性換手。已有者沿 5MA（649）續抱；空手者<b>等回測月線 601 量縮止跌再分批</b>，不追當日長上影黑 K。<br><b>5 條口訣套用</b>：順勢不逆（沿 5MA 抱） ✅、買低不追（等月線 601） ✅、停利不猶豫（達 695 區） ✅、量價健康（量縮止跌再進） ✅、停損守紀（跌破 5MA 降倉） ✅</span>
-  </div>
-</div>
+<!-- ① 分析總結（已搬到 ⑦）— 原位置依使用者決策留空 -->
 
-<!-- ② 技術分析 K 線圖 -->
-<div class="sec-title"><span class="sec-num">2</span>技術分析 K 線圖（含圖例）</div>
+
+<!-- ① 技術分析 K 線圖（原②）-->
+<div class="sec-title"><span class="sec-num">1</span>技術分析 K 線圖（含圖例）</div>
 <div class="price-bar">
-  <span class="price" style="color:#ef5350">641.0</span>
-  <span class="chg" style="color:#26d07c">▼-12.0 元（-1.84%）</span>
-  <span class="kv">開 <b>679.0</b>　高 <b>679.0</b>　低 <b>625.0</b>　收 <b>641.0</b></span>
-  <span class="kv">量 <b>31,615,796</b> 股</span>
+  <span class="price" style="color:#26d07c">632.0</span>
+  <span class="chg" style="color:#26d07c">▼-9.0 元（-1.40%）</span>
+  <span class="kv">開 <b>650.0</b>　高 <b>695.0</b>　低 <b>630.0</b>　收 <b>632.0</b></span>
+  <span class="kv">量 <b>43,302,683</b> 股</span>
 </div>
 <div class="chartcard"><svg width="880" height="560" viewBox="0 0 880 560" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,PingFang TC,Microsoft JhengHei,sans-serif">
 <rect x="0" y="0" width="880" height="560" fill="#0a0f1f"/>
@@ -616,7 +603,7 @@
 <rect x="766.2" y="321.2" width="4.0" height="54.8" fill="#26d07c" opacity="0.85" stroke="#26d07c" stroke-width="0.3"/>
 <rect x="772.4" y="331.8" width="4.0" height="44.2" fill="#ef5350" opacity="0.85" stroke="#ef5350" stroke-width="0.3"/>
 <rect x="778.6" y="337.1" width="4.0" height="38.9" fill="#26d07c" opacity="0.85" stroke="#26d07c" stroke-width="0.3"/>
-<rect x="784.9" y="318.6" width="4.0" height="57.4" fill="#26d07c" opacity="0.85" stroke="#26d07c" stroke-width="0.3"/>
+<rect x="784.9" y="320.7" width="4.0" height="55.3" fill="#26d07c" opacity="0.85" stroke="#26d07c" stroke-width="0.3"/>
 <text x="59" y="317" fill="#ffffff" font-size="11" font-weight="800">成交量（萬股）</text>
 <line x1="55" y1="440.0" x2="790" y2="440.0" stroke="#1a2342" stroke-width="0.5" stroke-dasharray="2,3"/>
 <text x="49" y="444.0" fill="#ffffff" font-size="10" font-weight="700" text-anchor="end">20</text>
@@ -742,8 +729,8 @@
 </div>
 <p class="note">※ K 線、KD、MACD、MA 數值全部自 TWSE 抓取 + 自算，不引用任何外部圖表。右側短色塊標示 4 條關鍵價位水平線（前高壓 / 缺口壓 / 大量撐 / 前低撐）。</p>
 
-<!-- ③ 信號摘要 + 關鍵價位 + 基本面 -->
-<div class="sec-title"><span class="sec-num">3</span>信號摘要 + 基本面</div>
+<!-- ② 信號摘要 + 關鍵價位 + 基本面（原③）-->
+<div class="sec-title"><span class="sec-num">2</span>信號摘要 + 基本面</div>
 <div class="signal-grid">
       <div class="signal"><div class="signal-label">結構</div><div class="signal-val" style="color:var(--red)">四線多排 ✅</div><div class="signal-desc">5MA 652 / 20MA 601</div></div>
       <div class="signal"><div class="signal-label">均線多排</div><div class="signal-val" style="color:var(--red)">四線多排 ✅</div><div class="signal-desc">5/10/20/60MA 全向上、5&gt;10&gt;20&gt;60</div></div>
@@ -769,12 +756,12 @@
   <table class="t-fund">
     <colgroup><col style="width:30%"><col style="width:26%"><col style="width:44%"></colgroup>
     <thead><tr><th>項目</th><th class="num">數值</th><th>備註</th></tr></thead>
-    <tbody><tr class="highlight"><td>最新收盤</td><td class="num"><b style="color:#ffffff;">632 元</b></td><td>前收 641、單日 -1.40%</td></tr><tr><td>20 日最高 / 最低</td><td class="num"><b style="color:#ffffff;">674 / 539 元</b></td><td>偏離月線 20 = +5.1%（現價距月線多遠）</td></tr><tr><td>MA5 / MA20 / MA60</td><td class="num"><b style="color:#ffffff;">652 / 601 / 525 元</b></td><td>均線多排</td></tr><tr><td>RSI(14)</td><td class="num"><b style="color:#ffffff;">58</b></td><td>中性偏強</td></tr><tr><td>K 線型態</td><td class="num"><b style="color:#ffffff;">短陰線（上影偏長）</b></td><td>視窗近期 K 線型態</td></tr><tr class="highlight"><td>月營收</td><td class="num"><b style="color:#ffffff;">630.3 億</b></td><td>YoY +2856.9% / MoM +126.3%</td></tr><tr class="highlight"><td>近 60 日累積漲跌</td><td class="num"><b style="color:#ffffff;">+78.8%</b></td><td>354 → 632</td></tr><tr><td>本益比 PE</td><td class="num"><b style="color:#ffffff;">59.5</b></td><td>股價領先法人目標價區間</td></tr><tr><td>殖利率</td><td class="num"><b style="color:#ffffff;">1.03%</b></td><td>低息殖利率股</td></tr><tr><td>股價淨值比 PB</td><td class="num"><b style="color:#ffffff;">8.02</b></td><td>高於半導體同業平均</td></tr><tr><td>季度 EPS</td><td class="num"><b style="color:#ffffff;">3.24 元</b></td><td>2026Q1 稅後淨利 146 億</td></tr><tr><td>營業利益</td><td class="num"><b style="color:#ffffff;">175 億</b></td><td>115QNone</td></tr></tbody>
+    <tbody><tr class="highlight"><td>最新收盤</td><td class="num"><b style="color:#ffffff;">632 元</b></td><td>前收 641、單日 -1.40%</td></tr><tr><td>20 日最高 / 最低</td><td class="num"><b style="color:#ffffff;">674 / 539 元</b></td><td>偏離月線 20 = +5.1%（現價距月線多遠）</td></tr><tr><td>MA5 / MA20 / MA60</td><td class="num"><b style="color:#ffffff;">652 / 601 / 525 元</b></td><td>均線多排</td></tr><tr><td>RSI(14)</td><td class="num"><b style="color:#ffffff;">58</b></td><td>中性偏強</td></tr><tr><td>K 線型態</td><td class="num"><b style="color:#ffffff;">短陰線（上影偏長）</b></td><td>視窗近期 K 線型態</td></tr><tr class="highlight"><td>月營收</td><td class="num"><b style="color:#ffffff;">630.3 億</b></td><td>YoY +2856.9% / MoM +126.3%</td></tr><tr class="highlight"><td>近 60 日累積漲跌</td><td class="num"><b style="color:#ffffff;">+78.8%</b></td><td>354 → 632</td></tr><tr><td>本益比 PE</td><td class="num"><b style="color:#ffffff;">58.7</b></td><td>股價領先法人目標價區間</td></tr><tr><td>殖利率</td><td class="num"><b style="color:#ffffff;">1.04%</b></td><td>低息殖利率股</td></tr><tr><td>股價淨值比 PB</td><td class="num"><b style="color:#ffffff;">7.91</b></td><td>高於半導體同業平均</td></tr><tr><td>季度 EPS</td><td class="num"><b style="color:#ffffff;">3.24 元</b></td><td>2026Q1 稅後淨利 146 億</td></tr><tr><td>營業利益</td><td class="num"><b style="color:#ffffff;">175 億</b></td><td>115QNone</td></tr></tbody>
   </table>
 </div>
 
-<!-- ④ 籌碼面 -->
-<div class="sec-title"><span class="sec-num">4</span>籌碼面</div>
+<!-- ③ 籌碼面（原④）-->
+<div class="sec-title"><span class="sec-num">3</span>籌碼面</div>
 <div class="panel">
   <h3><span class="dot"></span>三大法人近 5 日買賣超（單位：張；1 張 = 1,000 股）</h3>
   <table class="t-chips">
@@ -826,7 +813,7 @@
         <td class="num"><b style="color:#ef5350">+7,631.3</b></td>
       </tr></tbody>
   </table>
-  <p class="note">※ 近 5 日三大法人合計 <b style="color:#ef5350">-3,502.0 張（賣超）</b>，外資 +28,439.0 張、投信 -33,294.0 張、自營 +1,350 張。土洋對作訊號強烈；回測 601 元（MA20）有守才試單，跌破則先降 33% 部位。</p>
+  <p class="note">※ 近 5 日三大法人合計 <b style="color:#ef5350">+7,631.3 張（買超）</b>，外資 +35,514.2 張、投信 -27,381.5 張、自營 -501.4 張。偏多觀察但不追價；回測 601.20 元（MA20） 有守才試單，跌破則先降 33% 部位。</p>
 </div>
 
 <div class="panel">
@@ -842,40 +829,82 @@
   </table>
 </div>
 
-<!-- ⑤ 新聞 + 趨勢 -->
-<div class="sec-title"><span class="sec-num">5</span>最新新聞與趨勢</div>
+<!-- ④ 新聞 + 趨勢（原⑤）-->
+<div class="sec-title"><span class="sec-num">4</span>最新新聞與趨勢</div>
 <div class="panel">
   <h3><span class="dot"></span>近期重大訊息（時序倒序）</h3>
-  <div class="news-axes"><div class="news-axes-label">新聞 4 面向評分（5 條標題掃描）｜ 總分 <b>6/16</b></div><div class="news-axes-grid"><span class="axis-chip red" title="業績催化（營收/EPS/出貨）">業績 <b class="score">1</b>/4</span><span class="axis-chip red" title="題材熱度（AI/新產品/趨勢）">題材 <b class="score">1</b>/4</span><span class="axis-chip gold" title="法人動向（買賣超/評等/目標價）">法人 <b class="score">2</b>/4</span><span class="axis-chip gold" title="產業脈動（供應鏈/產能/市佔）">產業 <b class="score">2</b>/4</span></div></div>
+  <div class="news-axes"><div class="news-axes-label">新聞 4 面向評分（5 條標題掃描）｜ 總分 <b>5/16</b></div><div class="news-axes-grid"><span class="axis-chip red" title="業績催化（營收/EPS/出貨）">業績 <b class="score">1</b>/4</span><span class="axis-chip red" title="題材熱度（AI/新產品/趨勢）">題材 <b class="score">1</b>/4</span><span class="axis-chip gold" title="法人動向（買賣超/評等/目標價）">法人 <b class="score">2</b>/4</span><span class="axis-chip red" title="產業脈動（供應鏈/產能/市佔）">產業 <b class="score">1</b>/4</span></div></div>
   <div class="news-item">
-    <div class="news-meta">2026-06-26 (今天) ｜ Yahoo 股市</div>
+    <div class="news-meta">2026-06-27 (今天) ｜ Yahoo 股市</div>
     <div class="news-title"><a href="https://tw.stock.yahoo.com/news/%E6%97%A5%E6%9C%88%E5%85%89%E6%8A%95%E6%8E%A7%E7%9B%AE%E6%A8%99%E5%83%B9-%E5%A4%96%E8%B3%87%E5%96%8A420%E5%85%83-201000259.html" target="_blank" rel="noopener">日月光投控目標價 外資喊420元</a></div>
     <div class="news-text"># 日月光投控目標價 外資喊420元. 641(1.84%)000776.SZ. 廣發證券海外電子通信主管蒲得宇指出，日月光投控（3711）挾毛利率較高的先進封測（LEAP）業務快速增長，LEAP營收將持續跳升、其占ATM業務營收比重亦會愈來愈高，盛讚日月光投控是AI趨勢下的受惠…</div>
   </div><div class="news-item">
-    <div class="news-meta">2026-06-26 (今天) ｜ cmnews</div>
+    <div class="news-meta">2026-06-27 (今天) ｜ cmnews</div>
     <div class="news-title"><a href="https://cmnews.com.tw/article/suwanzhen-e146ce03-5b11-11f1-b591-22136222161c" target="_blank" rel="noopener">日月光投控(3711)的估值，先別急著看價格，先看獲利能不能跟上-蘇宛真 | CMoney投資網誌</a></div>
     <div class="news-text">日月光投控(3711)的估值，先別急著看價格，先看獲利能不能跟上. 上班族出身，自己看盤、做功課好幾年。主要看籌碼面，技術面當輔助——法人在搬什麼、誰在偷偷加碼，常常比題材本身更值得追蹤。話直接，被忽略的訊號會拉出來講；判斷不一定次次都對，但至少不會講那種「萬無一失」的話。. 三…</div>
   </div><div class="news-item">
-    <div class="news-meta">2026-06-26 (今天) ｜ cmnews</div>
+    <div class="news-meta">2026-06-27 (今天) ｜ cmnews</div>
     <div class="news-title"><a href="https://cmnews.com.tw/article/cmoneyairesearcher-f74cfbde-2d78-11f1-9bd6-0a675d888571" target="_blank" rel="noopener">【11:14 即時新聞】日月光投控(3711)攻上漲停361元，AI封測評等與目標價同步上修＋前高附近短空回補力道轉強-CMoney 研究員 | CMoney投資網誌</a></div>
     <div class="news-text">【11:14 即時新聞】日月光投控(3711)攻上漲停361元，AI封測評等與目標價同步上修＋前高附近短空回補力道轉強. CMoney 團隊透過 AI 結合股市，每日提供重點股票的新聞事件，期望讓投資人更有效率找到各種投資標的的投資事實。. ## 🔸日月光投控(3711)")股價…</div>
   </div><div class="news-item">
-    <div class="news-meta">2026-06-26 (今天) ｜ cmnews</div>
+    <div class="news-meta">2026-06-27 (今天) ｜ cmnews</div>
     <div class="news-title"><a href="https://cmnews.com.tw/article/suwanzhen-2fb755a3-57f0-11f1-a35b-2a0364e2b032" target="_blank" rel="noopener">日月光投控(3711)被三家券商同時看好，市場真正看的是什麼？-蘇宛真 | CMoney投資網誌</a></div>
     <div class="news-text"># 日月光投控(3711)被三家券商同時看好，市場真正看的是什麼？. 上班族出身，自己看盤、做功課好幾年。主要看籌碼面，技術面當輔助——法人在搬什麼、誰在偷偷加碼，常常比題材本身更值得追蹤。話直接，被忽略的訊號會拉出來講；判斷不一定次次都對，但至少不會講那種「萬無一失」的話。.…</div>
   </div><div class="news-item">
-    <div class="news-meta">2026-06-26 (今天) ｜ Pocket Insights</div>
-    <div class="news-title"><a href="https://www.pocket.tw/school/report/SCHOOL/7540" target="_blank" rel="noopener">日月光投控（3711）股東會重點整理｜先進封裝擴產 - 口袋證券</a></div>
-    <div class="news-text">上午8:30~下午5:00 （週一至週五，非交易日除外）. 國外專線：886-2-7753-2508(須付費). 一般服務時間(按9)：08:00-17:00. 夏令17:00-04:00，冬令17:00-05:00. © 口袋證券 版權所有 0.0.14.47.…</div>
+    <div class="news-meta">2026-06-27 (今天) ｜ Yahoo 股市</div>
+    <div class="news-title"><a href="https://tw.stock.yahoo.com/news/%E6%97%A5%E6%9C%88%E5%85%89%E6%8A%95%E6%8E%A7-%E5%8F%B0%E5%85%89%E9%9B%BB-%E7%87%9F%E9%81%8B%E7%86%B1%E8%BD%89-201000601.html" target="_blank" rel="noopener">日月光投控、台光電 營運熱轉</a></div>
+    <div class="news-text"># 日月光投控、台光電 營運熱轉. 投資專家點出，目前市場氛圍鎖定強勢績優股，可留意日月光投控、台光電等展望正向的個股。圖／本報資料照片. 台股10日收盤改寫歷史新高，電子股重返主流，投資專家點出，目前市場氛圍鎖定強勢績優股，資金匯聚效應顯著，建議可留意日月光投控（3711）、台…</div>
   </div>
 </div>
 
 <div class="panel">
   <h3><span class="dot"></span>產業趨勢：CoWoS 外溢 + LEAP 倍增</h3>
-  <ul><li><b>CoWoS 外溢效應</b>：NVIDIA GB200/Rubin 推升台積電 CoWoS 需求，日月光投控承接 oSP 委外訂單、FoCoS 業務 2026 H2 開始放量（客戶 AMD、Broadcom）。2026 先進封裝營收上看 32 億美元（YoY +100%）。</li><li><b>LEAP 業務</b>：2025 LEAP 營收已翻倍，2026 全年上調 23%、年增率達 100%；CoWoS 月產能年底從 9,000 片倍增至 2 萬片。AI 業務占比由 2025 ~10% 升至 2026 ~20%。<b>風險：股價 641 領先多數法人目標價區間 520~600，5 日三大法人賣超 +7,631 張，追價風險升高</b>。</li></ul>
+  <ul><li><b>CoWoS 外溢效應</b>：NVIDIA GB200/Rubin 推升台積電 CoWoS 需求，日月光投控承接 oSP 委外訂單、FoCoS 業務 2026 H2 開始放量（客戶 AMD、Broadcom）。2026 先進封裝營收上看 32 億美元（YoY +100%）。</li><li><b>LEAP 業務</b>：2025 LEAP 營收已翻倍，2026 全年上調 23%、年增率達 100%；CoWoS 月產能年底從 9,000 片倍增至 2 萬片。AI 業務占比由 2025 ~10% 升至 2026 ~20%。<b>風險：股價 632 領先多數法人目標價區間 520~600，5 日三大法人賣超 +7,631 張，追價風險升高</b>。</li></ul>
 </div>
 
-<div class="exec-contract"><div class="sec-title"><span class="sec-num">6</span>進出場條件（續抱管理合約）</div><div class="ec-grid"><div class="ec-item"><span class="ec-k">進場區（可以買的價位範圍）</span><span class="ec-v"><b>619 ~ 645 元</b>（這是給空手新單參考的範圍，已有部位沿用, 不在此下新單）</span></div><div class="ec-item"><span class="ec-k">停利價（漲到這裡可賣出鎖利）</span><span class="ec-v"><b>735</b> 元（動態: 抓近 60 日最高 × 1.05 或現價 × 1.10, 取較高者）</span></div><div class="ec-item"><span class="ec-k">失效價（跌破此價代表判斷錯誤, 該出場）</span><span class="ec-v"><b>收盤跌破 MA20 (601) 連 3 日, 或跌破 553（2×ATR 停損）</b></span></div><div class="ec-item"><span class="ec-k">部位規則（手上股票怎麼處理）</span><span class="ec-v">沿 5MA 續抱, 不加碼; 收盤跌破 MA20 先降 1/3 部位</span></div><div class="ec-item"><span class="ec-k">殘單處理（已成交單怎麼收尾）</span><span class="ec-v">剩餘部位 stop 重掛至 MA20 (601)</span></div><div class="ec-item"><span class="ec-k">風報比（賺賠比, 越高越值得進場）</span><span class="ec-v">目標 735 / 失效 601 ≈ 3.3R</span></div><div class="ec-item"><span class="ec-k">ATR 依據（計算停損距離的指標波動度）</span><span class="ec-v"><b>ATR(14) 停損依據</b>: <span class="hl">39.6 元</span>（停損距離 = 2×ATR = <b>79.3 元</b>）｜若以 100 萬帳戶、單筆風險 2% 計 → 建議部位 <b>0.3 張</b>（252 股）</span></div></div></div>
+<div class="exec-contract"><div class="sec-title"><span class="sec-num">5</span>進出場條件（續抱管理合約）</div><div class="ec-grid"><div class="ec-item"><span class="ec-k">進場區（可以買的價位範圍）</span><span class="ec-v"><b>619 ~ 645 元</b>（這是給空手新單參考的範圍，已有部位沿用, 不在此下新單）</span></div><div class="ec-item"><span class="ec-k">停利價（漲到這裡可賣出鎖利）</span><span class="ec-v"><b>735</b> 元（動態: 抓近 60 日最高 × 1.05 或現價 × 1.10, 取較高者）</span></div><div class="ec-item"><span class="ec-k">失效價（跌破此價代表判斷錯誤, 該出場）</span><span class="ec-v"><b>收盤跌破 MA20 (601) 連 3 日, 或跌破 553（2×ATR 停損）</b></span></div><div class="ec-item"><span class="ec-k">部位規則（手上股票怎麼處理）</span><span class="ec-v">沿 5MA 續抱, 不加碼; 收盤跌破 MA20 先降 1/3 部位</span></div><div class="ec-item"><span class="ec-k">殘單處理（已成交單怎麼收尾）</span><span class="ec-v">剩餘部位 stop 重掛至 MA20 (601)</span></div><div class="ec-item"><span class="ec-k">風報比（賺賠比, 越高越值得進場）</span><span class="ec-v">目標 735 / 失效 601 ≈ 3.3R</span></div><div class="ec-item"><span class="ec-k">ATR 依據（計算停損距離的指標波動度）</span><span class="ec-v"><b>ATR(14) 停損依據</b>: <span class="hl">39.6 元</span>（停損距離 = 2×ATR = <b>79.3 元</b>）｜若以 100 萬帳戶、單筆風險 2% 計 → 建議部位 <b>0.3 張</b>（252 股）</span></div></div></div>
+
+<!-- ⑥ 綜合判讀（LLM 敘事整合：技術/籌碼/新聞/總經/第二大腦投資決策） -->
+<div class="sec-title"><span class="sec-num">6</span>綜合判讀 <small style="font-weight:600;color:var(--muted);font-size:11px;margin-left:4px">— 整合技術、籌碼、新聞、總經與投資決策資料的敘事分析</small></div>
+<div class="comprehensive">
+  <p>【技術面與籌碼面的拉扯】<b>判讀總結</b>：日月光投控技術面為多頭架構，但籌碼面出現外資大買、投信大賣的明顯拉扯，目前關鍵支撐在月線 601 元，只要能守住並轉為量縮整理，即符合強勢洗盤特徵而非真出貨。</p>
+<p class="evidence">證據：最新收盤 632 元，當日小跌 1.40%，但股價穩守於 5 日、10 日及月線之上，均線架構呈多頭排列。技術指標方面，MACD 仍處於金叉狀態，KD 則位於中段，並未進入過熱區，顯示中線動能未衰。籌碼面 5 日合計，外資強勢買超 35,514 張，但投信反向大賣 27,381 張，自營商小幅賣超 501 張；法人圈出現「外資吃貨、內資調節」的對作格局。依第二大腦「主力洗盤 vs 真出貨」決策矩陣中的量能驗證規則，若後續回檔時成交量能明顯萎縮至 5 日均量 1.5 倍以下，且不跌破 12 日均線，則目前的高檔震盪偏向洗盤而非主力出貨。</p>
+<p class="outlook">未來可能發展：未來 1 至 2 週，日月光股價將進入關鍵的「意圖驗證期」。兩種主要情境如下：第一，若股價在回測月線 601 元時出現「縮量跌破後帶量站回」的組合，則確認這是假跌破的強勢洗盤，整理完成後可望再攻前高甚至挑戰 695 元的決策框架目標區；第二，若反彈至 650 元附近反而開始「放量不漲」或出現「利多不漲」，且 5 個出貨前兆觸發超過 2 個，則籌碼對作的結構可能轉向真出貨，屆時需嚴格執行分批減碼紀律。關鍵轉折價位為月線 601 元與前高 650 元。</p>
+
+<p>【基本面與題材面的延續性】<b>判讀總結</b>：CoWoS 外溢效應與 LEAP 先進封裝業務的高速成長，構成日月光本業最紮實的驅動力，法人機構同步上修評等與目標價，使目前的基本面題材具備極佳延續性，不至於淪為短線消息行情。</p>
+<p class="evidence">證據：產業趨勢明確指向封測龍頭的結構性受惠，其中 FoCoS 業務預計自 2026 年下半年開始放量，而 LEAP 業務全年營收預估已上調 23%、年增率高達 100%，占 ATM 業務比重將顯著攀升，直接拉高毛利率結構。新聞資訊顯示，廣發證券、CMoney 等法人或研究機構同步將日月光列為 AI 封測重點股，並上修目標價與評等，顯示此次題材並非單一券商炒作，而是有業績上修作為支撐的集體共識。儘管有部分新聞提醒「先看獲利能不能跟上」，但這僅是估值節奏問題，無礙基本面改善的大方向。</p>
+<p class="outlook">未來可能發展：未來 1 至 3 個月，基本面題材的演變取決於兩大驗證點。第一，7 月營收公佈是否能延續月增與年增的趨勢，提供 CoWoS 與 LEAP 放量的初步實證，若數據符合或優於預期，將推動股價進入新一輪的基本面重估（re-rating）行情；第二，第三季法說會對 2027 年 LEAP 產能擴張與客戶訂單能見度的指引，將是決定這波題材能走多遠的關鍵催化劑。若法人圈開始提出 2027 年的明確營運模型，則股價目前的本益比框架將再次被打破上調；反之，若營收遲遲未見跳升，則可能出現利多出盡的修正壓力。</p>
+
+<p>【總經環境與投資決策框架的綜合觀點】<b>判讀總結</b>：大盤雖經歷單日重挫千點，但 ETF 市場出現強勁逢低承接力道，顯示市場資金並未全面撤離，對於日月光這類具備強悍基本面的權值股，可採取「總經震盪時觀察、個股支撐區分批」的紀律性偏多策略。</p>
+<p class="evidence">證據：近期總經新聞顯示，台股在 6 月 24 日再次大跌逾千點，為史上第八大跌點，但後續 ETF 市場卻創下大量淨申購，投資人信心並未瓦解，反而將急跌視為中長線布局機會。在此氛圍下，績優股如緯創大舉擴產、利機啟動漲價等利多仍能獨立於大盤發酵，顯示資金仍在尋求具實質業績支撐的標的。將此環境對應到日月光投控的「5 層決策矩陣」，最終判定為<b>續抱</b>且支持層數達 4/5，已經內化了技術面、籌碼面與新聞面的綜合評分，框架給出的明確出路是「空手者等回測月線 601 元分批進場，不追當日大量大紅 K」，這已將總經的不確定性轉化為低成本的進場紀律。</p>
+<p class="outlook">未來可能發展：從大盤環境、個股位置與投資紀律三層推演未來 1 至 2 季的路徑。大盤層面，短線的急跌已釋放部分賣壓，但國際變數猶存，第三季可能呈現大區間震盪，這會讓強勢股更難一路噴出，反而是拉回買進的策略更佔優勢。個股層面，日月光處於封測龍頭地位且受惠 AI 趨勢，長線偏多無疑，但短線股價已從低點上漲明顯，進場點直接決定報酬率與心理壓力。投資紀律層面，依「第二大腦」邏輯，目前已持有者嚴格執行「順勢不逆、買低不追、停利不猶豫」的 5 條口訣，以 5MA 作為續抱線，目標看向 695 元區間；尚未進場者，則應將資金備妥，等待大盤震盪連帶使個股回測月線 601 元時，以分批布局的方式建立部位，避免在總經不穩定的時期過度追高。</p>
+</div>
+
+<!-- ⑦ 分析總結（原① 整段搬下來） -->
+<div class="sec-title"><span class="sec-num">7</span>分析總結</div>
+<div class="exec">
+  <h2>日月光投控（3711）現價 <span class='hl'>632</span> 元，<b>上漲格局</b>（MA上漲），5 日法人 +7,631 張形成拉鋸，KD 48（中段）與 MACD 金叉（0軸上）位階偏高，<span class='hl'>依5 條口訣精神：順勢不逆、買低不追</span>，<b>需回測月線 601 才能加碼</b>。</h2>
+  <div class="status-bar"><div class="status-bar-main"><span class="status-badge sb-verified">✓ 9 欄位齊全 (高度可信)</span><span class="hedge-scale h4"><b>確信度 4/5</b> 高度確信<span class="hedge-avg">(avg 4.2/5)</span></span></div><div class="status-bar-triggers"><span class="trigger-count">⚠ 2 注意股</span><span class="trigger-chip" data-axis="估值">⚠ 估值: PE 58.7 偏高</span><span class="trigger-chip" data-axis="集中度">⚠ 集中度: 外資佔 465%</span></div></div>
+  <div class="exec-grid"><div class="exec-card">
+      <h4>⚡ 主線敘事（先進封裝受惠）</h4>
+      <ul><li><b>全球封測龍頭</b>：3711 投控封裝 / EMS / 測試三引擎，封裝營收占比 50%+</li><li><b>CoWoS / WMCM / SoIC 受惠層</b>：台積電 CoWoS 委外訂單 + FoCoS 2026 H2 放量</li><li><b>2026 目標</b>：先進封裝營收倍增至 32 億美元、LEAP 年增 100%、總營收 年增 60%+</li><li><b>擴產</b>：高雄楠梓 178 億三期、49 億美元 Capex</li></ul>
+    </div><div class="exec-card">
+      <h4>📊 技術面共識（半年視窗, 三環境判讀）</h4>
+      <ul><li><b>上漲格局</b>（MA 5&gt;20&gt;60=652&gt;601&gt;525）→ 依《均線戰法卡》3.1 節：3 線多排 ✅</li><li><b>K 棒三環境</b>（依《轉折訊號卡》1.）：方向=上漲，位置=高位（近 60 日漲 +78.8%、偏離月線 20 = +5.1%），量=爆大量</li><li><b>K 線型態</b>：短陰線（上影偏長） + 連三黑上漲續弱</li><li><b>指標</b>：RSI 14 = 58、KD = 48/61（中段，依《進階班卡》4.1）、MACD 金叉（0軸上，依《進階班卡》3.1）</li><li><b>《均線季線成本值》季線真假</b>: 季線成本 328 (季線 525 rising) → <b style="color:#26d07c">假跌破機率高</b>｜季線有慣性保護, 跌破多為假跌破 → 觀察 3 日站回</li><li><b>《跌破月線 3 日站回》</b>: 近 3 日未跌破月線 (601) → 結構穩定</li><li><b>《主力 9 階段定位》</b>: <b style="color:#7DD3FC">軋</b>（low）｜高檔 + 法人買 → 主力軋空/換手, 風險升高</li><li><b>頭底轉折</b>（朱家泓動態頭底, 視窗 118 日）: <b>9 個頭</b> / <b>8 個底</b>（APP 全部實心標示）</li></ul>
+    </div><div class="exec-card">
+      <h4>⚠️ 風險警示（套用《量價 SOP》8 心法 + 《進階班》目標管理）</h4>
+      <ul><li>現價 632 vs 法人目標價區間 520~600 元，<b>已過多數目標價</b></li><li>5 日三大法人 <b style="color:#26d07c">賣超 +7,631 張</b>，與股價創高背離</li><li>短線 -1.40% 屬追高情緒、偏離月線 20 已 +5.1%</li><li>06-25 投信連 5 賣、外資轉買：結構分歧，須看月線 601 守穩</li><li><b>《量價 SOP》心法 7 套用</b>：大量 K 線 1/2 價 = <b>304</b>（2026-02-06）→ 跌破即轉弱</li><li><b>《量價 SOP》心法 8 套用</b>：高檔爆大量，3 日內股價若未續漲 → 主力出貨警訊（八九成）</li><li><b>《進階班》卡住虧損三級</b>：若已持倉跌幅達 5% 列警示，10% 輕度、20% 中度、30% 重度卡住虧損</li><li><b>《土洋不同調三維》</b>: <b>強烈對作</b>｜淨額差極大, 結構性換手訊號｜投信 -27,382 張 vs 外資 +35,514 張, 淨額差 -62,896 張 (未知股)</li><li><b>《次日沖出貨三型態》</b>: <b>持平整理</b>｜開盤近持平, 無典型次日沖訊號</li><li><b>《M 頭逃命坡》</b>: 頸線 662 跌破, 但尚未回升, 觀察 1~2 日</li></ul>
+    </div><div class="exec-card">
+      <h4>🎯 進出場紀律（套用《量價 SOP》進場 10 戒律 + 《進階班》最可能買點）</h4>
+      <ul><li><b>已有部位</b>：沿 5MA（652）續抱；收盤跌破 MA20（601）先降 1/3 部位</li><li><b>空手</b>：等回測 MA20（601）量縮止跌再分批；帶量突破 644 才加重</li><li><b>不追</b>：今日 -1.40% 後不追，等月線回測</li><li><b>關鍵價位</b>：前高壓 669 / 前低撐 513 / 大量撐 298（2026-02-06）/ 跳空壓 519</li><li><b>進場 10 戒律 ✅ 9 / ⚠ 1</b>：</li><li>✅ ①上漲突破月線  ②非連漲第 3 根以上  ③不在週線壓力前  ④拉回已站回月線  ⑤未跌破前低  ⑥非盤整區  ⑦非下跌回升  ⑨非價漲綠 K  ⑩符合作多 SOP</li><li>⚠ ⑧<b>高檔大量大紅 K K</b>（現價 632 已在 2026-02-06 大量 K 撐 298 之上 +334 元 / +112.1%）— 高檔拉回風險升高</li><li><b>總計 9 項通過 / 1 項警訊 — 可進場但小部位, 跌破 MA20 即降倉</b></li><li><b>《進階班》6 多買點判定</b>：依目前位置 3711 屬「6-4 ABC 修正突破」候選 — 近 60 日從 354 漲至 632 後回測，需等跌破 MA20 601 量縮止跌 + 站回 5MA 652 才是 6-4 進場價</li><li><b>《朱家泓 3 條件 SOP》— 看到頭/底後的進出場判斷</b>（不是確認頭底, 是確認是否該進場）:</li><li><b>頭部出現</b>（高點反轉） → 看 ① 高於 MA20 2%?  ② 進攻量（>5日均量×1.3）?  ③ 後 3 日內 KD 死叉?  → <b>3 項全過才是「高檔反轉」, 該減倉</b></li><li><b>底部出現</b>（低點反轉） → 看 ① 低於 MA20 2%?  ② 進攻量（>5日均量×1.3）?  ③ 後 3 日內 KD 金叉?  → <b>3 項全過才是「底部反轉」, 該進場</b></li><li><b>本週期 9 頭 / 8 底</b> — 套用 SOP 後, 朱家泓 3 條件確認: <b>2 個頭 / 1 個底</b></li><li><b>《跌破季線 4 路分流》</b>: 未觸發 (股價在均線之上)</li></ul>
+    </div></div>
+  <div class="dmatrix"><div class="dm-card s5"><div class="dm-label">A 技術</div><div class="dm-state g">技術順勢</div><div class="dm-aux">MA652/601/525 KD48 RSI58</div></div><div class="dm-card s5"><div class="dm-label">B 基本面</div><div class="dm-state g">基本面驗證</div><div class="dm-aux">月營收 YoY +2856.9% MoM +126.3% EPS 3.2</div></div><div class="dm-card s4"><div class="dm-label">C 事件</div><div class="dm-state c">事件已落地</div><div class="dm-aux">近 5 條新聞 中性偏多</div></div><div class="dm-card s4"><div class="dm-label">D 籌碼</div><div class="dm-state c">籌碼支持</div><div class="dm-aux">5 日 +7,631 張 (外 +35,514 投 -27,382 自 -501)</div></div><div class="dm-card s3"><div class="dm-label">E 市場</div><div class="dm-state n">市場中性偏順</div><div class="dm-aux">加權 44572 / 5MA>20MA / 10日+0.9% / 20日-0.4%｜費半 偏空(-1) (調整-1)</div></div></div><div class="dm-summary">🎯 <b>執行決策：</b><b style="color:var(--cyan)">續抱</b>（已買的留著續抱, 不加碼也不賣） ｜ 支持層數 <b>4 / 5</b> ｜ 📰 新聞偏多 (+0.5)</div>
+  <div class="readiness r-now"><span class="readiness-tag r-now">READY NOW</span><span>主體 4 層支持, 可直接給進場區/失效價/目標價（見 ⑥ 段）</span></div>
+  <div class="verdict" style="background:rgba(38,208,124,.12);border-color:var(--muted)">
+    <span class="verdict-bull" style="background:var(--muted)">偏多觀察但不追高（依5 條口訣）</span>
+    <span class="verdict-text">綜合判讀：<b>封測龍頭 + CoWoS 受惠</b>，上漲格局，KD 中段、MACD 金叉。已有者沿 5MA 續抱；空手者<b>等回測月線 601 再分批</b>，不追當日大量大紅 K。<br><b>5 條口訣套用</b>：順勢不逆（上漲順勢） ✅、買低不追（等月線 601） ✅、停利不猶豫（達 695 區） ✅</span>
+  </div>
+</div>
 
 <div class="foot">
   資料來源：FinMind TaiwanStockPrice 個股日成交（過去 180 個交易日, 共 118 筆）｜FinMind TaiwanStockInstitutionalInvestorsBuySell 三大法人買賣超（近 5 日）｜融資融券｜工商時報 / Yahoo 股市 / FTNN / 經濟日報 / cmnews
