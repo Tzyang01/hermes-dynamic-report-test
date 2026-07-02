@@ -4,10 +4,10 @@
     {
       "id": "active-etf-holdings-change",
       "name": "主動式ETF持股異動報告",
-      "updated": "2026-06-30 19:31:28 CST",
+      "updated": "2026-07-02 19:13:31 CST",
       "url": "reports/active-etf-holdings-change/latest.html",
-      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/主動式ETF持股異動總覽_20260630.html",
-      "bytes": 466856,
+      "source": "/Users/ch/Documents/Claude/Projects/主動式ETF/reports/主動式ETF持股異動總覽_20260702.html",
+      "bytes": 580759,
       "schedule_desc": "每個交易日 19:30"
     },
     {
