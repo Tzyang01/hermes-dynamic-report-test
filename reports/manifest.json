@@ -31,10 +31,10 @@
     {
       "id": "market-twii",
       "name": "台股加權指數大盤分析",
-      "updated": "2026-08-03 19:43:28 CST",
+      "updated": "2026-08-04 19:41:02 CST",
       "url": "reports/market-twii/latest.html",
       "source": "/Users/ch/.hermes/cache/vault_round_html/twii.html",
-      "bytes": 102764,
+      "bytes": 104537,
       "schedule_desc": "每個交易日 18:00"
     }
   ]
